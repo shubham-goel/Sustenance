@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SHUBHAM</Machine>
+    <WindowsUser>sgoel</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>19795a56-815c-44ff-8589-c09e8eef0efe</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>F458BD382B19F833AB42277FBB9FE60D7A443AB1E69541BE83AFD7E30F353296</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>19795a56-815c-44ff-8589-c09e8eef0efe_1.0.0.0_neutral__twnr5w18312z8</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>19795a56-815c-44ff-8589-c09e8eef0efe_twnr5w18312z8!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>19795a56-815c-44ff-8589-c09e8eef0efe</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Shelly</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-06T15:40:10.832</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.exe">
+      <PackagePath>Sustenance_V_1.0.Windows.exe</PackagePath>
+      <Modified>2015-06-08T12:16:13.870</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization.dll">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
+      <Modified>2015-06-04T09:59:03.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+      <Modified>2015-06-04T09:58:50.766</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\apple.jpg">
+      <PackagePath>apple.jpg</PackagePath>
+      <Modified>2015-05-18T09:29:41.870</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\aq plants-2.jpg">
+      <PackagePath>aq plants-2.jpg</PackagePath>
+      <Modified>2015-05-18T10:13:53.981</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\big fish.jpg">
+      <PackagePath>big fish.jpg</PackagePath>
+      <Modified>2015-05-18T10:39:36.733</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\deer.jpg">
+      <PackagePath>deer.jpg</PackagePath>
+      <Modified>2015-05-18T09:11:48.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fish.jpg">
+      <PackagePath>fish.jpg</PackagePath>
+      <Modified>2015-05-18T10:33:08.752</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\god.jpg">
+      <PackagePath>god.jpg</PackagePath>
+      <Modified>2015-05-18T17:52:43.929</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.jpg">
+      <PackagePath>lion.jpg</PackagePath>
+      <Modified>2015-05-18T11:02:23.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\monkey.jpg">
+      <PackagePath>monkey.jpg</PackagePath>
+      <Modified>2015-05-18T09:34:22.411</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\stork-1.jpg">
+      <PackagePath>stork-1.jpg</PackagePath>
+      <Modified>2015-05-18T10:46:11.417</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\tiger.jpg">
+      <PackagePath>tiger.jpg</PackagePath>
+      <Modified>2015-05-18T11:03:55.631</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\vulture-2.jpg">
+      <PackagePath>vulture-2.jpg</PackagePath>
+      <Modified>2015-05-18T10:55:00.186</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T05:25:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T05:25:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T05:25:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T05:25:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bee.png">
+      <PackagePath>bee.png</PackagePath>
+      <Modified>2015-05-18T09:10:01.300</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bird.png">
+      <PackagePath>bird.png</PackagePath>
+      <Modified>2015-05-18T09:43:30.329</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\cow.png">
+      <PackagePath>cow.png</PackagePath>
+      <Modified>2015-05-18T09:18:11.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\deer.png">
+      <PackagePath>deer.png</PackagePath>
+      <Modified>2015-06-06T10:30:24.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\eagle.png">
+      <PackagePath>eagle.png</PackagePath>
+      <Modified>2015-06-06T09:41:35.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant.png">
+      <PackagePath>elephant.png</PackagePath>
+      <Modified>2015-05-18T09:27:39.996</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant_new.png">
+      <PackagePath>elephant_new.png</PackagePath>
+      <Modified>2015-06-06T08:28:20.893</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fish_small.png">
+      <PackagePath>fish_small.png</PackagePath>
+      <Modified>2015-06-04T07:24:54.563</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fruits.png">
+      <PackagePath>fruits.png</PackagePath>
+      <Modified>2015-05-18T09:30:27.649</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\goat.png">
+      <PackagePath>goat.png</PackagePath>
+      <Modified>2015-05-18T09:20:55.760</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\grasshopper.png">
+      <PackagePath>grasshopper.png</PackagePath>
+      <Modified>2015-05-18T09:07:02.130</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\GRASS_fLOWERS-3.png">
+      <PackagePath>GRASS_fLOWERS-3.png</PackagePath>
+      <Modified>2015-06-06T10:42:54.178</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.png">
+      <PackagePath>lion.png</PackagePath>
+      <Modified>2015-06-06T09:18:50.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\monkey-hanging-palm-tree-18004219.png">
+      <PackagePath>monkey-hanging-palm-tree-18004219.png</PackagePath>
+      <Modified>2015-06-06T07:57:50.218</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\rabbit.png">
+      <PackagePath>rabbit.png</PackagePath>
+      <Modified>2015-05-18T09:14:47.794</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\shark.png">
+      <PackagePath>shark.png</PackagePath>
+      <Modified>2015-06-06T08:09:04.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\sheep.png">
+      <PackagePath>sheep.png</PackagePath>
+      <Modified>2015-05-18T09:24:24.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\underwater_plants_cropped1.png">
+      <PackagePath>underwater_plants_cropped1.png</PackagePath>
+      <Modified>2015-06-04T07:55:30.713</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\veggie.png">
+      <PackagePath>veggie.png</PackagePath>
+      <Modified>2015-05-18T09:26:13.416</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\vulture.png">
+      <PackagePath>vulture.png</PackagePath>
+      <Modified>2015-06-04T15:47:05.828</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-06-06T15:40:10.225</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-06-08T12:07:22.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.xr.xml">
+      <PackagePath>Sustenance_V_1.0.Windows.xr.xml</PackagePath>
+      <Modified>2015-06-08T11:05:27.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AnimatingContainer.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.778</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CascadingTextBlock.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingTextBlock.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.790</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CountdownControl.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CountdownControl.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.794</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.781</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.783</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.792</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CustomAppBar\CustomAppBar.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CustomAppBar\CustomAppBar.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.797</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.799</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.802</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\ImageButton\ImageButton.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageButton\ImageButton.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.807</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\InputDialog\InputDialog.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\InputDialog\InputDialog.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.813</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.815</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\TreeView\TreeView.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeView.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.842</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.844</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.847</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.850</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\WebBrowser\WebBrowser.xaml">
+      <PackagePath>WinRTXamlToolkit\Controls\WebBrowser\WebBrowser.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.853</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Themes\Generic.xaml">
+      <PackagePath>WinRTXamlToolkit\Themes\Generic.xaml</PackagePath>
+      <Modified>2015-06-04T09:58:50.855</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\AxisLabel.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\AxisLabel.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DateTimeAxisLabel.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DateTimeAxisLabel.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DisplayAxis.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DisplayAxis.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\NumericAxisLabel.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\NumericAxisLabel.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\RangeAxis.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\RangeAxis.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.576</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Chart\Chart.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Chart\Chart.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.579</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\AreaDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\AreaDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.583</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BarDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BarDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.585</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BubbleDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BubbleDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.596</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ColumnDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ColumnDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\LineDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\LineDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.599</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\PieDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\PieDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.601</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ScatterDataPoint.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ScatterDataPoint.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Primitives\DelegatingListBox.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Primitives\DelegatingListBox.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.605</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\AreaSeries.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\AreaSeries.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DataPointSeries.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DataPointSeries.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.608</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DefinitionSeries.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DefinitionSeries.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.710</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LegendItem.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LegendItem.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.712</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LineSeries.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LineSeries.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.713</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\PieSeries.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\PieSeries.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.770</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Legend\Legend.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Legend\Legend.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.773</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Themes\Generic.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Themes\Generic.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization\Title\Title.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Title\Title.xaml</PackagePath>
+      <Modified>2015-06-04T09:59:03.778</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Downloads\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-08T12:14:59.880</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
