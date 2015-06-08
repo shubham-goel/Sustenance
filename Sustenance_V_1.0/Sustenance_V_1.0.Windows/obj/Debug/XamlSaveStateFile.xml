@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\sgoel\downloads\sustenance_v_1.0\sustenance_v_1.0\sustenance_v_1.0\sustenance_v_1.0.windows\obj\debug\intermediatexaml\sustenance_v_1.0.windows.exe" HashGuid="7c8a3f91-0b61-812f-c93a-6f7c54a84ade" />
-    <ReferenceAssembly PathName="c:\users\sgoel\desktop\sustenance\sustenance_v_1.0\sustenance_v_1.0\packages\winrtxamltoolkit.controls.datavisualization.1.4.4.1\lib\netcore45\winrtxamltoolkit.controls.datavisualization.dll" HashGuid="d2e4ff14-1e2d-fd8c-600b-21bd7b8a5897" />
-    <ReferenceAssembly PathName="c:\users\sgoel\desktop\sustenance\sustenance_v_1.0\sustenance_v_1.0\packages\winrtxamltoolkit.1.4.4.1\lib\netcore45\winrtxamltoolkit.dll" HashGuid="7a56cd69-eb14-4423-c95f-72179724c63d" />
+    <ReferenceAssembly PathName="c:\users\sgoel\desktop\sustenance\sustenance_v_1.0\sustenance\packages\winrtxamltoolkit.controls.datavisualization.1.4.4.1\lib\netcore45\winrtxamltoolkit.controls.datavisualization.dll" HashGuid="d2e4ff14-1e2d-fd8c-600b-21bd7b8a5897" />
+    <ReferenceAssembly PathName="c:\users\sgoel\desktop\sustenance\sustenance_v_1.0\sustenance\packages\winrtxamltoolkit.1.4.4.1\lib\netcore45\winrtxamltoolkit.dll" HashGuid="7a56cd69-eb14-4423-c95f-72179724c63d" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

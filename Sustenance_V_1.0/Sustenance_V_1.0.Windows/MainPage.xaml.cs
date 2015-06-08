@@ -26,52 +26,23 @@ namespace Sustenance_V_1._0
     public sealed partial class MainPage : Page
     {
 
-//===========CLASS DEFINITIONS===========//
-        public class species
-        {
-            public string name { get; set; }
-            public double healthy { get; set; }
-            public double sick { get; set; }
-            public string sc_name { get; set; }
-            public string desc { get; set; }
-            public string wiki { get; set; }
-            public Grid grid { get; set; }
-            public Image image { get; set; }
-            public Ellipse circle { get; set; }
-            public Chart chart { get; set; }
-            public TextBlock sick_b { get; set; }
-            public TextBlock healthy_b { get; set; }
-            public TextBox title { get; set; }
+        ////===========CONVERTERS==========//
+        //public class species_chart_itemsource_converter : IValueConverter
+        //{
+        //    public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        //    {
+        //        var sp = parameter as species;
+        //        List<Population> data = new List<Population>();
+        //        data.Add(new Population() { Name = "Healthy", Amount = sp.healthy });
+        //        data.Add(new Population() { Name = "Healthy", Amount = sp.sick });
+        //        return data;
+        //    }
 
-
-            public void update_chart()
-            {
-                //(chart.Series[0] as PieSeries).ItemsSource = double_list(healthy, sick);
-                List<Population> data = new List<Population>();
-                data.Add(new Population() { Name = "Healthy", Amount = healthy });
-                data.Add(new Population() { Name = "Healthy", Amount = sick });
-                (chart.Series[0] as PieSeries).ItemsSource = data;
-            }
-            public void update_population_boxes()
-            {
-                healthy_b.Text = healthy.ToString();
-                sick_b.Text = sick.ToString();
-            }
-
-            public species()
-            {
-
-            }
-            
-        }
-
-        public class Population
-        {
-            public string Name { get; set; }
-            public double Amount { get; set; }
-        }
-
-
+        //    public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        //    {
+        //        return true;
+        //    }
+        //}
 
 //===========VAR DEFINITIONS===========//
         List<species> all_species = new List<species>();
@@ -286,4 +257,50 @@ namespace Sustenance_V_1._0
 
 
     }
+
+    //===========CLASS DEFINITIONS===========//
+    public class species
+    {
+        public string name { get; set; }
+        public double healthy { get; set; }
+        public double sick { get; set; }
+        public string sc_name { get; set; }
+        public string desc { get; set; }
+        public string wiki { get; set; }
+        public Grid grid { get; set; }
+        public Image image { get; set; }
+        public Ellipse circle { get; set; }
+        public Chart chart { get; set; }
+        public TextBlock sick_b { get; set; }
+        public TextBlock healthy_b { get; set; }
+        public TextBox title { get; set; }
+
+
+        public void update_chart()
+        {
+            //(chart.Series[0] as PieSeries).ItemsSource = double_list(healthy, sick);
+            List<Population> data = new List<Population>();
+            data.Add(new Population() { Name = "Healthy", Amount = healthy });
+            data.Add(new Population() { Name = "Healthy", Amount = sick });
+            (chart.Series[0] as PieSeries).ItemsSource = data;
+        }
+        public void update_population_boxes()
+        {
+            healthy_b.Text = healthy.ToString();
+            sick_b.Text = sick.ToString();
+        }
+
+        public species()
+        {
+
+        }
+
+    }
+
+    public class Population
+    {
+        public string Name { get; set; }
+        public double Amount { get; set; }
+    }
+
 }
