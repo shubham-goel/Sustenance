@@ -62,12 +62,12 @@
       <RootProperty Name="Stroke" />
       <RootProperty Name="StrokeThickness" />
       <RootProperty Name="Fill" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Stretch" />
       <RootProperty Name="MaxWidth" />
       <RootProperty Name="MaxHeight" />
     </RootType>
@@ -165,6 +165,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Palette" />
       <RootProperty Name="Series" />
     </RootType>
@@ -185,6 +186,10 @@
       <RootProperty Name="IndependentValuePath" />
       <RootProperty Name="DependentValuePath" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="LegendItemStyle" />
       <RootProperty Name="IsSelectionEnabled" />
     </RootType>

@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.exe">
       <PackagePath>Sustenance_V_1.0.Windows.exe</PackagePath>
-      <Modified>2015-06-09T04:35:16.514</Modified>
+      <Modified>2015-06-09T08:46:28.535</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization.dll">
       <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
@@ -186,11 +186,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-06-09T04:21:46.266</Modified>
+      <Modified>2015-06-09T08:46:28.021</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.xr.xml">
       <PackagePath>Sustenance_V_1.0.Windows.xr.xml</PackagePath>
-      <Modified>2015-06-09T04:21:45.979</Modified>
+      <Modified>2015-06-09T08:21:26.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AnimatingContainer.xaml">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xaml</PackagePath>
@@ -378,7 +378,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-09T04:35:16.947</Modified>
+      <Modified>2015-06-09T08:46:28.838</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

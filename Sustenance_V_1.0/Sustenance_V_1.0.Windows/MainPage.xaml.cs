@@ -46,6 +46,7 @@ namespace Sustenance_V_1._0
 
 //===========VAR DEFINITIONS===========//
         List<species> all_species = new List<species>();
+        List<Environment_species> all_env = new List<Environment_species>();
 
         species Aquatic_Plants = new species() { name = "Aquatic_Plants"};
         species Bee = new species() { name = "Bee" };
@@ -65,6 +66,11 @@ namespace Sustenance_V_1._0
         species Small_Bird = new species() { name = "Small_Bird" };
         species Small_Fish = new species() { name = "Small_Fish" };
         species Vulture = new species() { name = "Vulture" };
+
+        Environment_species Land = new Environment_species() { name = "Land" };
+        Environment_species Air = new Environment_species() { name = "Air" };
+        Environment_species Water = new Environment_species() { name = "Water" };
+        Environment_species Green_Cover = new Environment_species() { name = "Green_Cover" };
 
         
 
@@ -110,6 +116,10 @@ namespace Sustenance_V_1._0
             add_species(all_species);
             link_members(all_species);
             LoadChartContents(all_species);
+
+            add_species(all_env);
+            link_members(all_env); 
+            LoadChartContents(all_env);
         }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -121,6 +131,7 @@ namespace Sustenance_V_1._0
         {
             
             LoadChartContents(all_species);
+            LoadChartContents(all_env);
         }
         private void test_Click(object sender, RoutedEventArgs e)
         {
@@ -209,27 +220,47 @@ namespace Sustenance_V_1._0
                 link_members(sp);
             }
         }
+         public void link_members(Environment_species sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.title = FindName(sp.name + "_n") as TextBlock;
+            sp.chart = FindName(sp.name + "_Chart") as Chart;
+        }
+        public void link_members(List<Environment_species> list)
+        {
+            foreach (Environment_species sp in list)
+            {
+                link_members(sp);
+            }
+        }
         public void add_species(List<species> list)
         {
 
-            all_species.Add(Aquatic_Plants);
-            all_species.Add(Bee);
-            all_species.Add(Cow);
-            all_species.Add(Deer);
-            all_species.Add(Eagle);
-            all_species.Add(Elephant);
-            all_species.Add(Fruits);
-            all_species.Add(Goat);
-            all_species.Add(Grass_Flowers);
-            all_species.Add(Grasshopper);
-            all_species.Add(Lion);
-            all_species.Add(Monkey);
-            all_species.Add(Rabbit);
-            all_species.Add(Shark);
-            all_species.Add(Sheep);
-            all_species.Add(Small_Bird);
-            all_species.Add(Small_Fish);
-            all_species.Add(Vulture);
+            list.Add(Aquatic_Plants);
+            list.Add(Bee);
+            list.Add(Cow);
+            list.Add(Deer);
+            list.Add(Eagle);
+            list.Add(Elephant);
+            list.Add(Fruits);
+            list.Add(Goat);
+            list.Add(Grass_Flowers);
+            list.Add(Grasshopper);
+            list.Add(Lion);
+            list.Add(Monkey);
+            list.Add(Rabbit);
+            list.Add(Shark);
+            list.Add(Sheep);
+            list.Add(Small_Bird);
+            list.Add(Small_Fish);
+            list.Add(Vulture);
+        }
+        public void add_species(List<Environment_species> list)
+        {
+            list.Add(Land);
+            list.Add(Air);
+            list.Add(Water);
+            list.Add(Green_Cover);
         }
         private void LoadChartContents(List<species> list)
         {
@@ -246,6 +277,23 @@ namespace Sustenance_V_1._0
                 ///=====================================================================///
 
                 mySpecies.update_population_boxes();
+                mySpecies.update_chart();
+            }
+
+        }
+        private void LoadChartContents(List<Environment_species> list)
+        {
+            Random rand = new Random();
+            foreach (Environment_species mySpecies in list)
+            {
+
+
+                ///================Updeate healthy and sick values======================///
+
+                mySpecies.healthy = rand.Next(0, 100);
+
+                ///=====================================================================///
+
                 mySpecies.update_chart();
             }
 
@@ -335,6 +383,15 @@ namespace Sustenance_V_1._0
         
         public Chart chart { get; set; }
         public TextBlock title { get; set; }
+        public void update_chart()
+        {
+            //(chart.Series[0] as PieSeries).ItemsSource = double_list(healthy, sick);
+            List<Population> data = new List<Population>();
+            data.Add(new Population() { Name = "Healthy", Amount = healthy });
+            data.Add(new Population() { Name = "Sick", Amount = 100-healthy });
+            (chart.Series[0] as PieSeries).ItemsSource = data;
+        }
+
     }
 
     public class Population
