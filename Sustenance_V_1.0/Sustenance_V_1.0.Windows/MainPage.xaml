@@ -5,8 +5,10 @@
     xmlns:local="using:Sustenance_V_1._0"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:DataVisualization="using:WinRTXamlToolkit.Controls.DataVisualization" xmlns:Controls="using:WinRTXamlToolkit.Controls" x:Name="page"
+    xmlns:DataVisualization="using:WinRTXamlToolkit.Controls.DataVisualization" xmlns:Controls="using:WinRTXamlToolkit.Controls" x:Name="game_page"
     x:Class="Sustenance_V_1._0.MainPage"
+    
+    
     mc:Ignorable="d">
 	<Page.Resources>
         <!--<local:MainPage.species_to_chart_itemsource_converter x:Key="chart_converter"/>-->
@@ -75,9 +77,9 @@
 				<Image Margin="0" Source="deer.png" Width="100" Height="100"/>
 			</Grid>
 		</Grid>
-		<ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF741D1D" BorderThickness="2" ZoomSnapPointsType="Optional" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="{Binding ActualHeight, ElementName=page}" Width="{Binding ActualWidth, ElementName=page}" Margin="0" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" >
+		<ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF741D1D" BorderThickness="2" ZoomSnapPointsType="Optional" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" >
 			<FlyoutBase.AttachedFlyout>
-				<Flyout x:Name="myFlyout" Placement="Bottom">
+				<Flyout x:Name="myFlyout" Placement="Bottom" Closed="flyout_closing" >
 					<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
 						<TextBlock x:Name="myFlyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
 						<TextBlock x:Name="myFlyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,40,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>

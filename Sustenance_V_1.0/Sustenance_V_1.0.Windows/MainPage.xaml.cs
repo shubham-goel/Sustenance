@@ -124,13 +124,13 @@ namespace Sustenance_V_1._0
         }
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            myFlyout.ShowAt(page);
+            myFlyout.ShowAt(game_page);
         }
         private void Species_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
         {
             // TODO: Add event handler implementation here.
 
-            species sp = all_species.Find(x => (x.name + "_g") == object_to_name(sender));
+            species sp = grid_obj_to_species(sender);
 
             myFlyout_Title.Text = sp.name;
             myFlyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
@@ -150,14 +150,9 @@ namespace Sustenance_V_1._0
         {
             // TODO: Add event handler implementation here.
 
-            species sp = all_species.Find(x => (x.name + "_g") == object_to_name(sender));
+            species sp = grid_obj_to_species(sender);
 
-            scale_transform(sp.grid, 1.1, 1.1);
-
-            //SHOW title, population values
-            sp.sick_b.Visibility = Visibility.Visible;
-            sp.healthy_b.Visibility = Visibility.Visible;
-            sp.title.Visibility = Visibility.Visible;
+            sp.pointer_entered();
             
         }
 
@@ -167,27 +162,28 @@ namespace Sustenance_V_1._0
         {
             // TODO: Add event handler implementation here.
 
-            species sp = all_species.Find(x => (x.name + "_g") == object_to_name(sender));
+            species sp = grid_obj_to_species(sender);
+            
+            if(myFlyout_Title.Text!=sp.name)
+            {
+                 sp.pointer_exited();
+            }
 
-            scale_transform(sp.grid, 1, 1);
-
-            //HIDE title, population values
-            sp.sick_b.Visibility = Visibility.Collapsed;
-            sp.healthy_b.Visibility = Visibility.Collapsed;
-            sp.title.Visibility = Visibility.Collapsed;
+            
         }
 
-//===========UTILITY FUNCTIONS==========//
-        public void scale_transform(UIElement element, double x, double y)
+//===============ON CLOSE===============//
+        private void flyout_closing(object sender, object e)
         {
-            element.RenderTransformOrigin = new Point(0.5, 0.5);
+            species sp = all_species.Find(x => x.name == myFlyout_Title.Text);
+            sp.pointer_exited();
+            myFlyout_Title.Text = "closed";
 
-            ScaleTransform myScaleTransform = new ScaleTransform();
-            myScaleTransform.ScaleY = x;
-            myScaleTransform.ScaleX = y;
-            TransformGroup myTransformGroup = new TransformGroup();
-            myTransformGroup.Children.Add(myScaleTransform);
-            element.RenderTransform = myTransformGroup; 
+        }
+//===============UTILITY================//
+        public species grid_obj_to_species(object obj)
+        {
+            return all_species.Find(x => (x.name + "_g") == object_to_name(obj));
         }
         public string object_to_name(object sender)
         {
@@ -195,25 +191,6 @@ namespace Sustenance_V_1._0
             var species_name = spec.Name;
             string sp_name = species_name.ToString();
             return sp_name;
-        }
-        private void LoadChartContents(List<species> list)
-        {
-            Random rand = new Random();
-            foreach (species mySpecies in list)
-            {
-
-
-                ///================Updeate healthy and sick values======================///
-
-                mySpecies.healthy = rand.Next(0, 200);
-                mySpecies.sick = rand.Next(0, 200);
-
-                ///=====================================================================///
-
-                mySpecies.update_population_boxes();
-                mySpecies.update_chart();
-            }
-
         }
         public void link_members(species sp)
         {
@@ -254,8 +231,25 @@ namespace Sustenance_V_1._0
             all_species.Add(Small_Fish);
             all_species.Add(Vulture);
         }
+        private void LoadChartContents(List<species> list)
+        {
+            Random rand = new Random();
+            foreach (species mySpecies in list)
+            {
 
 
+                ///================Updeate healthy and sick values======================///
+
+                mySpecies.healthy = rand.Next(0, 200);
+                mySpecies.sick = rand.Next(0, 200);
+
+                ///=====================================================================///
+
+                mySpecies.update_population_boxes();
+                mySpecies.update_chart();
+            }
+
+        }
     }
 
     //===========CLASS DEFINITIONS===========//
@@ -295,6 +289,52 @@ namespace Sustenance_V_1._0
 
         }
 
+        public void pointer_entered()
+        {
+            scale_transform(grid, 1.1, 1.1);
+
+            //HIDE title, population values
+            sick_b.Visibility = Visibility.Visible;
+            healthy_b.Visibility = Visibility.Visible;
+            title.Visibility = Visibility.Visible;
+        }
+
+        public void pointer_exited()
+        {
+            scale_transform(grid, 1, 1);
+
+            //HIDE title, population values
+            sick_b.Visibility = Visibility.Collapsed;
+            healthy_b.Visibility = Visibility.Collapsed;
+            title.Visibility = Visibility.Collapsed;
+        }
+
+//===========UTILITY FUNCTIONS==========//
+        public void scale_transform(UIElement element, double x, double y)
+        {
+            element.RenderTransformOrigin = new Point(0.5, 0.5);
+
+            ScaleTransform myScaleTransform = new ScaleTransform();
+            myScaleTransform.ScaleY = x;
+            myScaleTransform.ScaleX = y;
+            TransformGroup myTransformGroup = new TransformGroup();
+            myTransformGroup.Children.Add(myScaleTransform);
+            element.RenderTransform = myTransformGroup;
+        }
+        
+        
+        
+
+    }
+
+    public class Environment_species
+    {
+        public string name { get; set; }
+        public double healthy { get; set; }
+        public Grid grid { get; set; }
+        
+        public Chart chart { get; set; }
+        public TextBlock title { get; set; }
     }
 
     public class Population
@@ -302,5 +342,6 @@ namespace Sustenance_V_1._0
         public string Name { get; set; }
         public double Amount { get; set; }
     }
+
 
 }

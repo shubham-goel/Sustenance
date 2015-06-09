@@ -5,8 +5,10 @@
     xmlns:local="using:Sustenance_V_1._0"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:DataVisualization="using:WinRTXamlToolkit.Controls.DataVisualization" xmlns:Controls="using:WinRTXamlToolkit.Controls" x:Name="page"
+    xmlns:DataVisualization="using:WinRTXamlToolkit.Controls.DataVisualization" xmlns:Controls="using:WinRTXamlToolkit.Controls" x:Name="game_page"
     x:Class="Sustenance_V_1._0.MainPage"
+    
+    
     mc:Ignorable="d">
 	<Page.Resources>
         <!--<local:MainPage.species_to_chart_itemsource_converter x:Key="chart_converter"/>-->
@@ -75,9 +77,9 @@
 				<Image Margin="0" Source="deer.png" Width="100" Height="100"/>
 			</Grid>
 		</Grid>
-		<ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF741D1D" BorderThickness="2" ZoomSnapPointsType="Optional" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="{Binding ActualHeight, ElementName=page}" Width="{Binding ActualWidth, ElementName=page}" Margin="0" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" >
+		<ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF741D1D" BorderThickness="2" ZoomSnapPointsType="Optional" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" >
 			<FlyoutBase.AttachedFlyout>
-				<Flyout x:Name="myFlyout" Placement="Bottom">
+				<Flyout x:ConnectionId='3' x:Name="myFlyout" Placement="Bottom"                         >
 					<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
 						<TextBlock x:Name="myFlyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
 						<TextBlock x:Name="myFlyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,40,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
@@ -89,7 +91,7 @@
 				</Flyout>
 			</FlyoutBase.AttachedFlyout>
 			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=scrollViewer, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=scrollViewer}" RenderTransformOrigin="0.5,0.5">
-				<Grid x:ConnectionId='3' x:Name="Grasshopper_g" Margin="899,188,367,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                               >
+				<Grid x:ConnectionId='4' x:Name="Grasshopper_g" Margin="899,188,367,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                               >
 					<Charting:Chart x:Name="Grasshopper_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -168,7 +170,7 @@
 					<TextBlock x:Name="Grasshopper_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Grasshopper_n" HorizontalAlignment="Center" Height="30" Margin="5,107,6,-37" TextWrapping="Wrap" Text="Grasshopper" VerticalAlignment="Center" Width="89" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='4' x:Name="Rabbit_g" Margin="591,188,675,480" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100"                                                                                                                              >
+				<Grid x:ConnectionId='5' x:Name="Rabbit_g" Margin="591,188,675,480" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100"                                                                                                                              >
 					<Charting:Chart x:Name="Rabbit_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -255,7 +257,7 @@
 					<TextBlock x:Name="Rabbit_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Rabbit_n" HorizontalAlignment="Center" Height="30" Margin="25,107,26,-37" TextWrapping="Wrap" Text="Rabbit" VerticalAlignment="Center" Width="49" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='5' x:Name="Sheep_g" Margin="743,188,523,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='6' x:Name="Sheep_g" Margin="743,188,523,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Sheep_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -334,7 +336,7 @@
 					<TextBlock x:Name="Sheep_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Sheep_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Sheep" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='6' x:Name="Aquatic_Plants_g" Margin="1077,188,189,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                               >
+				<Grid x:ConnectionId='7' x:Name="Aquatic_Plants_g" Margin="1077,188,189,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                               >
 					<Charting:Chart x:Name="Aquatic_Plants_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
 				
 						<Charting:Chart.Palette>
@@ -423,7 +425,7 @@
 					<TextBlock x:Name="Aquatic_Plants_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Aquatic_Plants_n" HorizontalAlignment="Center" Height="30" Margin="0,107,-1,-37" TextWrapping="Wrap" Text="Aquatic Plants" VerticalAlignment="Center" Width="101" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='7' x:Name="Bee_g" Margin="303,524,963,144" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='8' x:Name="Bee_g" Margin="303,524,963,144" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Bee_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -502,7 +504,7 @@
 					<TextBlock x:Name="Bee_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Bee_n" HorizontalAlignment="Center" Height="30" Margin="35,107,34,-37" TextWrapping="Wrap" Text="Bee" VerticalAlignment="Center" Width="31" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='8' x:Name="Small_Bird_g" Margin="402,642,864,26" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='9' x:Name="Small_Bird_g" Margin="402,642,864,26" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Small_Bird_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -581,7 +583,7 @@
 					<TextBlock x:Name="Small_Bird_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Small_Bird_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Bird" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='9' x:Name="Deer_g" Margin="657,605,609,63" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='10' x:Name="Deer_g" Margin="657,605,609,63" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Deer_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -660,7 +662,7 @@
 					<TextBlock x:Name="Deer_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Deer_n" HorizontalAlignment="Center" Height="30" Margin="30,107,31,-37" TextWrapping="Wrap" Text="Deer" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='10' x:Name="Eagle_g" Margin="657,421,609,247" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='11' x:Name="Eagle_g" Margin="657,421,609,247" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Eagle_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -739,7 +741,7 @@
 					<TextBlock x:Name="Eagle_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Eagle_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Eagle" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='11' x:Name="Fruits_g" Margin="167,215,1099,453" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='12' x:Name="Fruits_g" Margin="167,215,1099,453" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Fruits_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -818,7 +820,7 @@
 					<TextBlock x:Name="Fruits_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Fruits_n" HorizontalAlignment="Center" Height="30" Margin="26,107,26,-37" TextWrapping="Wrap" Text="Fruits" VerticalAlignment="Center" Width="48" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='12' x:Name="Goat_g" Margin="830,532,436,136" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='13' x:Name="Goat_g" Margin="830,532,436,136" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Goat_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -897,7 +899,7 @@
 					<TextBlock x:Name="Goat_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Goat_n" HorizontalAlignment="Center" Height="30" Margin="32,107,31,-37" TextWrapping="Wrap" Text="Goat" VerticalAlignment="Center" Width="37" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='13' x:Name="Grass_Flowers_g" Margin="469,503,797,165" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='14' x:Name="Grass_Flowers_g" Margin="469,503,797,165" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Grass_Flowers_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -976,7 +978,7 @@
 					<TextBlock x:Name="Grass_Flowers_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Grass_Flowers_n" HorizontalAlignment="Center" Height="30" Margin="-2,107,-2,-37" TextWrapping="Wrap" Text="Grass Flowers" VerticalAlignment="Center" Width="104" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='14' x:Name="Lion_g" Margin="1019,605,247,63" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
+				<Grid x:ConnectionId='15' x:Name="Lion_g" Margin="1019,605,247,63" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"                                                                                                                              >
 					<Charting:Chart x:Name="Lion_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1055,7 +1057,7 @@
 					<TextBlock x:Name="Lion_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Lion_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Lion" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='15' x:Name="Elephant_g" Margin="428,340,838,328" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='16' x:Name="Elephant_g" Margin="428,340,838,328" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Elephant_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1134,7 +1136,7 @@
 					<TextBlock x:Name="Elephant_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Elephant_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Elephant" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='16' x:Name="Vulture_g" Margin="862,379,404,289"  Width="100" Height="100"                                                                                                                               >
+				<Grid x:ConnectionId='17' x:Name="Vulture_g" Margin="862,379,404,289"  Width="100" Height="100"                                                                                                                               >
 					<Charting:Chart x:Name="Vulture_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1213,7 +1215,7 @@
 					<TextBlock x:Name="Vulture_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Vulture_n" HorizontalAlignment="Center" Height="30" Margin="21,107,21,-37" TextWrapping="Wrap" Text="Vulture" VerticalAlignment="Center" Width="58" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='17' x:Name="Monkey_g" Margin="104,503,1162,165" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='18' x:Name="Monkey_g" Margin="104,503,1162,165" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Monkey_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1292,7 +1294,7 @@
 					<TextBlock x:Name="Monkey_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Monkey_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Monkey" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='18' x:Name="Shark_g" Margin="1057,379,209,289" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='19' x:Name="Shark_g" Margin="1057,379,209,289" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Shark_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1371,7 +1373,7 @@
 					<TextBlock x:Name="Shark_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Shark_n" HorizontalAlignment="Center" Height="30" Margin="29,107,29,-37" TextWrapping="Wrap" Text="Shark" VerticalAlignment="Center" Width="42" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='19' x:Name="Cow_g" Margin="237,363,1029,305" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='20' x:Name="Cow_g" Margin="237,363,1029,305" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Cow_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1450,7 +1452,7 @@
 					<TextBlock x:Name="Cow_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Cow_n" HorizontalAlignment="Center" Height="30" Margin="33,107,33,-37" TextWrapping="Wrap" Text="Cow" VerticalAlignment="Center" Width="34" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:ConnectionId='20' x:Name="Small_Fish_g" Margin="428,188,838,480" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
+				<Grid x:ConnectionId='21' x:Name="Small_Fish_g" Margin="428,188,838,480" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"                                                                                                                              >
 					<Charting:Chart x:Name="Small_Fish_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
 				
 						<Charting:Chart.Palette>
