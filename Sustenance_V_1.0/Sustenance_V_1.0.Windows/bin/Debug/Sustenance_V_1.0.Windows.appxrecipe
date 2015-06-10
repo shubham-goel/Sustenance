@@ -43,6 +43,9 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\god.jpg">
       <PackagePath>god.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\green_shopping_cart_icon_vector_280755.jpg">
+      <PackagePath>green_shopping_cart_icon_vector_280755.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.jpg">
       <PackagePath>lion.jpg</PackagePath>
     </AppxPackagedFile>
@@ -80,6 +83,9 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bird.png">
       <PackagePath>bird.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Coin_Icon.png">
+      <PackagePath>Coin_Icon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\cow.png">
       <PackagePath>cow.png</PackagePath>
     </AppxPackagedFile>
@@ -110,8 +116,20 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\GRASS_fLOWERS-3.png">
       <PackagePath>GRASS_fLOWERS-3.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\green_shopping_cart_icon_vector_280755.png">
+      <PackagePath>green_shopping_cart_icon_vector_280755.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.png">
       <PackagePath>lion.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_bulb_flask-512_modified.png">
+      <PackagePath>magic_bulb_flask-512_modified.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_cylinder_flask-512.png">
+      <PackagePath>magic_cylinder_flask-512.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_triangle_flask-512_modified.png">
+      <PackagePath>magic_triangle_flask-512_modified.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\monkey-hanging-palm-tree-18004219.png">
       <PackagePath>monkey-hanging-palm-tree-18004219.png</PackagePath>

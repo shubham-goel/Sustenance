@@ -298,6 +298,19 @@ namespace Sustenance_V_1._0
             }
 
         }
+
+        private void Species_Grid_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			species sp = grid_obj_to_species(sender);
+
+            myFlyout_Title.Text = sp.name;
+            myFlyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
+            myFlyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+            myFlyout.ShowAt(sp.grid);
+            sp.title.Visibility = Visibility.Collapsed;
+        }
     }
 
     //===========CLASS DEFINITIONS===========//

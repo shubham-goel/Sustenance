@@ -146,6 +146,12 @@ C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\S
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.pri.xml
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Coin_Icon.png
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\green_shopping_cart_icon_vector_280755.jpg
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\magic_bulb_flask-512_modified.png
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\magic_cylinder_flask-512.png
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\magic_triangle_flask-512_modified.png
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\green_shopping_cart_icon_vector_280755.png
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles.intermediate
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\Resources.resfiles

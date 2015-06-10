@@ -90,7 +90,7 @@
 					</Grid>
 				</Flyout>
 			</FlyoutBase.AttachedFlyout>
-			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=scrollViewer, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=scrollViewer}" RenderTransformOrigin="0.5,0.5">
+			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=scrollViewer, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=scrollViewer}" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
 				<Grid x:Name="Grasshopper_g" Margin="899,188,367,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
 					<Charting:Chart x:Name="Grasshopper_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
@@ -1538,7 +1538,6 @@
 		<Button x:Name="test" Content="Button" HorizontalAlignment="Left" Height="{Binding ActualWidth, ElementName=test}" Margin="10,10,0,0" Style="{StaticResource ButtonStyle1}" VerticalAlignment="Top" Width="163" Click="test_Click" PointerEntered="test_PointerEntered"/>
 		<Grid x:Name="Environment_g" Margin="0,20,214,0" Height="123" Width="492" Background="LightGray" VerticalAlignment="Top" HorizontalAlignment="Right">
 			<Grid x:Name="Air_g" HorizontalAlignment="Right" Height="123" Margin="0,0,369,0" VerticalAlignment="Center" Width="123">
-				<TextBlock x:Name="Air_n" HorizontalAlignment="Center" Height="20" Margin="16,105,15,-2" TextWrapping="Wrap" Text="AIR" VerticalAlignment="Center" Width="92" FontSize="9.333" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
 				<Charting:Chart x:Name="Air_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-37,-31,-40,-46" Width="200" Height="200" Foreground="#FF64E3F0">
 				
 					<Charting:Chart.Palette>
@@ -1615,6 +1614,7 @@
 				
 				</Charting:Chart>
 				<Ellipse HorizontalAlignment="Center" Height="80" Margin="22,14,21,29" Stroke="Black" VerticalAlignment="Center" Width="80"/>
+				<TextBlock x:Name="Air_n" HorizontalAlignment="Center" Height="20" Margin="17,47,14,56" TextWrapping="Wrap" Text="AIR" VerticalAlignment="Center" Width="92" FontSize="12" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
 			</Grid>
 			<Grid x:Name="Water_g" HorizontalAlignment="Right" Height="123" Margin="0,0,246,0" VerticalAlignment="Center" Width="123">
 				<TextBlock x:Name="Water_n" HorizontalAlignment="Center" Height="20" Margin="16,105,15,-2" TextWrapping="Wrap" Text="WATER" VerticalAlignment="Center" Width="92" FontSize="9.333" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
@@ -1854,11 +1854,34 @@
 				<Ellipse HorizontalAlignment="Center" Height="80" Margin="22,14,21,29" Stroke="Black" VerticalAlignment="Center" Width="80"/>
 			</Grid>
 		</Grid>
-		<ProgressBar Maximum="100" Value="30" Height="3" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="195,37,1071,725" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="100"/>
+		<ProgressBar Maximum="100" Value="30" Height="3" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="195,130,1071,632" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="100"/>
 		<Grid x:Name="user_g" HorizontalAlignment="Right" Height="185" Margin="0,20,21,0" VerticalAlignment="Top" Width="175" Background="Black">
 			<Image x:Name="user_img" HorizontalAlignment="Center" Height="120" Margin="0,10,0,0" VerticalAlignment="Top" Width="120" Source="god.jpg"/>
 			<TextBlock x:Name="user_name" HorizontalAlignment="Center" Height="18" Margin="18,139,17,0" TextWrapping="Wrap" Text="BOB g" VerticalAlignment="Top" Width="140" TextAlignment="Center" Foreground="White" Padding="0,2"/>
 			<HyperlinkButton x:Name="user_email" Content="Huserg@email.com" HorizontalAlignment="Center" Height="23" Margin="16,157,16,0" VerticalAlignment="Top" Width="143" Padding="0" BorderThickness="0" FontSize="12"/>
 		</Grid>
+		<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="25" Margin="230,37,0,0">
+			<Grid HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Height="60" Width="390">
+				<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="84" Margin="8,-2,0,-1">
+					<Image Margin="4,4,25,4" Source="magic_bulb_flask-512_modified.png" Width="55" Height="55"/>
+					<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,4,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+				</Grid>
+				<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="92,-3,0,0">
+					<Image Margin="5,4,25,4" Source="magic_cylinder_flask-512.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,5,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+				</Grid>
+				<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="177,-3,0,0">
+					<Image Margin="4,4,26,4" Source="magic_triangle_flask-512_modified.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,5,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+				</Grid>
+				<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="120" Margin="257,-1,0,-2">
+					<Image Margin="62,4,3,4" Source="green_shopping_cart_icon_vector_280755.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<Grid Margin="6,17,62,16">
+						<Image Margin="0,0,22,0" Source="Coin_Icon.png" Stretch="Fill" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="-1.167,0.533"/>
+						<TextBlock HorizontalAlignment="Center" Height="23" Margin="19,6,0,1" TextWrapping="Wrap" Text="35" VerticalAlignment="Center" Width="33" FontSize="17.333" Foreground="Black" TextAlignment="Center"/>
+					</Grid>
+				</Grid>
+			</Grid>
+		</Border>
 	</Grid>
 </Page>
