@@ -18,8 +18,12 @@ using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
+
+
 namespace Sustenance_V_1._0
 {
+    
+    
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -405,6 +409,54 @@ namespace Sustenance_V_1._0
             (chart.Series[0] as PieSeries).ItemsSource = data;
         }
 
+    }
+
+    public class potion<Type>
+    {
+        
+        //// affectiveness
+        public const double percent_affect = 0.3;
+
+        public string name { get; set; }
+        public int available { get; set; }
+        public int maximum { get; set; }
+        public string desc { get; set; }
+        public double effectiveness { get; set; }// 0 < effectiveness < 1
+        public void affect(Type sp)
+        {
+            
+        }
+        public double min(double a, double b)
+        {
+            if (a > b)
+            {
+                return b;
+            }
+            else
+            {
+                return a;
+            }
+        }
+    }
+
+    public class env_potion : potion<Environment_species>
+    {
+        public void affect(Environment_species sp)
+        {
+            ////Formula Affecting Change;
+            sp.healthy = ((sp.healthy - (percent_affect*effectiveness))<=0)?(sp.healthy * (1-percent_affect)* effectiveness):((sp.healthy - (percent_affect*effectiveness));
+        }
+    }
+
+    public class animal_potion : potion<species>
+    {
+        public void affect(species sp)
+        {
+            ////Formula Affecting Change;
+            double change = ((sp.healthy - (0.3*effectiveness))<=0)?(sp.healthy * 0.7 * effectiveness):((sp.healthy - (0.3*effectiveness));
+            sp.healthy  = sp.healthy - change;
+            sp.sick = sp.sick + change;
+        }
     }
 
     public class Population
