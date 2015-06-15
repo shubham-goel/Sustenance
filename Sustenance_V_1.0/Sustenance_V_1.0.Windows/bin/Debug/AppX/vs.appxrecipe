@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-10T05:02:03.128</Modified>
+      <Modified>2015-06-15T06:06:48.598</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.exe">
       <PackagePath>Sustenance_V_1.0.Windows.exe</PackagePath>
-      <Modified>2015-06-10T05:02:02.427</Modified>
+      <Modified>2015-06-15T06:06:47.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization.dll">
       <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
@@ -35,6 +35,150 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit.dll">
       <PackagePath>WinRTXamlToolkit.dll</PackagePath>
       <Modified>2015-06-08T16:46:43.157</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\077-512.png">
+      <PackagePath>077-512.png</PackagePath>
+      <Modified>2015-06-15T04:42:14.719</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-08T16:46:40.706</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-08T16:46:40.707</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-08T16:46:40.710</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-08T16:46:40.712</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bee.png">
+      <PackagePath>bee.png</PackagePath>
+      <Modified>2015-06-08T16:46:40.947</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bird.png">
+      <PackagePath>bird.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Agriculture.png">
+      <PackagePath>Agriculture.png</PackagePath>
+      <Modified>2015-06-15T04:52:06.577</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Coin_Icon.png">
+      <PackagePath>Coin_Icon.png</PackagePath>
+      <Modified>2015-05-18T15:17:41.364</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\cow.png">
+      <PackagePath>cow.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\deer.png">
+      <PackagePath>deer.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\eagle.png">
+      <PackagePath>eagle.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.405</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant.png">
+      <PackagePath>elephant.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant_new.png">
+      <PackagePath>elephant_new.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.500</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fish_small.png">
+      <PackagePath>fish_small.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fruits.png">
+      <PackagePath>fruits.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\goat.png">
+      <PackagePath>goat.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\grasshopper.png">
+      <PackagePath>grasshopper.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\GRASS_fLOWERS-3.png">
+      <PackagePath>GRASS_fLOWERS-3.png</PackagePath>
+      <Modified>2015-06-08T16:46:40.720</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Grass_Flowers.png">
+      <PackagePath>Grass_Flowers.png</PackagePath>
+      <Modified>2015-06-15T05:40:22.285</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\green_shopping_cart_icon_vector_280755.png">
+      <PackagePath>green_shopping_cart_icon_vector_280755.png</PackagePath>
+      <Modified>2015-06-10T05:00:19.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Health_icon_TF2.png">
+      <PackagePath>Health_icon_TF2.png</PackagePath>
+      <Modified>2015-06-15T04:54:41.110</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.png">
+      <PackagePath>lion.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_bulb_flask-512_modified.png">
+      <PackagePath>magic_bulb_flask-512_modified.png</PackagePath>
+      <Modified>2015-06-10T03:48:00.942</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_cylinder_flask-512.png">
+      <PackagePath>magic_cylinder_flask-512.png</PackagePath>
+      <Modified>2015-06-10T03:55:07.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_triangle_flask-512_modified.png">
+      <PackagePath>magic_triangle_flask-512_modified.png</PackagePath>
+      <Modified>2015-06-15T05:22:49.487</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\monkey-hanging-palm-tree-18004219.png">
+      <PackagePath>monkey-hanging-palm-tree-18004219.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.665</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\places_and_locations_city-512.png">
+      <PackagePath>places_and_locations_city-512.png</PackagePath>
+      <Modified>2015-06-15T04:32:48.089</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\rabbit.png">
+      <PackagePath>rabbit.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.744</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\shark.png">
+      <PackagePath>shark.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.748</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\sheep.png">
+      <PackagePath>sheep.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.750</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\tiger-clip-art-tiger_clip_art.png">
+      <PackagePath>tiger-clip-art-tiger_clip_art.png</PackagePath>
+      <Modified>2015-06-14T10:13:55.328</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\underwater_plants_cropped1.png">
+      <PackagePath>underwater_plants_cropped1.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.820</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\veggie.png">
+      <PackagePath>veggie.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.825</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\vulture.png">
+      <PackagePath>vulture.png</PackagePath>
+      <Modified>2015-06-08T16:46:42.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\apple.jpg">
       <PackagePath>apple.jpg</PackagePath>
@@ -84,137 +228,17 @@
       <PackagePath>vulture-2.jpg</PackagePath>
       <Modified>2015-06-08T16:46:42.827</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\Logo.scale-100.png">
-      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-08T16:46:40.706</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SmallLogo.scale-100.png">
-      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-08T16:46:40.707</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\SplashScreen.scale-100.png">
-      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-08T16:46:40.710</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\StoreLogo.scale-100.png">
-      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-08T16:46:40.712</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bee.png">
-      <PackagePath>bee.png</PackagePath>
-      <Modified>2015-06-08T16:46:40.947</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bird.png">
-      <PackagePath>bird.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.377</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Coin_Icon.png">
-      <PackagePath>Coin_Icon.png</PackagePath>
-      <Modified>2015-05-18T15:17:41.364</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\cow.png">
-      <PackagePath>cow.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.381</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\deer.png">
-      <PackagePath>deer.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.386</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\eagle.png">
-      <PackagePath>eagle.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.405</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant.png">
-      <PackagePath>elephant.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.436</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\elephant_new.png">
-      <PackagePath>elephant_new.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.500</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fish_small.png">
-      <PackagePath>fish_small.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.540</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\fruits.png">
-      <PackagePath>fruits.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.544</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\goat.png">
-      <PackagePath>goat.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.548</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\grasshopper.png">
-      <PackagePath>grasshopper.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.552</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\GRASS_fLOWERS-3.png">
-      <PackagePath>GRASS_fLOWERS-3.png</PackagePath>
-      <Modified>2015-06-08T16:46:40.720</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\green_shopping_cart_icon_vector_280755.png">
-      <PackagePath>green_shopping_cart_icon_vector_280755.png</PackagePath>
-      <Modified>2015-06-10T05:00:19.165</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.png">
-      <PackagePath>lion.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.560</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_bulb_flask-512_modified.png">
-      <PackagePath>magic_bulb_flask-512_modified.png</PackagePath>
-      <Modified>2015-06-10T03:48:00.942</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_cylinder_flask-512.png">
-      <PackagePath>magic_cylinder_flask-512.png</PackagePath>
-      <Modified>2015-06-10T03:55:07.607</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\magic_triangle_flask-512_modified.png">
-      <PackagePath>magic_triangle_flask-512_modified.png</PackagePath>
-      <Modified>2015-06-10T04:00:48.388</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\monkey-hanging-palm-tree-18004219.png">
-      <PackagePath>monkey-hanging-palm-tree-18004219.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.665</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\rabbit.png">
-      <PackagePath>rabbit.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.744</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\shark.png">
-      <PackagePath>shark.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.748</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\sheep.png">
-      <PackagePath>sheep.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.750</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\underwater_plants_cropped1.png">
-      <PackagePath>underwater_plants_cropped1.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.820</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\veggie.png">
-      <PackagePath>veggie.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.825</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\vulture.png">
-      <PackagePath>vulture.png</PackagePath>
-      <Modified>2015-06-08T16:46:42.830</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2015-06-08T16:47:40.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-06-10T05:02:01.791</Modified>
+      <Modified>2015-06-15T06:06:46.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.xr.xml">
       <PackagePath>Sustenance_V_1.0.Windows.xr.xml</PackagePath>
-      <Modified>2015-06-10T05:02:01.669</Modified>
+      <Modified>2015-06-15T05:03:23.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AnimatingContainer.xaml">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xaml</PackagePath>
@@ -402,7 +426,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-10T05:23:19.164</Modified>
+      <Modified>2015-06-15T06:06:48.051</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

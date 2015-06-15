@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
+using Windows.UI.Xaml.Media.Animation;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -69,6 +70,7 @@ namespace Sustenance_V_1._0
         species Sheep = new species() { name = "Sheep" };
         species Small_Bird = new species() { name = "Small_Bird" };
         species Small_Fish = new species() { name = "Small_Fish" };
+        species Tiger = new species() { name = "Tiger" };
         species Vulture = new species() { name = "Vulture" };
 
         Environment_species Land = new Environment_species() { name = "Land" };
@@ -140,6 +142,7 @@ namespace Sustenance_V_1._0
         private void test_Click(object sender, RoutedEventArgs e)
         {
             myFlyout.ShowAt(game_page);
+            //animate_scale_button(sender, 1.5);
         }
         private void Species_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
         {
@@ -153,13 +156,15 @@ namespace Sustenance_V_1._0
             //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
             myFlyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
+
+            //animate_scale(sender, 1.2);
         }
-       
-        
+
 //===========HOVER START FUNCTIONS==========//
         private void test_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             test.Opacity = 0.5;
+            //animate_scale_button(sender, 1.1);
         }
         private void Species_Grid_PointerEntered(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
         {
@@ -167,7 +172,9 @@ namespace Sustenance_V_1._0
 
             species sp = grid_obj_to_species(sender);
 
+
             sp.pointer_entered();
+            //animate_scale(sender, 1.1);
             
         }
 
@@ -182,6 +189,7 @@ namespace Sustenance_V_1._0
             if(myFlyout_Title.Text!=sp.name)
             {
                  sp.pointer_exited();
+                 //animate_scale(sender, 1.0);
             }
 
             
@@ -239,7 +247,6 @@ namespace Sustenance_V_1._0
         }
         public void add_species(List<species> list)
         {
-
             list.Add(Aquatic_Plants);
             list.Add(Bee);
             list.Add(Cow);
@@ -254,9 +261,10 @@ namespace Sustenance_V_1._0
             list.Add(Monkey);
             list.Add(Rabbit);
             list.Add(Shark);
-            list.Add(Sheep);
+            list.Add(Sheep);  
             list.Add(Small_Bird);
             list.Add(Small_Fish);
+            list.Add(Tiger);
             list.Add(Vulture);
         }
         public void add_species(List<Environment_species> list)
@@ -315,6 +323,29 @@ namespace Sustenance_V_1._0
             myFlyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
         }
+
+
+        //===========ANIMATIONS===========//
+        //public void animate_scale(object sender, double to)
+        //{
+        //    // TODO: Add event handler implementation here.
+
+            
+
+        //    elastic_scale_1_1.Begin();
+        //}
+        //public void animate_scale_button(object sender, double to)
+        //{
+        //    // TODO: Add event handler implementation here.
+
+        //    elastic_scale_1_1_x.To = to;
+        //    elastic_scale_1_1_y.To = to;
+
+        //    elastic_scale_1_1.Stop();
+        //    Storyboard.SetTargetName(elastic_scale_1_1, (sender as Button).Name);
+        //    elastic_scale_1_1.Begin();
+        //}
+
     }
 
     //===========CLASS DEFINITIONS===========//
@@ -358,10 +389,12 @@ namespace Sustenance_V_1._0
         {
             scale_transform(grid, 1.1, 1.1);
 
-            //HIDE title, population values
+
+            //SHOW title, population values
             sick_b.Visibility = Visibility.Visible;
             healthy_b.Visibility = Visibility.Visible;
             title.Visibility = Visibility.Visible;
+
         }
 
         public void pointer_exited()
@@ -387,8 +420,6 @@ namespace Sustenance_V_1._0
             element.RenderTransform = myTransformGroup;
         }
         
-        
-        
 
     }
 
@@ -411,6 +442,19 @@ namespace Sustenance_V_1._0
 
     }
 
+    public class Industrial_species
+    {
+        public string name { get; set; }
+        public double healthy { get; set; } ////0 < healthy <1000
+        public Grid grid { get; set; }
+        public ProgressBar  chart { get; set; }
+        public TextBlock title { get; set; }
+        public void update_chart()
+        {
+            chart.Value = healthy / 10;
+        }
+    }
+
     public class potion<Type>
     {
         
@@ -420,6 +464,7 @@ namespace Sustenance_V_1._0
         public string name { get; set; }
         public int available { get; set; }
         public int maximum { get; set; }
+        public TextBlock box { get; set; }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
         public void affect(Type sp)
@@ -437,6 +482,11 @@ namespace Sustenance_V_1._0
                 return a;
             }
         }
+        public void update_box()
+        {
+            box.Text = available + "/" + maximum;
+        }
+        
     }
 
     public class env_potion : potion<Environment_species>
@@ -444,7 +494,7 @@ namespace Sustenance_V_1._0
         public void affect(Environment_species sp)
         {
             ////Formula Affecting Change;
-            sp.healthy = ((sp.healthy - (percent_affect*effectiveness))<=0)?(sp.healthy * (1-percent_affect)* effectiveness):((sp.healthy - (percent_affect*effectiveness));
+            sp.healthy = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
         }
     }
 
@@ -453,11 +503,22 @@ namespace Sustenance_V_1._0
         public void affect(species sp)
         {
             ////Formula Affecting Change;
-            double change = ((sp.healthy - (0.3*effectiveness))<=0)?(sp.healthy * 0.7 * effectiveness):((sp.healthy - (0.3*effectiveness));
+            double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (percent_affect) * effectiveness) : ((sp.healthy * percent_affect * effectiveness));
             sp.healthy  = sp.healthy - change;
             sp.sick = sp.sick + change;
         }
     }
+
+    public class ind_potion : potion<Industrial_species>
+    {
+        public void affect(Industrial_species sp)
+        {
+            ////Formula Affecting Change;
+            double temp = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            sp.healthy = (temp>1000)?1000:temp;
+        }
+    }
+
 
     public class Population
     {

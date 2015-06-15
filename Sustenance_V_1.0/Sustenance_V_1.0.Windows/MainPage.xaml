@@ -36,9 +36,24 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+		
         
-        
-	</Page.Resources>
+        <!--<Storyboard x:Name="elastic_scale_1_1">
+            <DoubleAnimation  x:Name="elastic_scale_1_1_x" Duration="0:0:1" From="1.0" To="1.1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" >
+        		<DoubleAnimation.EasingFunction>
+        			<ElasticEase EasingMode="EaseOut" Springiness="2"/>
+        		</DoubleAnimation.EasingFunction>
+        	</DoubleAnimation>
+            <DoubleAnimation x:Name="elastic_scale_1_1_y" Duration="0:0:1" From="1.0" To="1.1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+        		<DoubleAnimation.EasingFunction>
+        			<ElasticEase EasingMode="EaseOut" Springiness="2"/>
+        		</DoubleAnimation.EasingFunction>
+        	</DoubleAnimation>
+        </Storyboard>-->
+
+
+
+    </Page.Resources>
 
 	<Grid Background="{ThemeResource AppBarItemForegroundThemeBrush}">
 		<Grid x:Name="Old_Items" Margin="99,35,587,201" Width="100" Height="100" d:IsHidden="True" Visibility="Collapsed">
@@ -90,8 +105,11 @@
 					</Grid>
 				</Flyout>
 			</FlyoutBase.AttachedFlyout>
-			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=scrollViewer, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=scrollViewer}" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
-				<Grid x:Name="Grasshopper_g" Margin="899,188,367,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding ActualWidth, ElementName=scrollViewer, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=scrollViewer}" RenderTransformOrigin="0.5,0.5">
+				<Grid x:Name="Grasshopper_g" Margin="899,188,367,480" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
+					<Grid.RenderTransform>
+						<CompositeTransform/>
+					</Grid.RenderTransform>
 					<Charting:Chart x:Name="Grasshopper_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -170,7 +188,7 @@
 					<TextBlock x:Name="Grasshopper_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Grasshopper_n" HorizontalAlignment="Center" Height="30" Margin="5,107,6,-37" TextWrapping="Wrap" Text="Grasshopper" VerticalAlignment="Center" Width="89" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:Name="Rabbit_g" Margin="591,188,675,480" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+                <Grid x:Name="Rabbit_g" Margin="591,188,675,480" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
 					<Charting:Chart x:Name="Rabbit_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -815,7 +833,7 @@
 				
 					</Charting:Chart>
 					<Ellipse x:Name="Fruits_e" Stroke="#FFCD4646" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-					<Image x:Name="Fruits_i" Margin="0,6,5,-1" Source="fruits.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="95" Height="95"/>
+					<Image x:Name="Fruits_i" Margin="0,6,5,-1" Source="fruits.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85"/>
 					<TextBlock x:Name="Fruits_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBlock x:Name="Fruits_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Fruits_n" HorizontalAlignment="Center" Height="30" Margin="26,107,26,-37" TextWrapping="Wrap" Text="Fruits" VerticalAlignment="Center" Width="48" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
@@ -973,12 +991,15 @@
 				
 					</Charting:Chart>
 					<Ellipse x:Name="Grass_Flowers_e" Stroke="#FF69AC5E" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-					<Image x:Name="Grass_Flowers_i" Margin="0" Source="GRASS_fLOWERS-3.png" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<Image x:Name="Grass_Flowers_i" Margin="0" Source="Grass_Flowers.png" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 					<TextBlock x:Name="Grass_Flowers_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBlock x:Name="Grass_Flowers_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Grass_Flowers_n" HorizontalAlignment="Center" Height="30" Margin="-2,107,-2,-37" TextWrapping="Wrap" Text="Grass Flowers" VerticalAlignment="Center" Width="104" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
-				<Grid x:Name="Lion_g" Margin="1019,605,247,63" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+				<Grid x:Name="Lion_g" Margin="1019,605,247,63" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
+					<Grid.RenderTransform>
+						<CompositeTransform/>
+					</Grid.RenderTransform>
 					<Charting:Chart x:Name="Lion_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
 						<Charting:Chart.Palette>
@@ -1532,10 +1553,93 @@
 					<TextBlock x:Name="Small_Fish_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
 					<TextBox x:Name="Small_Fish_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Fish" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
 				</Grid>
+				<Grid x:Name="Tiger_g" Margin="1148,507,126,169" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
+					<Grid.RenderTransform>
+						<CompositeTransform/>
+					</Grid.RenderTransform>
+					<Charting:Chart x:Name="Tiger_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
+				
+						<Charting:Chart.Palette>
+							<Charting:ResourceDictionaryCollection>
+						
+								<!-- Blue --><!--
+								<ResourceDictionary>
+									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
+									<Style x:Key="DataPointStyle" TargetType="Control">
+										<Setter  Property="Background"   Value="{StaticResource Background}" />
+									</Style>
+									<Style x:Key="DataShapeStyle" TargetType="Shape">
+										<Setter Property="Stroke" Value="{StaticResource Background}" />
+										<Setter Property="StrokeThickness" Value="2" />
+										<Setter Property="StrokeMiterLimit" Value="1" />
+										<Setter Property="Fill" Value="{StaticResource Background}" />
+									</Style>
+								</ResourceDictionary>
+						
+						--><!-- Yellow --><!--
+								<ResourceDictionary>
+									<SolidColorBrush x:Key="Background"  Color="#FFD6DC3B" />
+									<Style  x:Key="DataPointStyle"  TargetType="Control">
+										<Setter     Property="Background"   Value="{StaticResource Background}" />
+									</Style>
+									<Style  x:Key="DataShapeStyle" TargetType="Shape">
+										<Setter    Property="Stroke"   Value="{StaticResource Background}" />
+										<Setter Property="StrokeThickness" Value="2" />
+										<Setter Property="StrokeMiterLimit" Value="1" />
+										<Setter Property="Fill" Value="{StaticResource Background}" />
+									</Style>
+								</ResourceDictionary>-->
+
+								<!-- Green -->
+								<ResourceDictionary>
+									<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+									<Style  x:Key="DataPointStyle"  TargetType="Control">
+										<Setter  Property="Background"  Value="{StaticResource Background}" />
+									</Style>
+									<Style x:Key="DataShapeStyle"  TargetType="Shape">
+										<Setter Property="Stroke"  Value="{StaticResource Background}" />
+										<Setter  Property="StrokeThickness"  Value="2" />
+										<Setter  Property="StrokeMiterLimit"  Value="1" />
+										<Setter Property="Fill" Value="{StaticResource Background}" />
+									</Style>
+								</ResourceDictionary>
+						
+								<!-- Red -->
+								<ResourceDictionary>
+									<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+									<Style  x:Key="DataPointStyle" TargetType="Control">
+										<Setter  Property="Background" Value="{StaticResource Background}" />
+									</Style>
+									<Style x:Key="DataShapeStyle" TargetType="Shape">
+										<Setter Property="Stroke"  Value="{StaticResource Background}" />
+										<Setter  Property="StrokeThickness" Value="2" />
+										<Setter Property="StrokeMiterLimit"  Value="1" />
+										<Setter Property="Fill"  Value="{StaticResource Background}" />
+									</Style>
+								</ResourceDictionary>
+						
+							</Charting:ResourceDictionaryCollection>
+						</Charting:Chart.Palette>
+
+						<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+							<Charting:PieSeries.LegendItemStyle>
+								<Style TargetType="Charting:LegendItem">
+									<Setter Property="Visibility" Value="Collapsed" />
+								</Style>
+							</Charting:PieSeries.LegendItemStyle>
+						</Charting:PieSeries>
+				
+					</Charting:Chart>
+					<Ellipse x:Name="Tiger_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+					<Image x:Name="Tiger_i" Source="tiger-clip-art-tiger_clip_art.png" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,4,6,6"/>
+					<TextBlock x:Name="Tiger_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+					<TextBlock x:Name="Tiger_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+					<TextBox x:Name="Tiger_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Tiger" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+				</Grid>
 			</Grid>
 		</ScrollViewer>
-		<Button x:Name="ButtonRefresh" Content="refresh" HorizontalAlignment="Left" Margin="-3,175,0,0" VerticalAlignment="Top" Click="ButtonRefresh_Click" Foreground="Black" BorderBrush="Black" Height="87" Width="249"/>
-		<Button x:Name="test" Content="Button" HorizontalAlignment="Left" Height="{Binding ActualWidth, ElementName=test}" Margin="10,10,0,0" Style="{StaticResource ButtonStyle1}" VerticalAlignment="Top" Width="163" Click="test_Click" PointerEntered="test_PointerEntered"/>
+		<Button x:Name="ButtonRefresh" Content="refresh" HorizontalAlignment="Left" Margin="327,121,0,0" VerticalAlignment="Top" Click="ButtonRefresh_Click" Foreground="Black" BorderBrush="Black" Height="87" Width="249"/>
+		<Button x:Name="test" Content="Button" HorizontalAlignment="Left" Height="{Binding ActualWidth, ElementName=test}" Margin="10,10,0,0" Style="{StaticResource ButtonStyle1}" VerticalAlignment="Top" Width="163" Click="test_Click" PointerEntered="test_PointerEntered" d:IsHidden="True" Visibility="Collapsed"/>
 		<Grid x:Name="Environment_g" Margin="0,20,214,0" Height="123" Width="492" Background="LightGray" VerticalAlignment="Top" HorizontalAlignment="Right">
 			<Grid x:Name="Air_g" HorizontalAlignment="Right" Height="123" Margin="0,0,369,0" VerticalAlignment="Center" Width="123">
 				<Charting:Chart x:Name="Air_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-37,-31,-40,-46" Width="200" Height="200" Foreground="#FF64E3F0">
@@ -1614,7 +1718,7 @@
 				
 				</Charting:Chart>
 				<Ellipse HorizontalAlignment="Center" Height="80" Margin="22,14,21,29" Stroke="Black" VerticalAlignment="Center" Width="80"/>
-				<TextBlock x:Name="Air_n" HorizontalAlignment="Center" Height="20" Margin="17,47,14,56" TextWrapping="Wrap" Text="AIR" VerticalAlignment="Center" Width="92" FontSize="12" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
+				<TextBlock x:Name="Air_n" HorizontalAlignment="Center" Height="20" Margin="16,105,15,-2" TextWrapping="Wrap" Text="AIR" VerticalAlignment="Center" Width="92" FontSize="9.333" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
 			</Grid>
 			<Grid x:Name="Water_g" HorizontalAlignment="Right" Height="123" Margin="0,0,246,0" VerticalAlignment="Center" Width="123">
 				<TextBlock x:Name="Water_n" HorizontalAlignment="Center" Height="20" Margin="16,105,15,-2" TextWrapping="Wrap" Text="WATER" VerticalAlignment="Center" Width="92" FontSize="9.333" FontFamily="Segoe UI" Foreground="#FF042A44" TextAlignment="Center"/>
@@ -1854,7 +1958,6 @@
 				<Ellipse HorizontalAlignment="Center" Height="80" Margin="22,14,21,29" Stroke="Black" VerticalAlignment="Center" Width="80"/>
 			</Grid>
 		</Grid>
-		<ProgressBar Maximum="100" Value="30" Height="3" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="195,130,1071,632" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="100"/>
 		<Grid x:Name="user_g" HorizontalAlignment="Right" Height="185" Margin="0,20,21,0" VerticalAlignment="Top" Width="175" Background="Black">
 			<Image x:Name="user_img" HorizontalAlignment="Center" Height="120" Margin="0,10,0,0" VerticalAlignment="Top" Width="120" Source="god.jpg"/>
 			<TextBlock x:Name="user_name" HorizontalAlignment="Center" Height="18" Margin="18,139,17,0" TextWrapping="Wrap" Text="BOB g" VerticalAlignment="Top" Width="140" TextAlignment="Center" Foreground="White" Padding="0,2"/>
@@ -1883,5 +1986,21 @@
 				</Grid>
 			</Grid>
 		</Border>
+		<Grid x:Name="city_g" Margin="8,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+			<ProgressBar x:Name="city_Chart" Maximum="100" Value="30" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,0" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			<Image x:Name="city_i" Margin="0" Source="places_and_locations_city-512.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		</Grid>
+		<Grid x:Name="Industry_g" Margin="8,188,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+			<ProgressBar x:Name="Industry_Chart" Maximum="100" Value="30" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,0" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			<Image x:Name="Industry_i" Margin="0" Source="077-512.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		</Grid>
+		<Grid x:Name="Agriculture_g" Margin="8,388,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+			<ProgressBar x:Name="Agriculture_Chart" Maximum="100" Value="30" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,0" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			<Image x:Name="Agriculture_i" Margin="0" Source="Health_icon_TF2.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		</Grid>
+		<Grid x:Name="Health_g" Margin="8,288,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+			<ProgressBar x:Name="Health_Chart" Maximum="100" Value="30" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,0" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			<Image x:Name="Health_i" Margin="0" Source="Agriculture.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		</Grid>
 	</Grid>
 </Page>
