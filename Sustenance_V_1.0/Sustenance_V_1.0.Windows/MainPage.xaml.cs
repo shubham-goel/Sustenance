@@ -52,6 +52,7 @@ namespace Sustenance_V_1._0
 //===========VAR DEFINITIONS===========//
         List<species> all_species = new List<species>();
         List<Environment_species> all_env = new List<Environment_species>();
+        List<Industrial_species> all_ind = new List<Industrial_species>();
 
         species Aquatic_Plants = new species() { name = "Aquatic_Plants"};
         species Bee = new species() { name = "Bee" };
@@ -78,7 +79,10 @@ namespace Sustenance_V_1._0
         Environment_species Water = new Environment_species() { name = "Water" };
         Environment_species Green_Cover = new Environment_species() { name = "Green_Cover" };
 
-        
+        Industrial_species City = new Industrial_species() { name = "City" };
+        Industrial_species Manufacturing = new Industrial_species() { name = "Manufacturing_Industry" };
+        Industrial_species Agriculture = new Industrial_species() { name = "Agriculture" };
+        Industrial_species Health = new Industrial_species() { name = "Health" };
 
         //public List<double> double_list(double a, double b)
         //{
@@ -115,6 +119,9 @@ namespace Sustenance_V_1._0
         //    all_species.Add(new species() { name = "Cow", sick_b = Cow_s, healthy_b = Cow_h, title = Cow_n, healthy = 100, sick = 0, grid = Cow, image = Cow_i, circle = Cow_e, chart = Cow_Chart });
         //}
 
+
+        //------------------------//
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -126,8 +133,11 @@ namespace Sustenance_V_1._0
             add_species(all_env);
             link_members(all_env); 
             LoadChartContents(all_env);
-        }
 
+            add_species(all_ind);
+            link_members(all_ind);
+            LoadChartContents(all_ind);
+        }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
         }
@@ -138,27 +148,55 @@ namespace Sustenance_V_1._0
             
             LoadChartContents(all_species);
             LoadChartContents(all_env);
+            LoadChartContents(all_ind);
         }
-        private void test_Click(object sender, RoutedEventArgs e)
-        {
-            myFlyout.ShowAt(game_page);
-            //animate_scale_button(sender, 1.5);
-        }
+
+        //------------------------//
+
         private void Species_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
         {
             // TODO: Add event handler implementation here.
 
             species sp = grid_obj_to_species(sender);
 
-            myFlyout_Title.Text = sp.name;
-            myFlyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
-            myFlyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+            sp_Flyout_Title.Text = sp.name;
+            sp_Flyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
+            sp_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
             //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
-            myFlyout.ShowAt(sp.grid);
+            sp_Flyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
 
             //animate_scale(sender, 1.2);
         }
+        private void Env_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
+        {
+            // TODO: Add event handler implementation here.
+
+            Environment_species sp = grid_obj_to_env_species(sender);
+
+            env_Flyout_Title.Text = sp.name;
+            env_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+            env_Flyout.ShowAt(sp.grid);
+            //sp.title.Visibility = Visibility.Collapsed;
+
+            //animate_scale(sender, 1.2);
+        }
+        private void Ind_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
+        {
+            // TODO: Add event handler implementation here.
+
+            Industrial_species sp = grid_obj_to_ind_species(sender);
+
+            ind_Flyout_Title.Text = sp.name;
+            ind_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+            ind_Flyout.ShowAt(sp.grid);
+            //sp.title.Visibility = Visibility.Collapsed;
+
+            //animate_scale(sender, 1.2);
+        }
+
 
 //===========HOVER START FUNCTIONS==========//
         private void test_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -186,7 +224,7 @@ namespace Sustenance_V_1._0
 
             species sp = grid_obj_to_species(sender);
             
-            if(myFlyout_Title.Text!=sp.name)
+            if(sp_Flyout_Title.Text!=sp.name)
             {
                  sp.pointer_exited();
                  //animate_scale(sender, 1.0);
@@ -196,18 +234,31 @@ namespace Sustenance_V_1._0
         }
 
 //===============ON CLOSE===============//
-        private void flyout_closing(object sender, object e)
+        private void sp_flyout_closing(object sender, object e)
         {
-            species sp = all_species.Find(x => x.name == myFlyout_Title.Text);
+            species sp = all_species.Find(x => x.name == sp_Flyout_Title.Text);
             sp.pointer_exited();
-            myFlyout_Title.Text = "closed";
-
+            sp_Flyout_Title.Text = "closed";
         }
 //===============UTILITY================//
+        
+        //------------------------//
+        
         public species grid_obj_to_species(object obj)
         {
             return all_species.Find(x => (x.name + "_g") == object_to_name(obj));
         }
+        public Environment_species grid_obj_to_env_species(object obj)
+        {
+            return all_env.Find(x => (x.name + "_g") == object_to_name(obj));
+        }
+        public Industrial_species grid_obj_to_ind_species(object obj)
+        {
+            return all_ind.Find(x => (x.name + "_g") == object_to_name(obj));
+        }
+        
+        //------------------------//
+
         public string object_to_name(object sender)
         {
             var spec = sender as Grid;
@@ -215,6 +266,9 @@ namespace Sustenance_V_1._0
             string sp_name = species_name.ToString();
             return sp_name;
         }
+
+        //------------------------//
+        
         public void link_members(species sp)
         {
             sp.grid = FindName(sp.name + "_g") as Grid;
@@ -232,7 +286,7 @@ namespace Sustenance_V_1._0
                 link_members(sp);
             }
         }
-         public void link_members(Environment_species sp)
+        public void link_members(Environment_species sp)
         {
             sp.grid = FindName(sp.name + "_g") as Grid;
             sp.title = FindName(sp.name + "_n") as TextBlock;
@@ -245,6 +299,22 @@ namespace Sustenance_V_1._0
                 link_members(sp);
             }
         }
+        public void link_members(Industrial_species sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.title = FindName(sp.name + "_n") as TextBlock;
+            sp.chart = FindName(sp.name + "_Chart") as ProgressBar;
+        }
+        public void link_members(List<Industrial_species> list)
+        {
+            foreach (Industrial_species sp in list)
+            {
+                link_members(sp);
+            }
+        }
+        
+        //------------------------//
+        
         public void add_species(List<species> list)
         {
             list.Add(Aquatic_Plants);
@@ -274,6 +344,16 @@ namespace Sustenance_V_1._0
             list.Add(Water);
             list.Add(Green_Cover);
         }
+        public void add_species(List<Industrial_species> list)
+        {
+            list.Add(City);
+            list.Add(Manufacturing);
+            list.Add(Agriculture);
+            list.Add(Health);
+        }
+        
+        //------------------------//
+        
         private void LoadChartContents(List<species> list)
         {
             Random rand = new Random();
@@ -310,19 +390,38 @@ namespace Sustenance_V_1._0
             }
 
         }
-
-        private void Species_Grid_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        private void LoadChartContents(List<Industrial_species> list)
         {
-        	// TODO: Add event handler implementation here.
-			species sp = grid_obj_to_species(sender);
+            Random rand = new Random();
+            foreach (Industrial_species mySpecies in list)
+            {
 
-            myFlyout_Title.Text = sp.name;
-            myFlyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
-            myFlyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
-            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
-            myFlyout.ShowAt(sp.grid);
-            sp.title.Visibility = Visibility.Collapsed;
+
+                ///================Updeate healthy and sick values======================///
+
+                mySpecies.healthy = rand.Next(0, 1000);
+
+                ///=====================================================================///
+
+                mySpecies.update_chart();
+            }
+
         }
+
+        //------------------------//
+
+        //private void Species_Grid_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        //{
+        //    // TODO: Add event handler implementation here.
+        //    species sp = grid_obj_to_species(sender);
+
+        //    myFlyout_Title.Text = sp.name;
+        //    myFlyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
+        //    myFlyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+        //    //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+        //    myFlyout.ShowAt(sp.grid);
+        //    sp.title.Visibility = Visibility.Collapsed;
+        //}
 
 
         //===========ANIMATIONS===========//
@@ -349,6 +448,9 @@ namespace Sustenance_V_1._0
     }
 
     //===========CLASS DEFINITIONS===========//
+
+    //------------------------//
+    
     public class species
     {
         public string name { get; set; }
@@ -422,13 +524,12 @@ namespace Sustenance_V_1._0
         
 
     }
-
     public class Environment_species
     {
         public string name { get; set; }
         public double healthy { get; set; }
         public Grid grid { get; set; }
-        
+        public string desc { get; set; }
         public Chart chart { get; set; }
         public TextBlock title { get; set; }
         public void update_chart()
@@ -441,12 +542,12 @@ namespace Sustenance_V_1._0
         }
 
     }
-
     public class Industrial_species
     {
         public string name { get; set; }
         public double healthy { get; set; } ////0 < healthy <1000
         public Grid grid { get; set; }
+        public string desc { get; set; }
         public ProgressBar  chart { get; set; }
         public TextBlock title { get; set; }
         public void update_chart()
@@ -454,6 +555,8 @@ namespace Sustenance_V_1._0
             chart.Value = healthy / 10;
         }
     }
+
+    //------------------------//
 
     public class potion<Type>
     {
@@ -488,7 +591,6 @@ namespace Sustenance_V_1._0
         }
         
     }
-
     public class env_potion : potion<Environment_species>
     {
         public void affect(Environment_species sp)
@@ -497,7 +599,6 @@ namespace Sustenance_V_1._0
             sp.healthy = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
         }
     }
-
     public class animal_potion : potion<species>
     {
         public void affect(species sp)
@@ -508,7 +609,6 @@ namespace Sustenance_V_1._0
             sp.sick = sp.sick + change;
         }
     }
-
     public class ind_potion : potion<Industrial_species>
     {
         public void affect(Industrial_species sp)
@@ -519,6 +619,7 @@ namespace Sustenance_V_1._0
         }
     }
 
+    //------------------------//
 
     public class Population
     {
