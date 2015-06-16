@@ -91,11 +91,11 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="IsTextSelectionEnabled" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="FontStyle" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="TextTrimming" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="FontStyle" />
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">

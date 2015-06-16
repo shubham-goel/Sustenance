@@ -89,9 +89,9 @@ namespace Sustenance_V_1._0
         Industrial_species Agriculture = new Industrial_species() { name = "Agriculture" };
         Industrial_species Health = new Industrial_species() { name = "Health" };
 
-        animal_potion potion1_animal = new animal_potion() { name = "potion1" };
-        animal_potion potion2_animal = new animal_potion() { name = "potion2" };
-        animal_potion potion3_animal = new animal_potion() { name = "potion3" };
+        animal_potion potion1_animal = new animal_potion() { name = "potion1" , effectiveness = 0.3 };
+        animal_potion potion2_animal = new animal_potion() { name = "potion2" , effectiveness = 0.6 };
+        animal_potion potion3_animal = new animal_potion() { name = "potion3" , effectiveness = 0.9 };
 
         //ind_potion potion1_ind = new ind_potion() { name = "ind_potion1" };
         //ind_potion potion2_ind = new ind_potion() { name = "ind_potion2" };
@@ -473,8 +473,8 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_population_boxes();
-                mySpecies.update_chart();
+                //mySpecies.update_population_boxes();
+                //mySpecies.update_chart();
             }
 
         }
@@ -491,7 +491,7 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_chart();
+                //mySpecies.update_chart();
             }
 
         }
@@ -508,7 +508,7 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_chart();
+                //mySpecies.update_chart();
             }
 
         }
@@ -523,8 +523,8 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_box();
-                mySpecies.update_timer_box();
+                //mySpecies.update_box();
+                //mySpecies.update_timer_box();
             }
 
         }
@@ -538,8 +538,8 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_box();
-                mySpecies.update_timer_box();
+                //mySpecies.update_box();
+                //mySpecies.update_timer_box();
             }
 
         }
@@ -553,10 +553,26 @@ namespace Sustenance_V_1._0
 
                 ///=====================================================================///
 
-                mySpecies.update_box();
-                mySpecies.update_timer_box();
+                //mySpecies.update_box();
+                //mySpecies.update_timer_box();
             }
 
+        }
+
+
+        //==============POTIONS=================//
+        private void animal_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+            animal_potion pot = all_pot_animals.Find(x => (x.name + "_flyout_g") == object_to_name(sender));
+            species sp = all_species.Find(x => x.name == sp_Flyout_Title.Text);
+
+            if (pot == null || sp == null)
+            {
+                return;
+            }
+
+            pot.affect(ref sp);
         }
 
         //------------------------//
@@ -605,8 +621,34 @@ namespace Sustenance_V_1._0
     public class species
     {
         public string name { get; set; }
-        public double healthy { get; set; }
-        public double sick { get; set; }
+        double _healthy;
+        public double healthy
+        {
+            get
+            {
+                return _healthy;
+            }
+            set
+            {
+                _healthy = value;
+                update_chart();
+                update_population_boxes();
+            }
+        }
+        double _sick;
+        public double sick
+        {
+            get
+            {
+                return _sick;
+            }
+            set
+            {
+                _sick = value;
+                update_chart();
+                update_population_boxes();
+            }
+        }
         public string sc_name { get; set; }
         public string desc { get; set; }
         public string wiki { get; set; }
@@ -622,20 +664,27 @@ namespace Sustenance_V_1._0
         public void update_chart()
         {
             //(chart.Series[0] as PieSeries).ItemsSource = double_list(healthy, sick);
-            List<Population> data = new List<Population>();
-            data.Add(new Population() { Name = "Healthy", Amount = healthy });
-            data.Add(new Population() { Name = "Healthy", Amount = sick });
-            (chart.Series[0] as PieSeries).ItemsSource = data;
+            if (chart != null)
+            {
+                List<Population> data = new List<Population>();
+                data.Add(new Population() { Name = "Healthy", Amount = healthy });
+                data.Add(new Population() { Name = "Healthy", Amount = sick });
+                (chart.Series[0] as PieSeries).ItemsSource = data;
+            }
         }
         public void update_population_boxes()
         {
-            healthy_b.Text = healthy.ToString();
-            sick_b.Text = sick.ToString();
+            if (healthy_b != null && sick_b != null)
+            {
+                healthy_b.Text = healthy.ToString();
+                sick_b.Text = sick.ToString();
+            }
         }
 
         public species()
         {
-
+            healthy = 50;
+            sick = 50;
         }
 
         public void pointer_entered()
@@ -678,7 +727,19 @@ namespace Sustenance_V_1._0
     public class Environment_species
     {
         public string name { get; set; }
-        public double healthy { get; set; }
+        double _healthy;
+        public double healthy
+        {
+            get
+            {
+                return _healthy;
+            }
+            set
+            {
+                _healthy = value;
+                update_chart();
+            }
+        }
         public Grid grid { get; set; }
         public string desc { get; set; }
         public Chart chart { get; set; }
@@ -696,7 +757,19 @@ namespace Sustenance_V_1._0
     public class Industrial_species
     {
         public string name { get; set; }
-        public double healthy { get; set; } ////0 < healthy <1000
+        double _healthy;////0 < healthy <1000
+        public double healthy
+        {
+            get
+            {
+                return _healthy;
+            }
+            set
+            {
+                _healthy = value;
+                update_chart();
+            }
+        } 
         public Grid grid { get; set; }
         public string desc { get; set; }
         public ProgressBar  chart { get; set; }
@@ -716,14 +789,36 @@ namespace Sustenance_V_1._0
         public const double percent_affect = 0.3;
 
         public string name { get; set; }
-        public int available { get; set; }
-        public int maximum { get; set; }
+        int _available;
+        public int available 
+        { 
+            get{
+                return _available;
+            }
+            set{
+                _available= value;
+                update_box();
+            }
+        }
+        int _maximum;
+        public int maximum
+        {
+            get
+            {
+                return _maximum;
+            }
+            set
+            {
+                _maximum = value;
+                update_box();
+            }
+        }
         public Grid grid { get; set; }
         public TextBlock available_box { get; set; }
         public TextBlock timer_box { get; set; }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
-        public void affect(Type sp)
+        virtual public void affect(Type sp)
         {
             
         }
@@ -740,7 +835,7 @@ namespace Sustenance_V_1._0
         }
         public void update_box()
         {
-            available_box.Text = available + "/" + maximum;
+            if(available_box!=null) available_box.Text = available + "/" + maximum;
         }
         public void update_timer_box()
         {
@@ -781,14 +876,14 @@ namespace Sustenance_V_1._0
         }
         public potion()
         {
-            available = 1;
-            maximum = 2;
+            available = 2;
+            maximum = 3;
             setup_timer();
         }
     }
     public class env_potion : potion<Environment_species>
     {
-        public void affect(Environment_species sp)
+        public void affect(ref Environment_species sp)
         {
             ////Formula Affecting Change;
             sp.healthy = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
@@ -798,12 +893,16 @@ namespace Sustenance_V_1._0
     }
     public class animal_potion : potion<species>
     {
-        public void affect(species sp)
+        public void affect(ref species sp)
         {
-            ////Formula Affecting Change;
-            double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (percent_affect) * effectiveness) : ((sp.healthy * percent_affect * effectiveness));
-            sp.healthy  = sp.healthy - change;
-            sp.sick = sp.sick + change;
+            if (available > 0)
+            {
+                ////Formula Affecting Change;
+                double change = (sp.sick * (percent_affect) * effectiveness);
+                sp.healthy = sp.healthy + change;
+                sp.sick = sp.sick - change;
+                available--;
+            }
         }
         public animal_potion():base(){
         }
@@ -811,7 +910,7 @@ namespace Sustenance_V_1._0
     }
     public class ind_potion : potion<Industrial_species>
     {
-        public void affect(Industrial_species sp)
+        public void affect(ref Industrial_species sp)
         {
             ////Formula Affecting Change;
             double temp = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));

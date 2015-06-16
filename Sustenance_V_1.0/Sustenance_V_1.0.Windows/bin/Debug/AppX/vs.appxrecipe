@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-15T09:48:44.068</Modified>
+      <Modified>2015-06-16T10:47:51.563</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.exe">
       <PackagePath>Sustenance_V_1.0.Windows.exe</PackagePath>
-      <Modified>2015-06-16T08:05:05.564</Modified>
+      <Modified>2015-06-16T12:21:41.588</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization.dll">
       <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
@@ -230,15 +230,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-06-15T09:48:41.959</Modified>
+      <Modified>2015-06-16T10:47:46.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-06-16T07:59:11.014</Modified>
+      <Modified>2015-06-16T11:41:12.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.xr.xml">
       <PackagePath>Sustenance_V_1.0.Windows.xr.xml</PackagePath>
-      <Modified>2015-06-16T03:19:45.201</Modified>
+      <Modified>2015-06-16T11:39:54.967</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AnimatingContainer.xaml">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xaml</PackagePath>
@@ -426,7 +426,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-16T08:02:59.093</Modified>
+      <Modified>2015-06-16T12:21:41.843</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

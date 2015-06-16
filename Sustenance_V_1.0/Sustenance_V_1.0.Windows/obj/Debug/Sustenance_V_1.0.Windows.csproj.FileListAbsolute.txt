@@ -158,3 +158,11 @@ C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\S
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\ProjectArchitectures.txt
 C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\Sustenance_V_1.0.Windows.csprojResolveAssemblyReference.cache
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles.intermediate
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\Resources.resfiles
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\Resources.resfiles.intermediate
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\pri.resfiles
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\pri.resfiles.intermediate
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml
+C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml.intermediate

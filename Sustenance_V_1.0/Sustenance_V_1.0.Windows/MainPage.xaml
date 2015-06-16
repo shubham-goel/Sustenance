@@ -13,9 +13,6 @@
 	<Page.Resources>
         <!--<local:MainPage.species_to_chart_itemsource_converter x:Key="chart_converter"/>-->
 
-        
-        <local:species_to_chart_itemsource_converter x:Key="chart_converter"/>
-
         <Style TargetType="Image">
 			<Setter Property="Stretch" Value="Uniform"/>
 		</Style>
@@ -70,8 +67,8 @@
 							</Grid>
 						</Grid>
 		</Flyout>
-		<Flyout x:Name="sp_Flyout" x:Key="Species_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
-			<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
+		<Flyout x:Name="sp1_Flyout" x:Key="Species_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
+			<!--<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
 				<TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
 				<TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
 				<Grid Margin="222,100,10,67" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160"><Image Source="magic_bulb_flask-512_modified.png" Width="40" Height="40" Margin="7,8,9,102"/>
@@ -82,7 +79,7 @@
 					<TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
 					<HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
 				</Grid>
-			</Grid>
+			</Grid>-->
 		</Flyout>
         
         <!--<Storyboard x:Name="elastic_scale_1_1">
@@ -142,21 +139,28 @@
 		<Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" Stretch="Fill" >
 			<ScrollViewer x:Name="scrollViewer" BorderBrush="#FF741D1D" BorderThickness="20,20,20,10" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" Height="900" Width="1600" >
 				<FlyoutBase.AttachedFlyout>
-					<Flyout x:Name="sp1_Flyout" Placement="Bottom" Closed="sp_flyout_closing" >
-						<!--<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
-							<TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
-							<TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
-							<Grid Margin="222,100,10,67" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160"><Image Source="magic_bulb_flask-512_modified.png" Width="40" Height="40" Margin="7,8,9,102"/>
-								<Image Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,57,8,53"/>
-								<Image Source="magic_triangle_flask-512_modified.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,106,8,4"/>
-							</Grid>
-							<Grid Margin="17,82,69,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
-								<TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
-								<HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
-							</Grid>
-						</Grid>-->
-					</Flyout>
-				</FlyoutBase.AttachedFlyout>
+                    <Flyout x:Name="sp_Flyout" Placement="Full" Closed="sp_flyout_closing">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
+                            <TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
+                            <TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
+                            <Grid Margin="222,100,10,67" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160">
+                                <Grid x:Name="potion1_flyout_g" Margin="7,13,9,107" PointerPressed="animal_potion_pressed">
+                            		<Image Source="magic_bulb_flask-512_modified.png" Width="40" Height="40"/>
+                            	</Grid>
+                                <Grid x:Name="potion2_flyout_g" Margin="8,62,8,58" PointerPressed="animal_potion_pressed">
+                                	<Image Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                                <Grid x:Name="potion3_flyout_g" Margin="8,111,8,9" PointerPressed="animal_potion_pressed">
+                                	<Image Source="magic_triangle_flask-512_modified.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Margin="17,82,69,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
+                                <TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
+                                <HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
+                            </Grid>
+                        </Grid>
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
 				<Viewbox Height="{Binding ActualHeight, ElementName=scrollViewer}" Width="{Binding ActualWidth, ElementName=scrollViewer}">
 					<Grid Height="964" Width="1371">
 						<Grid x:Name="Grasshopper_g" Margin="902,233,369,523" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
