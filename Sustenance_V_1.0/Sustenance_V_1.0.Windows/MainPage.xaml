@@ -13,6 +13,9 @@
 	<Page.Resources>
         <!--<local:MainPage.species_to_chart_itemsource_converter x:Key="chart_converter"/>-->
 
+        
+        <local:species_to_chart_itemsource_converter x:Key="chart_converter"/>
+
         <Style TargetType="Image">
 			<Setter Property="Stretch" Value="Uniform"/>
 		</Style>
@@ -67,7 +70,7 @@
 							</Grid>
 						</Grid>
 		</Flyout>
-		<Flyout x:Name="sp_Flyout" x:Key="Species_Flyout" Placement="Bottom">
+		<Flyout x:Name="sp_Flyout" x:Key="Species_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
 			<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
 				<TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
 				<TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
@@ -136,8 +139,8 @@
 				<Image Margin="0" Source="deer.png" Width="100" Height="100"/>
 			</Grid>
 		</Grid>
-		<Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" >
-			<ScrollViewer x:Name="scrollViewer" BorderBrush="#FF741D1D" BorderThickness="20,20,20,10" ZoomSnapPointsType="Optional" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" Height="900" Width="1600" >
+		<Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" Stretch="Fill" >
+			<ScrollViewer x:Name="scrollViewer" BorderBrush="#FF741D1D" BorderThickness="20,20,20,10" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" Height="900" Width="1600" >
 				<FlyoutBase.AttachedFlyout>
 					<Flyout x:Name="sp1_Flyout" Placement="Bottom" Closed="sp_flyout_closing" >
 						<!--<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
@@ -154,17 +157,18 @@
 						</Grid>-->
 					</Flyout>
 				</FlyoutBase.AttachedFlyout>
-				<Grid Height="856" Width="1371">
-					<Grid x:Name="Grasshopper_g" Margin="902,233,369,524" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
-						<Grid.RenderTransform>
-							<CompositeTransform/>
-						</Grid.RenderTransform>
-						<Charting:Chart x:Name="Grasshopper_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+				<Viewbox Height="{Binding ActualHeight, ElementName=scrollViewer}" Width="{Binding ActualWidth, ElementName=scrollViewer}">
+					<Grid Height="964" Width="1371">
+						<Grid x:Name="Grasshopper_g" Margin="902,233,369,523" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
+							<Grid.RenderTransform>
+								<CompositeTransform/>
+							</Grid.RenderTransform>
+							<Charting:Chart x:Name="Grasshopper_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -193,58 +197,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Grasshopper_e" Stroke="#FF194614" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Grasshopper_i" Source="grasshopper.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="89" Height="84" Margin="-1,5,12,11"/>
-						<TextBlock x:Name="Grasshopper_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Grasshopper_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Grasshopper_n" HorizontalAlignment="Center" Height="30" Margin="5,107,6,-37" TextWrapping="Wrap" Text="Grasshopper" VerticalAlignment="Center" Width="89" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Rabbit_g" Margin="594,233,677,524" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
-						<Charting:Chart x:Name="Rabbit_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Grasshopper_e" Stroke="#FF194614" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Grasshopper_i" Source="grasshopper.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="89" Height="84" Margin="-1,5,12,11"/>
+							<TextBlock x:Name="Grasshopper_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Grasshopper_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Grasshopper_n" HorizontalAlignment="Center" Height="30" Margin="5,107,6,-37" TextWrapping="Wrap" Text="Grasshopper" VerticalAlignment="Center" Width="89" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Rabbit_g" Margin="594,233,677,523" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5">
+							<Charting:Chart x:Name="Rabbit_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -273,66 +277,66 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Rabbit_e" Stretch="Uniform" StrokeThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="{Binding ActualWidth, ElementName=Rabbit_g}" MaxHeight="{Binding ActualHeight, ElementName=Rabbit_g}" Height="100" Width="100">
-							<Ellipse.Fill>
-								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-									<GradientStop Color="#FF42D100" Offset="1"/>
-									<GradientStop Color="#FF8DDBFF" Offset="0.637"/>
-									<GradientStop Color="#FF43D103" Offset="0.711"/>
-								</LinearGradientBrush>
-							</Ellipse.Fill>
-						</Ellipse>
-						<Image x:Name="Rabbit_i" Margin="14,10,10,22" Source="rabbit.png" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" Height="70" Width="70"/>
-						<TextBlock x:Name="Rabbit_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Rabbit_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Rabbit_n" HorizontalAlignment="Center" Height="30" Margin="25,107,26,-37" TextWrapping="Wrap" Text="Rabbit" VerticalAlignment="Center" Width="49" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Sheep_g" Margin="746,233,525,524" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Sheep_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Rabbit_e" Stretch="Uniform" StrokeThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="{Binding ActualWidth, ElementName=Rabbit_g}" MaxHeight="{Binding ActualHeight, ElementName=Rabbit_g}" Height="100" Width="100">
+								<Ellipse.Fill>
+									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+										<GradientStop Color="#FF42D100" Offset="1"/>
+										<GradientStop Color="#FF8DDBFF" Offset="0.637"/>
+										<GradientStop Color="#FF43D103" Offset="0.711"/>
+									</LinearGradientBrush>
+								</Ellipse.Fill>
+							</Ellipse>
+							<Image x:Name="Rabbit_i" Margin="14,10,10,22" Source="rabbit.png" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" Height="70" Width="70"/>
+							<TextBlock x:Name="Rabbit_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Rabbit_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Rabbit_n" HorizontalAlignment="Center" Height="30" Margin="25,107,26,-37" TextWrapping="Wrap" Text="Rabbit" VerticalAlignment="Center" Width="49" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Sheep_g" Margin="746,233,525,523" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Sheep_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -361,59 +365,59 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Sheep_e" Margin="0" Stroke="#FF5D4213" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Sheep_i" Margin="16" Source="sheep.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="65" Height="65"/>
-						<TextBlock x:Name="Sheep_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Sheep_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Sheep_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Sheep" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Aquatic_Plants_g" Margin="1080,233,191,524" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Aquatic_Plants_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
+							</Charting:Chart>
+							<Ellipse x:Name="Sheep_e" Margin="0" Stroke="#FF5D4213" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Sheep_i" Margin="16" Source="sheep.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="65" Height="65"/>
+							<TextBlock x:Name="Sheep_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Sheep_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Sheep_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Sheep" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Aquatic_Plants_g" Margin="1080,233,191,523" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Aquatic_Plants_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!--Blue-->
-									<!-- 
+										<!--Blue-->
+										<!-- 
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -428,8 +432,8 @@
 								</ResourceDictionary>
 						
 						 -->
-									<!--Yellow-->
-									<!-- 
+										<!--Yellow-->
+										<!-- 
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background"  Color="#FFD6DC3B" />
 									<Style  x:Key="DataPointStyle"  TargetType="Control">
@@ -443,65 +447,65 @@
 									</Style>
 								</ResourceDictionary>-->
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Aquatic_Plants_e" Stroke="#FF06164D" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
-							<Ellipse.Fill>
-								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-									<GradientStop Color="#FF16CFBE" Offset="0.237"/>
-									<GradientStop Color="#FF915103" Offset="0.942"/>
-								</LinearGradientBrush>
-							</Ellipse.Fill>
-						</Ellipse>
-						<Image x:Name="Aquatic_Plants_i" Source="underwater_plants_cropped1.png" Stretch="Fill" Width="70" Height="73" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Aquatic_Plants_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Aquatic_Plants_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Aquatic_Plants_n" HorizontalAlignment="Center" Height="30" Margin="0,107,-1,-37" TextWrapping="Wrap" Text="Aquatic Plants" VerticalAlignment="Center" Width="101" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Bee_g" Margin="306,569,965,188" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Bee_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Aquatic_Plants_e" Stroke="#FF06164D" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+								<Ellipse.Fill>
+									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+										<GradientStop Color="#FF16CFBE" Offset="0.237"/>
+										<GradientStop Color="#FF915103" Offset="0.942"/>
+									</LinearGradientBrush>
+								</Ellipse.Fill>
+							</Ellipse>
+							<Image x:Name="Aquatic_Plants_i" Source="underwater_plants_cropped1.png" Stretch="Fill" Width="70" Height="73" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Aquatic_Plants_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Aquatic_Plants_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Aquatic_Plants_n" HorizontalAlignment="Center" Height="30" Margin="0,107,-1,-37" TextWrapping="Wrap" Text="Aquatic Plants" VerticalAlignment="Center" Width="101" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Bee_g" Margin="306,569,965,187" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Bee_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -530,58 +534,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Bee_e" Stroke="Yellow" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Bee_i" Margin="22,13,17,13" Source="bee.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
-						<TextBlock x:Name="Bee_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Bee_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Bee_n" HorizontalAlignment="Center" Height="30" Margin="35,107,34,-37" TextWrapping="Wrap" Text="Bee" VerticalAlignment="Center" Width="31" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Small_Bird_g" Margin="405,687,866,70" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Small_Bird_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Bee_e" Stroke="Yellow" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Bee_i" Margin="22,13,17,13" Source="bee.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+							<TextBlock x:Name="Bee_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Bee_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Bee_n" HorizontalAlignment="Center" Height="30" Margin="35,107,34,-37" TextWrapping="Wrap" Text="Bee" VerticalAlignment="Center" Width="31" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Small_Bird_g" Margin="405,687,866,69" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Small_Bird_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -610,58 +614,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Small_Bird_e" Stroke="#FF4DCDC1" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Small_Bird_i" Margin="0,5,15,10" Source="bird.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85"/>
-						<TextBlock x:Name="Small_Bird_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Small_Bird_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Small_Bird_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Bird" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Deer_g" Margin="660,650,611,107" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Deer_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Small_Bird_e" Stroke="#FF4DCDC1" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Small_Bird_i" Margin="0,5,15,10" Source="bird.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85"/>
+							<TextBlock x:Name="Small_Bird_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Small_Bird_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Small_Bird_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Bird" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Deer_g" Margin="660,650,611,106" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Deer_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -690,58 +694,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Deer_e" Stroke="#FFFBBE3A" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Deer_i" Margin="0" Source="deer.png" Width="85" Height="85" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Deer_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Deer_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Deer_n" HorizontalAlignment="Center" Height="30" Margin="30,107,31,-37" TextWrapping="Wrap" Text="Deer" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Eagle_g" Margin="660,466,611,291" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Eagle_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Deer_e" Stroke="#FFFBBE3A" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Deer_i" Margin="0" Source="deer.png" Width="85" Height="85" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Deer_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Deer_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Deer_n" HorizontalAlignment="Center" Height="30" Margin="30,107,31,-37" TextWrapping="Wrap" Text="Deer" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Eagle_g" Margin="660,466,611,290" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Eagle_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -770,58 +774,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Eagle_e" Stroke="#FFCB7903" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Eagle_i" Margin="8,3,2,7" Source="eagle.png" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Eagle_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Eagle_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Eagle_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Eagle" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Fruits_g" Margin="170,260,1101,497" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Fruits_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Eagle_e" Stroke="#FFCB7903" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Eagle_i" Margin="8,3,2,7" Source="eagle.png" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Eagle_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Eagle_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Eagle_n" HorizontalAlignment="Center" Height="30" Margin="27,107,27,-37" TextWrapping="Wrap" Text="Eagle" VerticalAlignment="Center" Width="46" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Fruits_g" Margin="170,260,1101,496" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Fruits_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -850,58 +854,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Fruits_e" Stroke="#FFCD4646" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Fruits_i" Margin="0,6,5,-1" Source="fruits.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85"/>
-						<TextBlock x:Name="Fruits_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Fruits_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Fruits_n" HorizontalAlignment="Center" Height="30" Margin="26,107,26,-37" TextWrapping="Wrap" Text="Fruits" VerticalAlignment="Center" Width="48" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Goat_g" Margin="833,577,438,180" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Goat_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Fruits_e" Stroke="#FFCD4646" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Fruits_i" Margin="0,6,5,-1" Source="fruits.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85"/>
+							<TextBlock x:Name="Fruits_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Fruits_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Fruits_n" HorizontalAlignment="Center" Height="30" Margin="26,107,26,-37" TextWrapping="Wrap" Text="Fruits" VerticalAlignment="Center" Width="48" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Goat_g" Margin="833,577,438,179" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Goat_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -930,58 +934,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Goat_e" Stroke="#FF25FFC4" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Goat_i" Source="goat.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85" Margin="6,12,9,3"/>
-						<TextBlock x:Name="Goat_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Goat_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Goat_n" HorizontalAlignment="Center" Height="30" Margin="32,107,31,-37" TextWrapping="Wrap" Text="Goat" VerticalAlignment="Center" Width="37" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Grass_Flowers_g" Margin="472,548,799,209" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Grass_Flowers_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Goat_e" Stroke="#FF25FFC4" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Goat_i" Source="goat.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Height="85" Margin="6,12,9,3"/>
+							<TextBlock x:Name="Goat_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Goat_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Goat_n" HorizontalAlignment="Center" Height="30" Margin="32,107,31,-37" TextWrapping="Wrap" Text="Goat" VerticalAlignment="Center" Width="37" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Grass_Flowers_g" Margin="472,548,799,208" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Grass_Flowers_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1010,61 +1014,61 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Grass_Flowers_e" Stroke="#FF69AC5E" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Grass_Flowers_i" Source="Grass_Flowers.png" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Grass_Flowers_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Grass_Flowers_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Grass_Flowers_n" HorizontalAlignment="Center" Height="30" Margin="-2,107,-2,-37" TextWrapping="Wrap" Text="Grass Flowers" VerticalAlignment="Center" Width="104" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Lion_g" Margin="1022,650,249,107" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
-						<Grid.RenderTransform>
-							<CompositeTransform/>
-						</Grid.RenderTransform>
-						<Charting:Chart x:Name="Lion_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Grass_Flowers_e" Stroke="#FF69AC5E" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Grass_Flowers_i" Source="Grass_Flowers.png" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Grass_Flowers_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Grass_Flowers_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Grass_Flowers_n" HorizontalAlignment="Center" Height="30" Margin="-2,107,-2,-37" TextWrapping="Wrap" Text="Grass Flowers" VerticalAlignment="Center" Width="104" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Lion_g" Margin="1022,650,249,106" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
+							<Grid.RenderTransform>
+								<CompositeTransform/>
+							</Grid.RenderTransform>
+							<Charting:Chart x:Name="Lion_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1093,58 +1097,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Lion_e" Stroke="#FFCB7903" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Lion_i" Margin="0" Source="lion.png" Width="95" Height="95" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Lion_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Lion_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Lion_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Lion" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Elephant_g" Margin="431,385,840,372" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Elephant_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Lion_e" Stroke="#FFCB7903" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Lion_i" Margin="0" Source="lion.png" Width="95" Height="95" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Lion_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Lion_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Lion_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Lion" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Elephant_g" Margin="431,385,840,371" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Elephant_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1173,58 +1177,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Elephant_e" Stroke="#FF69AC5E" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
-						<Image x:Name="Elephant_i" Margin="6,1,1,6" Source="elephant_new.png" Width="93" Height="93" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Elephant_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Elephant_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Elephant_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Elephant" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Vulture_g" Margin="865,424,406,333"  Width="100" Height="100"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Vulture_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Elephant_e" Stroke="#FF69AC5E" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+							<Image x:Name="Elephant_i" Margin="6,1,1,6" Source="elephant_new.png" Width="93" Height="93" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Elephant_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Elephant_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Elephant_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Elephant" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Vulture_g" Margin="865,424,406,332"  Width="100" Height="100"  PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Vulture_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1253,58 +1257,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Vulture_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
-						<Image x:Name="Vulture_i" Margin="0" Source="vulture.png" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Vulture_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Vulture_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Vulture_n" HorizontalAlignment="Center" Height="30" Margin="21,107,21,-37" TextWrapping="Wrap" Text="Vulture" VerticalAlignment="Center" Width="58" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Monkey_g" Margin="107,548,1164,209" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Monkey_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Vulture_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+							<Image x:Name="Vulture_i" Margin="0" Source="vulture.png" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Vulture_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Vulture_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Vulture_n" HorizontalAlignment="Center" Height="30" Margin="21,107,21,-37" TextWrapping="Wrap" Text="Vulture" VerticalAlignment="Center" Width="58" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Monkey_g" Margin="107,548,1164,208" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Monkey_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1333,58 +1337,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Monkey_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
-						<Image x:Name="Monkey_i" Source="monkey-hanging-palm-tree-18004219.png" Margin="2,10,8,0" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Monkey_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Monkey_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Monkey_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Monkey" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Shark_g" Margin="1060,424,211,333" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Shark_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Monkey_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+							<Image x:Name="Monkey_i" Source="monkey-hanging-palm-tree-18004219.png" Margin="2,10,8,0" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Monkey_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Monkey_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Monkey_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Monkey" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Shark_g" Margin="1060,424,211,332" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Shark_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1413,58 +1417,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Shark_e" Stroke="#FF2D1D8F" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
-						<Image x:Name="Shark_i" Source="shark.png" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Shark_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Shark_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Shark_n" HorizontalAlignment="Center" Height="30" Margin="29,107,29,-37" TextWrapping="Wrap" Text="Shark" VerticalAlignment="Center" Width="42" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Cow_g" Margin="240,408,1031,349" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Cow_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
+							</Charting:Chart>
+							<Ellipse x:Name="Shark_e" Stroke="#FF2D1D8F" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+							<Image x:Name="Shark_i" Source="shark.png" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Shark_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Shark_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Shark_n" HorizontalAlignment="Center" Height="30" Margin="29,107,29,-37" TextWrapping="Wrap" Text="Shark" VerticalAlignment="Center" Width="42" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Cow_g" Margin="240,408,1031,348" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Cow_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200" d:IsLocked="True">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1493,58 +1497,58 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Cow_e" Stroke="#FF93A5B2" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Cow_i" Margin="9,9,6,6" Source="cow.png" Width="85" Height="85" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Cow_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Cow_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Cow_n" HorizontalAlignment="Center" Height="30" Margin="33,107,33,-37" TextWrapping="Wrap" Text="Cow" VerticalAlignment="Center" Width="34" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Small_Fish_g" Margin="431,233,840,524" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
-						<Charting:Chart x:Name="Small_Fish_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
+							</Charting:Chart>
+							<Ellipse x:Name="Cow_e" Stroke="#FF93A5B2" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Cow_i" Margin="9,9,6,6" Source="cow.png" Width="85" Height="85" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Cow_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Cow_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Cow_n" HorizontalAlignment="Center" Height="30" Margin="33,107,33,-37" TextWrapping="Wrap" Text="Cow" VerticalAlignment="Center" Width="34" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Small_Fish_g" Margin="431,233,840,523" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" PointerPressed="Species_Grid_Clicked" PointerEntered="Species_Grid_PointerEntered" PointerExited="Species_Grid_PointerExited">
+							<Charting:Chart x:Name="Small_Fish_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!--Blue--><!-- 
+										<!--Blue--><!-- 
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1573,61 +1577,61 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Small_Fish_e" Margin="0" Stroke="#FF06215B" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
-						<Image x:Name="Small_Fish_i" Margin="-40" Source="fish_small.png" Width="65" Height="65" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock x:Name="Small_Fish_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Small_Fish_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Small_Fish_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Fish" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
-					</Grid>
-					<Grid x:Name="Tiger_g" Margin="1147,548,124,209" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
-						<Grid.RenderTransform>
-							<CompositeTransform/>
-						</Grid.RenderTransform>
-						<Charting:Chart x:Name="Tiger_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
+							</Charting:Chart>
+							<Ellipse x:Name="Small_Fish_e" Margin="0" Stroke="#FF06215B" StrokeThickness="0" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White"/>
+							<Image x:Name="Small_Fish_i" Margin="-40" Source="fish_small.png" Width="65" Height="65" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock x:Name="Small_Fish_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Small_Fish_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Small_Fish_n" HorizontalAlignment="Center" Height="30" Margin="14,107,14,-37" TextWrapping="Wrap" Text="Small Fish" VerticalAlignment="Center" Width="72" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
+						<Grid x:Name="Tiger_g" Margin="1147,548,124,208" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="Species_Grid_PointerExited" RenderTransformOrigin="0.5,0.5" PointerEntered="Species_Grid_PointerEntered" PointerPressed="Species_Grid_Clicked">
+							<Grid.RenderTransform>
+								<CompositeTransform/>
+							</Grid.RenderTransform>
+							<Charting:Chart x:Name="Tiger_Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-49,-36,-51,-64" Width="200" Height="200">
 				
-							<Charting:Chart.Palette>
-								<Charting:ResourceDictionaryCollection>
+								<Charting:Chart.Palette>
+									<Charting:ResourceDictionaryCollection>
 						
-									<!-- Blue --><!--
+										<!-- Blue --><!--
 								<ResourceDictionary>
 									<SolidColorBrush x:Key="Background" Color="#FF4586D8" />
 									<Style x:Key="DataPointStyle" TargetType="Control">
@@ -1656,52 +1660,53 @@
 								</ResourceDictionary>-->
 
 								<!-- Green -->
-									<ResourceDictionary>
-										<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
-										<Style  x:Key="DataPointStyle"  TargetType="Control">
-											<Setter  Property="Background"  Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle"  TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness"  Value="2" />
-											<Setter  Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill" Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush  x:Key="Background" Color="#FFAAD34F" />
+											<Style  x:Key="DataPointStyle"  TargetType="Control">
+												<Setter  Property="Background"  Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle"  TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness"  Value="2" />
+												<Setter  Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill" Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
 								<!-- Red -->
-									<ResourceDictionary>
-										<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
-										<Style  x:Key="DataPointStyle" TargetType="Control">
-											<Setter  Property="Background" Value="{StaticResource Background}" />
-										</Style>
-										<Style x:Key="DataShapeStyle" TargetType="Shape">
-											<Setter Property="Stroke"  Value="{StaticResource Background}" />
-											<Setter  Property="StrokeThickness" Value="2" />
-											<Setter Property="StrokeMiterLimit"  Value="1" />
-											<Setter Property="Fill"  Value="{StaticResource Background}" />
-										</Style>
-									</ResourceDictionary>
+										<ResourceDictionary>
+											<SolidColorBrush x:Key="Background" Color="#FFDC443F" />
+											<Style  x:Key="DataPointStyle" TargetType="Control">
+												<Setter  Property="Background" Value="{StaticResource Background}" />
+											</Style>
+											<Style x:Key="DataShapeStyle" TargetType="Shape">
+												<Setter Property="Stroke"  Value="{StaticResource Background}" />
+												<Setter  Property="StrokeThickness" Value="2" />
+												<Setter Property="StrokeMiterLimit"  Value="1" />
+												<Setter Property="Fill"  Value="{StaticResource Background}" />
+											</Style>
+										</ResourceDictionary>
 						
-								</Charting:ResourceDictionaryCollection>
-							</Charting:Chart.Palette>
+									</Charting:ResourceDictionaryCollection>
+								</Charting:Chart.Palette>
 
-							<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
-								<Charting:PieSeries.LegendItemStyle>
-									<Style TargetType="Charting:LegendItem">
-										<Setter Property="Visibility" Value="Collapsed" />
-									</Style>
-								</Charting:PieSeries.LegendItemStyle>
-							</Charting:PieSeries>
+								<Charting:PieSeries Margin="14,-25,-14,25" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True" FontSize="10.667">
+									<Charting:PieSeries.LegendItemStyle>
+										<Style TargetType="Charting:LegendItem">
+											<Setter Property="Visibility" Value="Collapsed" />
+										</Style>
+									</Charting:PieSeries.LegendItemStyle>
+								</Charting:PieSeries>
 				
-						</Charting:Chart>
-						<Ellipse x:Name="Tiger_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
-						<Image x:Name="Tiger_i" Source="tiger-clip-art-tiger_clip_art.png" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,4,6,6"/>
-						<TextBlock x:Name="Tiger_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBlock x:Name="Tiger_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
-						<TextBox x:Name="Tiger_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Tiger" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+							</Charting:Chart>
+							<Ellipse x:Name="Tiger_e" Stroke="#FFCB7903" Stretch="Uniform" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" StrokeThickness="0"/>
+							<Image x:Name="Tiger_i" Source="tiger-clip-art-tiger_clip_art.png" Width="90" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,4,6,6"/>
+							<TextBlock x:Name="Tiger_s" HorizontalAlignment="Center" Height="16" Margin="-18,-6,92,90" TextWrapping="Wrap" Text="15" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBlock x:Name="Tiger_h" HorizontalAlignment="Center" Height="16" Margin="92,-6,-18,90" TextWrapping="Wrap" Text="30" VerticalAlignment="Center" Width="26" Foreground="Black" TextAlignment="Center" FontSize="13.333" FontFamily="Segoe UI" Visibility="Collapsed"/>
+							<TextBox x:Name="Tiger_n" HorizontalAlignment="Center" Height="30" Margin="31,107,30,-37" TextWrapping="Wrap" Text="Tiger" VerticalAlignment="Center" Width="39" TextAlignment="Center" FontWeight="SemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" MinWidth="0" MinHeight="0" IsReadOnly="True" Visibility="Collapsed"/>
+						</Grid>
 					</Grid>
-				</Grid>
+				</Viewbox>
 			</ScrollViewer>
 		</Viewbox>
 		<Button x:Name="ButtonRefresh" Content="refresh" HorizontalAlignment="Left" Margin="327,121,0,0" VerticalAlignment="Top" Click="ButtonRefresh_Click" Foreground="Black" BorderBrush="Black" Height="87" Width="249"/>
@@ -2032,17 +2037,20 @@
 			</Grid>
 			<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="25" Margin="103,30,0,0">
 				<Grid HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Height="60" Width="390">
-					<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="84" Margin="8,-2,0,-1">
-						<Image Margin="4,4,25,4" Source="magic_bulb_flask-512_modified.png" Width="55" Height="55"/>
-						<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,4,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+					<Grid x:Name="potion1_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="84" Margin="8,-2,0,-1">
+						<Image x:Name="potion1_i" Margin="4,4,25,4" Source="magic_bulb_flask-512_modified.png" Width="55" Height="55"/>
+						<TextBlock x:Name="potion1_available" HorizontalAlignment="Center" Height="19" Margin="50,24,4,20" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+						<TextBlock x:Name="potion1_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-8,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
 					</Grid>
-					<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="92,-3,0,0">
-						<Image Margin="5,4,25,4" Source="magic_cylinder_flask-512.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,5,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+					<Grid x:Name="potion2_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="92,-3,0,0">
+						<Image x:Name="potion2_i" Margin="5,4,25,4" Source="magic_cylinder_flask-512.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock x:Name="potion2_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+						<TextBlock x:Name="potion2_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
 					</Grid>
-					<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="177,-3,0,0">
-						<Image Margin="4,4,26,4" Source="magic_triangle_flask-512_modified.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						<TextBlock HorizontalAlignment="Center" Height="19" Margin="50,26,5,18" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+					<Grid x:Name="potion3_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="177,-3,0,0">
+						<Image x:Name="potion3_i" Margin="4,4,26,4" Source="magic_triangle_flask-512_modified.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock x:Name="potion3_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+						<TextBlock x:Name="potion3_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
 					</Grid>
 					<Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="120" Margin="257,-1,0,-2">
 						<Image Margin="62,4,3,4" Source="green_shopping_cart_icon_vector_280755.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
