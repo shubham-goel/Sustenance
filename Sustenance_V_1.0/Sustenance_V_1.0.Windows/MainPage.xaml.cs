@@ -798,6 +798,28 @@ namespace Sustenance_V_1._0
             set{
                 _available= value;
                 update_box();
+                if (grid != null)
+                {
+                    if (_available == 0)
+                    {
+                        grid.Opacity = 0.5;
+                    }
+                    else
+                    {
+                        grid.Opacity = 1;
+                        if (_available == maximum)
+                        {
+                            timer_box.Visibility = Visibility.Collapsed;
+                        }
+                        else
+                        {
+                            timer.Start();
+                            timer_box.Visibility = Visibility.Visible;
+                        }
+                    }
+
+
+                }
             }
         }
         int _maximum;
@@ -852,21 +874,19 @@ namespace Sustenance_V_1._0
             {
                 if (time_left.ToString() == "00:00:00")
                 {
-                    if (available >= maximum)
-                    {
-                        timer_box.Visibility = Visibility.Collapsed;
-                    }
-                    else
+                    if (available < maximum)
                     {
                         available++;
                         time_left = time_left.Add(max_time);
                         update_timer_box();
-                        timer_box.Visibility = Visibility.Visible;
+                        if (available >= maximum)
+                        {
+                            timer.Stop();
+                        }
                     }
                 }
                 else
                 {
-                    //time.Subtract(timer.Interval);
                     time_left = time_left.Subtract(new TimeSpan(0, 0, 1));
                     update_timer_box();
                 }
