@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 using Windows.UI.Xaml.Media.Animation;
+//using System.Windows.Threading;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -54,6 +55,10 @@ namespace Sustenance_V_1._0
         List<Environment_species> all_env = new List<Environment_species>();
         List<Industrial_species> all_ind = new List<Industrial_species>();
 
+        List<animal_potion> all_pot_animals = new List<animal_potion>();
+        List<ind_potion> all_pot_ind = new List<ind_potion>();
+        List<env_potion> all_pot_env = new List<env_potion>();
+
         species Aquatic_Plants = new species() { name = "Aquatic_Plants"};
         species Bee = new species() { name = "Bee" };
         species Cow = new species() { name = "Cow" };
@@ -84,6 +89,29 @@ namespace Sustenance_V_1._0
         Industrial_species Agriculture = new Industrial_species() { name = "Agriculture" };
         Industrial_species Health = new Industrial_species() { name = "Health" };
 
+        animal_potion potion1_animal = new animal_potion() { name = "potion1" };
+        animal_potion potion2_animal = new animal_potion() { name = "potion2" };
+        animal_potion potion3_animal = new animal_potion() { name = "potion3" };
+
+        //ind_potion potion1_ind = new ind_potion() { name = "ind_potion1" };
+        //ind_potion potion2_ind = new ind_potion() { name = "ind_potion2" };
+        //ind_potion potion3_ind = new ind_potion() { name = "ind_potion3" };
+
+        //env_potion potion1_env = new env_potion() { name = "env_potion1" };
+        //env_potion potion2_env = new env_potion() { name = "env_potion2" };
+        //env_potion potion3_env = new env_potion() { name = "env_potion3" };
+
+
+        ind_potion potion1_ind ;
+        ind_potion potion2_ind ;
+        ind_potion potion3_ind ;
+
+        env_potion potion1_env ;
+        env_potion potion2_env ;
+        env_potion potion3_env ;
+        
+        
+        
         //public List<double> double_list(double a, double b)
         //{
         //    List<double> data = new List<double>();
@@ -122,6 +150,8 @@ namespace Sustenance_V_1._0
 
         //------------------------//
 
+        
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -137,6 +167,18 @@ namespace Sustenance_V_1._0
             add_species(all_ind);
             link_members(all_ind);
             LoadChartContents(all_ind);
+
+            add_species(all_pot_animals);
+            link_members(all_pot_animals);
+            LoadChartContents(all_pot_animals);
+
+            //add_species(all_pot_ind);
+            link_members(all_pot_ind);
+            LoadChartContents(all_pot_ind);
+
+            //add_species(all_pot_env);
+            link_members(all_pot_env);
+            LoadChartContents(all_pot_env);
         }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -149,6 +191,10 @@ namespace Sustenance_V_1._0
             LoadChartContents(all_species);
             LoadChartContents(all_env);
             LoadChartContents(all_ind);
+
+            LoadChartContents(all_pot_animals);
+            LoadChartContents(all_pot_env);
+            LoadChartContents(all_pot_ind);
         }
 
         //------------------------//
@@ -312,7 +358,47 @@ namespace Sustenance_V_1._0
                 link_members(sp);
             }
         }
-        
+
+        public void link_members(animal_potion sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.available_box = FindName(sp.name + "_available") as TextBlock;
+            sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
+        }
+        public void link_members(List<animal_potion> list)
+        {
+            foreach (animal_potion sp in list)
+            {
+                link_members(sp);
+            }
+        }
+        public void link_members(ind_potion sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.available_box = FindName(sp.name + "_available") as TextBlock;
+            sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
+        }
+        public void link_members(List<ind_potion> list)
+        {
+            foreach (ind_potion sp in list)
+            {
+                link_members(sp);
+            }
+        }
+        public void link_members(env_potion sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.available_box = FindName(sp.name + "_available") as TextBlock;
+            sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
+        }
+        public void link_members(List<env_potion> list)
+        {
+            foreach (env_potion sp in list)
+            {
+                link_members(sp);
+            }
+        }
+
         //------------------------//
         
         public void add_species(List<species> list)
@@ -350,6 +436,25 @@ namespace Sustenance_V_1._0
             list.Add(Manufacturing);
             list.Add(Agriculture);
             list.Add(Health);
+        }
+
+        public void add_species(List<animal_potion> list)
+        {
+            list.Add(potion1_animal);
+            list.Add(potion2_animal);
+            list.Add(potion3_animal);
+        }
+        public void add_species(List<ind_potion> list)
+        {
+            list.Add(potion1_ind);
+            list.Add(potion2_ind);
+            list.Add(potion3_ind);
+        }
+        public void add_species(List<env_potion> list)
+        {
+            list.Add(potion1_env);
+            list.Add(potion2_env);
+            list.Add(potion3_env);
         }
         
         //------------------------//
@@ -404,6 +509,52 @@ namespace Sustenance_V_1._0
                 ///=====================================================================///
 
                 mySpecies.update_chart();
+            }
+
+        }
+
+        private void LoadChartContents(List<animal_potion> list)
+        {
+            foreach (animal_potion mySpecies in list)
+            {
+
+
+                ///================Updeate healthy and sick values======================///
+
+                ///=====================================================================///
+
+                mySpecies.update_box();
+                mySpecies.update_timer_box();
+            }
+
+        }
+        private void LoadChartContents(List<ind_potion> list)
+        {
+            foreach (ind_potion mySpecies in list)
+            {
+
+
+                ///================Updeate healthy and sick values======================///
+
+                ///=====================================================================///
+
+                mySpecies.update_box();
+                mySpecies.update_timer_box();
+            }
+
+        }
+        private void LoadChartContents(List<env_potion> list)
+        {
+            foreach (env_potion mySpecies in list)
+            {
+
+
+                ///================Updeate healthy and sick values======================///
+
+                ///=====================================================================///
+
+                mySpecies.update_box();
+                mySpecies.update_timer_box();
             }
 
         }
@@ -567,7 +718,9 @@ namespace Sustenance_V_1._0
         public string name { get; set; }
         public int available { get; set; }
         public int maximum { get; set; }
-        public TextBlock box { get; set; }
+        public Grid grid { get; set; }
+        public TextBlock available_box { get; set; }
+        public TextBlock timer_box { get; set; }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
         public void affect(Type sp)
@@ -587,9 +740,51 @@ namespace Sustenance_V_1._0
         }
         public void update_box()
         {
-            box.Text = available + "/" + maximum;
+            available_box.Text = available + "/" + maximum;
         }
-        
+        public void update_timer_box()
+        {
+            timer_box.Text = time_left.ToString(@"mm\:ss");
+        }
+        DispatcherTimer timer = new DispatcherTimer();
+        TimeSpan  max_time = new TimeSpan(0,0,10);///Setting Max Time
+        TimeSpan time_left = new TimeSpan();
+        public void setup_timer()
+        {
+            time_left = max_time;
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += delegate
+            {
+                if (time_left.ToString() == "00:00:00")
+                {
+                    if (available >= maximum)
+                    {
+                        timer_box.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        available++;
+                        time_left = time_left.Add(max_time);
+                        update_timer_box();
+                        timer_box.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    //time.Subtract(timer.Interval);
+                    time_left = time_left.Subtract(new TimeSpan(0, 0, 1));
+                    update_timer_box();
+                }
+            };
+
+            timer.Start();
+        }
+        public potion()
+        {
+            available = 1;
+            maximum = 2;
+            setup_timer();
+        }
     }
     public class env_potion : potion<Environment_species>
     {
@@ -597,6 +792,8 @@ namespace Sustenance_V_1._0
         {
             ////Formula Affecting Change;
             sp.healthy = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+        }
+        public env_potion():base(){
         }
     }
     public class animal_potion : potion<species>
@@ -608,6 +805,9 @@ namespace Sustenance_V_1._0
             sp.healthy  = sp.healthy - change;
             sp.sick = sp.sick + change;
         }
+        public animal_potion():base(){
+        }
+
     }
     public class ind_potion : potion<Industrial_species>
     {
@@ -616,6 +816,8 @@ namespace Sustenance_V_1._0
             ////Formula Affecting Change;
             double temp = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
             sp.healthy = (temp>1000)?1000:temp;
+        }
+        public ind_potion():base(){
         }
     }
 
@@ -627,5 +829,25 @@ namespace Sustenance_V_1._0
         public double Amount { get; set; }
     }
 
+
+    ////===============CONVERTERS===================////
+
+    public class species_to_chart_itemsource_converter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            var sp = parameter as species;
+            List<Population> data = new List<Population>();
+            data.Add(new Population() { Name = "Healthy", Amount = sp.healthy });
+            data.Add(new Population() { Name = "Healthy", Amount = sp.sick });
+            return data;
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return true;
+        }
+    }
 
 }
