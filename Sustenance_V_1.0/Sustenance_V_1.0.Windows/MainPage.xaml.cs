@@ -15,7 +15,9 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 using Windows.UI.Xaml.Media.Animation;
+using System.ComponentModel;
 //using System.Windows.Threading;
+//using System.Windows.DragDrop;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -51,6 +53,7 @@ namespace Sustenance_V_1._0
         //}
 
 //===========VAR DEFINITIONS===========//
+
         List<species> all_species = new List<species>();
         List<Environment_species> all_env = new List<Environment_species>();
         List<Industrial_species> all_ind = new List<Industrial_species>();
@@ -69,6 +72,7 @@ namespace Sustenance_V_1._0
         species Goat = new species() { name = "Goat" };
         species Grass_Flowers = new species() { name = "Grass_Flowers" };
         species Grasshopper = new species() { name = "Grasshopper" };
+        species Humans = new species() { name = "Humans" };
         species Lion = new species() { name = "Lion" };
         species Monkey = new species() { name = "Monkey" };
         species Rabbit = new species() { name = "Rabbit" };
@@ -76,8 +80,10 @@ namespace Sustenance_V_1._0
         species Sheep = new species() { name = "Sheep" };
         species Small_Bird = new species() { name = "Small_Bird" };
         species Small_Fish = new species() { name = "Small_Fish" };
+        species Stork = new species() { name = "Stork" };
         species Tiger = new species() { name = "Tiger" };
         species Vulture = new species() { name = "Vulture" };
+        species Veggie = new species() { name = "Veggie" };
 
         Environment_species Land = new Environment_species() { name = "Land" };
         Environment_species Air = new Environment_species() { name = "Air" };
@@ -109,8 +115,10 @@ namespace Sustenance_V_1._0
         env_potion potion1_env ;
         env_potion potion2_env ;
         env_potion potion3_env ;
-        
-        
+
+        int Coins;
+
+        myProgressBar XP = new myProgressBar() {name = "XP"};
         
         //public List<double> double_list(double a, double b)
         //{
@@ -179,6 +187,25 @@ namespace Sustenance_V_1._0
             //add_species(all_pot_env);
             link_members(all_pot_env);
             LoadChartContents(all_pot_env);
+
+            add_data_contexts();
+
+            link_members(XP);
+        }
+
+        public void add_data_contexts()
+        {
+            potion1_flyout_available.DataContext = potion1_animal;
+            potion1_flyout_timer.DataContext = potion1_animal;
+            potion1_flyout_g.DataContext = potion1_animal;
+
+            potion2_flyout_available.DataContext = potion2_animal;
+            potion2_flyout_timer.DataContext = potion2_animal;
+            potion2_flyout_g.DataContext = potion2_animal;
+
+            potion3_flyout_available.DataContext = potion3_animal;
+            potion3_flyout_timer.DataContext = potion3_animal;
+            potion3_flyout_g.DataContext = potion3_animal;
         }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -399,6 +426,16 @@ namespace Sustenance_V_1._0
             }
         }
 
+
+        public void link_members(myProgressBar sp)
+        {
+            sp.outer = FindName(sp.name + "_outer") as Border;
+            sp.inner = FindName(sp.name + "_inner") as Border;
+            sp.Level_box = FindName(sp.name + "_level") as TextBlock;
+            sp.value_box = FindName(sp.name + "_value") as TextBlock;
+            sp.animate = FindName(sp.name + "_animate") as Storyboard;
+            sp.animate_easingkeyframe = FindName(sp.name + "_animate_keyframe") as EasingDoubleKeyFrame;
+        }
         //------------------------//
         
         public void add_species(List<species> list)
@@ -413,6 +450,7 @@ namespace Sustenance_V_1._0
             list.Add(Goat);
             list.Add(Grass_Flowers);
             list.Add(Grasshopper);
+            list.Add(Humans);
             list.Add(Lion);
             list.Add(Monkey);
             list.Add(Rabbit);
@@ -420,8 +458,10 @@ namespace Sustenance_V_1._0
             list.Add(Sheep);  
             list.Add(Small_Bird);
             list.Add(Small_Fish);
+            list.Add(Stork);
             list.Add(Tiger);
             list.Add(Vulture);
+            list.Add(Veggie);
         }
         public void add_species(List<Environment_species> list)
         {
@@ -572,8 +612,30 @@ namespace Sustenance_V_1._0
                 return;
             }
 
-            pot.affect(ref sp);
+            int xp_change = pot.affect(ref sp);
+            XP.Add(xp_change);
+            
+
         }
+
+        ////=====================DRAG/DROP==================//
+        //private void grid_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    Ellipse ellipse = sender as Ellipse;
+        //    if (ellipse != null && e.LeftButton == MouseButtonState.Pressed)
+        //    {
+        //        DragDrop.DoDragDrop(ellipse,
+        //                             ellipse.Fill.ToString(),
+        //                             DragDropEffects.Copy);
+        //    }
+        //}
+
+        //private void Species_Grid_Dropped(object sender, Windows.UI.Xaml.DragEventArgs e)
+        //{
+        //    // TODO: Add event handler implementation here.
+        //    LoadChartContents(all_species);
+			
+        //}
 
         //------------------------//
 
@@ -782,7 +844,7 @@ namespace Sustenance_V_1._0
 
     //------------------------//
 
-    public class potion<Type>
+    public class potion<Type> : INotifyPropertyChanged
     {
         
         //// affectiveness
@@ -836,8 +898,31 @@ namespace Sustenance_V_1._0
             }
         }
         public Grid grid { get; set; }
-        public TextBlock available_box { get; set; }
-        public TextBlock timer_box { get; set; }
+        TextBlock _available_box;
+        public TextBlock available_box 
+        {
+            get{
+                return _available_box;
+            }
+            set{
+                _available_box = value;
+                update_box();
+                OnPropertyChanged("available_box");
+            }
+        }
+        TextBlock _timer_box;
+        public TextBlock timer_box
+        {
+            get
+            {
+                return _timer_box;
+            }
+            set
+            {
+                _timer_box = value;
+                OnPropertyChanged("timer_box");
+            }
+        }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
         virtual public void affect(Type sp)
@@ -864,7 +949,7 @@ namespace Sustenance_V_1._0
             timer_box.Text = time_left.ToString(@"mm\:ss");
         }
         DispatcherTimer timer = new DispatcherTimer();
-        TimeSpan  max_time = new TimeSpan(0,0,10);///Setting Max Time
+        TimeSpan  max_time = new TimeSpan(0,0,20);///Setting Max Time
         TimeSpan time_left = new TimeSpan();
         public void setup_timer()
         {
@@ -894,6 +979,15 @@ namespace Sustenance_V_1._0
 
             timer.Start();
         }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
         public potion()
         {
             available = 2;
@@ -903,38 +997,64 @@ namespace Sustenance_V_1._0
     }
     public class env_potion : potion<Environment_species>
     {
-        public void affect(ref Environment_species sp)
+        public int affect(ref Environment_species sp)
         {
             ////Formula Affecting Change;
-            sp.healthy = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+
+            //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            double change = (100 - sp.healthy) * (percent_affect * effectiveness);
+            sp.healthy += change;
+            return change_to_xp(change);
+        }
+        public int change_to_xp(double change)
+        {
+            int xp = (int)(change*1.5);//Formula for Adding XP;
+            return xp;
         }
         public env_potion():base(){
         }
     }
     public class animal_potion : potion<species>
     {
-        public void affect(ref species sp)
+        public int affect(ref species sp)
         {
+            double change = 0;
             if (available > 0)
             {
                 ////Formula Affecting Change;
-                double change = (sp.sick * (percent_affect) * effectiveness);
+                change = (sp.sick * (percent_affect) * effectiveness);
                 sp.healthy = sp.healthy + change;
                 sp.sick = sp.sick - change;
                 available--;
             }
+            return change_to_xp(change);
         }
+
+        public int change_to_xp(double change)
+        {
+            int xp = (int)(change/2);
+            return xp;
+        }
+
         public animal_potion():base(){
         }
 
     }
     public class ind_potion : potion<Industrial_species>
     {
-        public void affect(ref Industrial_species sp)
+        public int affect(ref Industrial_species sp)
         {
             ////Formula Affecting Change;
-            double temp = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
-            sp.healthy = (temp>1000)?1000:temp;
+            //double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            //sp.healthy = (change > 1000) ? 1000 : change;
+            double change = (1000 - sp.healthy) * (percent_affect * effectiveness);
+            sp.healthy += change;
+            return change_to_xp(change);
+        }
+        public int change_to_xp(double change)
+        {
+            int xp = (int)(change); ///Formula for Adding XP
+            return xp;
         }
         public ind_potion():base(){
         }
@@ -946,6 +1066,217 @@ namespace Sustenance_V_1._0
     {
         public string Name { get; set; }
         public double Amount { get; set; }
+    }
+
+    public class myProgressBar
+    {
+        public string name;
+        Border _outer;
+        public Border outer
+        {
+            get
+            {
+                return _outer;
+            }
+            set
+            {
+                _outer = value;
+                set_border_dimensions();
+            }
+        }
+        Border _inner;
+        public Border inner
+        {
+            get
+            {
+                return _inner;
+            }
+            set
+            {
+                _inner = value;
+                set_border_dimensions();
+            }
+        }
+        TextBlock _level_box;
+        public TextBlock Level_box
+        {
+            get
+            {
+                return _level_box;
+            }
+            set
+            {
+                _level_box = value;
+                update_level_box();
+            }
+        }
+        TextBlock _value_box;
+        public TextBlock value_box
+        {
+            get
+            {
+                return _value_box;
+            }
+            set
+            {
+                _value_box = value;
+                value_box.Text = Value.ToString() + '/' + max_value.ToString();
+            }
+        }
+        int max_value = 50;///Set initial Max-Value
+        int _level;
+        int Level
+        {
+            get
+            {
+                return _level;
+            }
+            set
+            {
+                _level = value;
+
+                if (!members_null())
+                {
+                    update_level_box();///Updating Level_box
+                }
+            }
+        }
+        int _value;
+        public int Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+                if (_value >= max_value)
+                {
+
+
+
+                    while (_value >= max_value)
+                    {
+                        _value -= max_value;
+                        
+                        //int add_max = (max_value <= 300) ? max_value : ((int)(((double) max_value) / 3) / 100) * 100;
+                        int add_max = Level * 50;                     ///Formula for different levels
+                        max_value += add_max;
+                        Level++;
+
+                        if (!members_null())
+                        {
+                            update_value_box();///Updating Value_box
+                            update_border_width_animate(max_value); ///Updating Border-Width
+                        }
+                    }
+                }
+                else
+                {
+                    if (!members_null())
+                    {
+                        update_value_box();///Updating Value_box
+                        update_border_width_animate();///Updating Border-Width
+                    }
+                }
+            }
+        }
+        private bool members_null()
+        {
+            return (outer == null || inner == null || Level_box == null || value_box == null || animate == null || animate_easingkeyframe == null);
+        }
+        private void set_border_dimensions()
+        {
+            if (!members_null())
+            {
+                inner.Height = outer.ActualHeight;
+                inner.HorizontalAlignment = HorizontalAlignment.Left;
+            }
+        }
+        private void update_level_box()
+        {
+            if (!members_null())
+            {
+                Level_box.Text = "Level: " + Level.ToString();
+            }
+        }
+        private void update_value_box()
+        {
+            if (!members_null())
+            {
+                value_box.Text = Value.ToString() + '/' + max_value.ToString();
+            }
+        }
+        private void update_border_width_animate(int Input = 0)
+        {
+            if (!members_null())
+            {
+                //animate.Stop();
+                //inner.Width = outer.ActualWidth * _value / max_value;
+                animate_easingkeyframe.Value = outer.ActualWidth * Input / max_value;
+                animate.Begin();
+            }
+        }
+        private void update_border_width_animate()
+        {
+            if (!members_null())
+            {
+                //animate.Stop();
+                //inner.Width = outer.ActualWidth * _value / max_value;
+                animate_easingkeyframe.Value = outer.ActualWidth * Value / max_value;
+                animate.Begin();
+            }
+        }
+        private void update_border_width(int Input)
+        {
+            if (!members_null())
+            {
+                //inner.Width = outer.ActualWidth * _value / max_value;
+                inner.Width = outer.ActualWidth * Input / max_value;
+            }
+        }
+        private void update_border_width()
+        {
+            if (!members_null())
+            {
+                //inner.Width = outer.ActualWidth * _value / max_value;
+                inner.Width = outer.ActualWidth * Value / max_value;
+            }
+        }
+        public void Add(int change)
+        {
+            Value += change;
+        }
+        public myProgressBar()
+        {
+            Value = 10;//test
+            Level = 1;
+        }
+        public Storyboard _animate;
+        public Storyboard animate
+        {
+            get
+            {
+                return _animate;
+            }
+            set
+            {
+                _animate = value;
+                animate.Completed += animate_Completed;
+            }
+        }
+
+        void animate_Completed(object sender, object e)
+        {
+            if (inner.ActualWidth == outer.ActualWidth)
+            {
+                update_border_width(0);
+                update_border_width_animate(0);
+                update_border_width_animate();
+            }
+        }
+        public EasingDoubleKeyFrame animate_easingkeyframe;
     }
 
 
