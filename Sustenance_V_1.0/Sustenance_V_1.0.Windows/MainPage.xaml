@@ -53,35 +53,34 @@
             </Grid>
         </Flyout>
 
-        <Flyout x:Name="ind_Flyout" x:Key="Industry_Flyout" Placement="Bottom">
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
-                <TextBlock x:Name="ind_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
-                <Grid Margin="17,42,10,54">
-                    <Grid Margin="205,18,0,53" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160">
-                        <Image Source="magic_bulb_flask-512_modified.png" Width="40" Height="40" Margin="7,8,9,102"/>
-                        <Image Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,57,8,53"/>
-                        <Image Source="magic_triangle_flask-512_modified.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,106,8,4"/>
+        <Flyout x:Name="ind_Flyout1" x:Key="Industry_Flyout" Placement="Bottom">
+            
+        </Flyout>
+        <Flyout x:Name="sp_Flyout" x:Key="Species_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="379" Width="288">
+                <TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
+                <TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,40,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
+                <Grid Margin="222,136,10,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="160">
+                    <Grid x:Name="exilir_flyout_g" Margin="7,13,9,107" PointerPressed="animal_potion_pressed" Opacity="{Binding Path=grid.Opacity}">
+                        <Image x:Name="exilir_flyout_i" Source="magic_bulb_flask-512_modified.png" Width="40" Height="40"/>
+                        <TextBlock x:Name="exilir_flyout_available" HorizontalAlignment="Center" Height="19" Margin="34,8,-24,13" TextWrapping="Wrap" Text="{Binding Path=available_box.Text}" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock x:Name="exilir_flyout_timer" HorizontalAlignment="Left" Height="20" Margin="23,25,-34,-5" TextWrapping="Wrap" Text="{Binding Path=timer_box.Text}" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="9.333" Opacity="{Binding timer_box.Opacity}" Visibility="{Binding timer_box.Visibility}" />
                     </Grid>
-                    <Grid Margin="0,0,59,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
-                        <TextBlock x:Name="ind_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
-                        <HyperlinkButton x:Name="ind_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
+                    <Grid x:Name="reproductive_enhancer_flyout_g" Margin="8,62,8,58" PointerPressed="animal_potion_pressed" Opacity="{Binding grid.Opacity}">
+                        <Image x:Name="reproductive_enhancer_flyout_i" Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="reproductive_enhancer_flyout_available" HorizontalAlignment="Center" Height="19" Margin="34,8,-24,13" TextWrapping="Wrap" Text="{Binding available_box.Text}" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock x:Name="reproductive_enhancer_flyout_timer" HorizontalAlignment="Left" Height="20" Margin="23,25,-34,-5" TextWrapping="Wrap" Text="{Binding timer_box.Text}" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="9.333" Opacity="{Binding timer_box.Opacity}" Visibility="{Binding timer_box.Visibility}" />
                     </Grid>
                 </Grid>
+                <Grid Margin="17,115,69,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="196" Width="202">
+                    <TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
+                    <HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="110,167,0,0"/>
+                </Grid>
+                <TextBlock x:Name="sp_Flyout_terrain" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="13.333" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,78,47,0" IsTextSelectionEnabled="True"/>
+                <TextBlock x:Name="sp_Flyout_status" Height="51" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="13.333" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,322,47,0" FontStyle="Italic" IsTextSelectionEnabled="True">
+                    <Run FontStyle="Normal" Text="MenuFlyoutItem"/>
+                </TextBlock>
             </Grid>
-        </Flyout>
-        <Flyout x:Name="sp1_Flyout" x:Key="Species_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
-            <!--<Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
-				<TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
-				<TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
-				<Grid Margin="222,100,10,67" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160"><Image Source="magic_bulb_flask-512_modified.png" Width="40" Height="40" Margin="7,8,9,102"/>
-					<Image Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,57,8,53"/>
-					<Image Source="magic_triangle_flask-512_modified.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,106,8,4"/>
-				</Grid>
-				<Grid Margin="17,82,69,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
-					<TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
-					<HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
-				</Grid>
-			</Grid>-->
         </Flyout>
         <Storyboard x:Name="XP_animate">
         	<DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="XP_inner">
@@ -150,32 +149,23 @@
         <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding ActualHeight, ElementName=game_page}" Width="{Binding ActualWidth, ElementName=game_page}" Margin="0" Stretch="Fill" >
             <ScrollViewer x:Name="scrollViewer" BorderBrush="#FF741D1D" BorderThickness="10" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="{x:Null}" MinZoomFactor="0.5" MaxZoomFactor="5" Height="900" Width="1600" >
                 <FlyoutBase.AttachedFlyout>
-                    <Flyout x:Name="sp_Flyout" Placement="Bottom" Closed="sp_flyout_closing">
+                    <Flyout x:Name="ind_Flyout" Placement="Full">
                         <Grid HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="327" Width="288">
-                            <TextBlock x:Name="sp_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
-                            <TextBlock x:Name="sp_Flyout_sc_name" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="14.667" FontFamily="Segoe UI" TextAlignment="Center" Margin="48,39,47,0" FontStyle="Italic" IsTextSelectionEnabled="True"/>
-                            <Grid Margin="222,100,10,67" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160">
-                                <Grid x:Name="potion1_flyout_g" Margin="7,13,9,107" PointerPressed="animal_potion_pressed" Opacity="{Binding Path=grid.Opacity}">
-                                    <Image x:Name="potion1_flyout_i" Source="magic_bulb_flask-512_modified.png" Width="40" Height="40"/>
-                                    <TextBlock x:Name="potion1_flyout_available" HorizontalAlignment="Center" Height="19" Margin="34,8,-24,13" TextWrapping="Wrap" Text="{Binding Path=available_box.Text}" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" TextAlignment="Center"/>
-                                    <TextBlock x:Name="potion1_flyout_timer" HorizontalAlignment="Left" Height="20" Margin="23,25,-34,-5" TextWrapping="Wrap" Text="{Binding Path=timer_box.Text}" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="9.333" Opacity="{Binding timer_box.Opacity}" Visibility="{Binding timer_box.Visibility}" />
-                                </Grid>
-                                <Grid x:Name="potion2_flyout_g" Margin="8,62,8,58" PointerPressed="animal_potion_pressed" Opacity="{Binding grid.Opacity}">
-                                    <Image x:Name="potion2_flyout_i" Source="magic_cylinder_flask-512.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="potion2_flyout_available" HorizontalAlignment="Center" Height="19" Margin="34,8,-24,13" TextWrapping="Wrap" Text="{Binding available_box.Text}" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" TextAlignment="Center"/>
-                                    <TextBlock x:Name="potion2_flyout_timer" HorizontalAlignment="Left" Height="20" Margin="23,25,-34,-5" TextWrapping="Wrap" Text="{Binding timer_box.Text}" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="9.333" Opacity="{Binding timer_box.Opacity}" Visibility="{Binding timer_box.Visibility}" />
-                                </Grid>
-                                <Grid x:Name="potion3_flyout_g" Margin="8,111,8,9" PointerPressed="animal_potion_pressed" Opacity="{Binding grid.Opacity}">
-                                    <Image x:Name="potion3_flyout_i" Source="magic_triangle_flask-512_modified.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="potion3_flyout_available" HorizontalAlignment="Center" Height="19" Margin="34,8,-24,13" TextWrapping="Wrap" Text="{Binding available_box.Text}" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" TextAlignment="Center"/>
-                                    <TextBlock x:Name="potion3_flyout_timer" HorizontalAlignment="Left" Height="20" Margin="23,25,-34,-5" TextWrapping="Wrap" Text="{Binding timer_box.Text}" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="9.333" Opacity="{Binding timer_box.Opacity}" Visibility="{Binding timer_box.Visibility}" />
-                                </Grid>
-                            </Grid>
-                            <Grid Margin="17,82,69,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
-                                <TextBlock x:Name="sp_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
-                                <HyperlinkButton x:Name="sp_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
-                            </Grid>
-                        </Grid>
+							<TextBlock x:Name="ind_Flyout_Title" Text="MenuFlyoutItem" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193" FontSize="17.333" FontWeight="Bold" FontFamily="Segoe UI" TextAlignment="Center" IsTextSelectionEnabled="True"/>
+							<Grid Margin="17,42,10,54">
+								<Grid Margin="205,18,0,53" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160">
+									<Grid x:Name="boost_flyout_g" Margin="7,13,9,107" PointerPressed="animal_potion_pressed" Opacity="{Binding Path=grid.Opacity}">
+										<Image x:Name="boost_flyout_i" Source="bolt.png" Width="40" Height="40"/>
+										<TextBlock x:Name="boost_flyout_available" HorizontalAlignment="Center" Height="23" Margin="40,17,-31,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="31" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" Text="{Binding Path=available}" FontFamily="Andalus"/>
+										<TextBlock x:Name="boost_flyout_n" HorizontalAlignment="Left" Height="14" Margin="-2,40,-26,-14" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Foreground="Black" TextAlignment="Center" FontSize="9.333" Text="BOOST!" FontFamily="Andalus" />
+									</Grid>
+								</Grid>
+								<Grid Margin="0,0,59,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="231" Width="202">
+									<TextBlock x:Name="ind_Flyout_desc" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI" TextAlignment="Center" Margin="10,10,10,0" Width="202" Height="158" IsTextSelectionEnabled="True" Text="Description&#xA;&#xA;its me n u against them&#xA;litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf sdfsf sdfsdf litrsdfsdf sdfsf sdfsdf litrsdfsdf 50000" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
+									<HyperlinkButton x:Name="ind_Flyout_wiki" Content="Wikipaedia" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="92" FontSize="12" Padding="0" NavigateUri="http://www.google.com" Margin="120,170,10,0"/>
+								</Grid>
+							</Grid>
+						</Grid>
                     </Flyout>
                 </FlyoutBase.AttachedFlyout>
                 <Viewbox Height="{Binding ActualHeight, ElementName=scrollViewer}" Width="{Binding ActualWidth, ElementName=scrollViewer}">
@@ -2363,36 +2353,40 @@
                 <HyperlinkButton x:Name="user_email" Content="Huserg@email.com" HorizontalAlignment="Center" Height="23" Margin="16,157,16,0" VerticalAlignment="Top" Width="143" Padding="0" BorderThickness="0" FontSize="12"/>
             </Grid>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="25" Margin="103,30,0,0">
-                <Grid HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Height="60" Width="527">
-                    <Grid x:Name="potion1_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="84" Margin="8,-2,0,-1">
-                        <Image x:Name="potion1_i" Margin="4,4,25,4" Source="magic_bulb_flask-512_modified.png" Width="55" Height="55"/>
-                        <TextBlock x:Name="potion1_available" HorizontalAlignment="Center" Height="19" Margin="50,24,4,20" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
-                        <TextBlock x:Name="potion1_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-8,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
+                <Grid HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Height="60" Width="612">
+                    <Grid x:Name="exilir_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="84" Margin="8,-2,0,-1">
+                        <Image x:Name="exilir_i" Margin="4,4,25,4" Source="magic_bulb_flask-512_modified.png" Width="55" Height="55"/>
+                        <TextBlock x:Name="exilir_available" HorizontalAlignment="Center" Height="19" Margin="50,24,4,20" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock x:Name="exilir_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-8,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
                     </Grid>
-                    <Grid x:Name="potion2_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="92,-3,0,0">
-                        <Image x:Name="potion2_i" Margin="5,4,25,4" Source="magic_cylinder_flask-512.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="potion2_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
-                        <TextBlock x:Name="potion2_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
+                    <Grid x:Name="reproductive_enhancer_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="92,-3,0,0">
+                        <Image x:Name="reproductive_enhancer_i" Margin="5,4,25,4" Source="magic_cylinder_flask-512.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="reproductive_enhancer_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock x:Name="reproductive_enhancer_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
                     </Grid>
-                    <Grid x:Name="potion3_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="177,-3,0,0">
-                        <Image x:Name="potion3_i" Margin="4,4,26,4" Source="magic_triangle_flask-512_modified.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="potion3_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
-                        <TextBlock x:Name="potion3_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
+                    <Grid x:Name="purifiers_g" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="85" Margin="177,-3,0,0">
+                        <Image x:Name="purifiers_i" Margin="4,4,26,4" Source="magic_triangle_flask-512_modified.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="purifiers_available" HorizontalAlignment="Center" Height="19" Margin="50,25,5,19" TextWrapping="Wrap" Text="1/2" VerticalAlignment="Center" Width="30" Typography.Fraction="Slashed" FontSize="18.667" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock x:Name="purifiers_timer" HorizontalAlignment="Left" Height="20" Margin="41,46,-7,-3" TextWrapping="Wrap" Text="00:30" VerticalAlignment="Top" Width="51" Foreground="Black" TextAlignment="Center" FontSize="10.667" />
                     </Grid>
-                    <Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="120" Margin="407,-1,0,-2">
+                    <Grid x:Name="boost_g" Margin="254,-2,0,-1" PointerPressed="animal_potion_pressed" Opacity="{Binding grid.Opacity}" Width="85" Height="63" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    	<Image x:Name="boost_i" Source="bolt.png" Width="55" Height="55"/>
+                    	<TextBlock x:Name="boost_available" HorizontalAlignment="Center" Height="23" Margin="66,21,-12,19" TextWrapping="Wrap" VerticalAlignment="Center" Width="31" Typography.Fraction="Slashed" FontSize="16" Foreground="Black" Text="5" FontFamily="Andalus"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="120" Margin="484,-1,0,-2">
                         <Image Margin="62,4,3,4" Source="green_shopping_cart_icon_vector_280755.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Grid Margin="6,17,62,16">
                             <Image Margin="0,0,22,0" Source="Coin_Icon.png" Stretch="Fill" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="-1.167,0.533"/>
                             <TextBlock HorizontalAlignment="Center" Height="23" Margin="19,6,0,1" TextWrapping="Wrap" Text="35" VerticalAlignment="Center" Width="33" FontSize="17.333" Foreground="Black" TextAlignment="Center"/>
                         </Grid>
                     </Grid>
-                    <Grid x:Name="grid" Margin="280,12,127,10" RenderTransformOrigin="0.5,0.5">
+                    <Grid x:Name="grid" Margin="353,12,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
                     	<Grid.RenderTransform>
                     		<CompositeTransform/>
                     	</Grid.RenderTransform>
                     	<TextBlock x:Name="XP_level" TextWrapping="Wrap" Text="Level : 1" VerticalAlignment="Top" Foreground="Black" FontFamily="Andalus" TextAlignment="Center"/>
                     	<Border x:Name="XP_outer" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Background="#FFC5C5C5" Margin="0,15,0,-15" >
-                    		<Grid Margin="0,0,0,-2" Height="20" Width="120">
+                    		<Grid Margin="0,0,0,-2" Height="20">
                     			<Border x:Name="XP_inner" Margin="-1,-1,0,1" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Height="20" Width="20" HorizontalAlignment="Left" Background="#FF25BD9B" RenderTransformOrigin="0.5,0.5">
                     				<Border.RenderTransform>
                     					<CompositeTransform/>
@@ -2407,12 +2401,8 @@
         </Grid>
         <Grid x:Name="Side_Bar" Margin="0" Height="{Binding Height, ElementName=game_page}" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid x:Name="City_g" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="35,232,35,577" PointerPressed="Ind_Grid_Clicked" Height="91">
-                <ProgressBar x:Name="City_Chart" Maximum="100" Value="30" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,-88" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top">
-                	<ProgressBar.Foreground>
-                		<ImageBrush Stretch="Fill"/>
-                	</ProgressBar.Foreground>
-                </ProgressBar>
-                <Image x:Name="City_i" Source="places_and_locations_city-512.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,-80"/>
+                <ProgressBar x:Name="City_Chart" Maximum="100" Value="38" Height="6" LargeChange="0" BorderBrush="{x:Null}" BorderThickness="1" Margin="0,82,0,-88" Background="#59A2A0A0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" FontFamily="Segoe UI" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF5B2EC5"/>
+                <Image x:Name="City_i" Source="places_and_locations_city-512.png" Width="80" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBlock x:Name="City_n" HorizontalAlignment="Center" Height="18" Margin="13,30,7,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Foreground="White" FontSize="12" FontFamily="Segoe UI" Text="City" TextAlignment="Center" Padding="0,2,0,0"/>
             </Grid>
             <Grid x:Name="Manufacturing_Industry_g" Margin="35,338,35,471" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="Ind_Grid_Clicked" Height="91">
@@ -2431,5 +2421,18 @@
                 <TextBlock x:Name="Health_n" HorizontalAlignment="Left" Height="18" Margin="10,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Foreground="White" FontSize="12" FontFamily="Segoe UI" Text="Health" TextAlignment="Center" Padding="0,2,0,0"/>
             </Grid>
         </Grid>
+        <Popup>
+        	<Grid Background="White" Height="200" Width="300">
+        		<Border HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="300" Background="#FFD8D8D8" CornerRadius="30" BorderBrush="#FF343434" BorderThickness="0,0,9,9" Margin="0" >
+        			<TextBlock TextWrapping="Wrap" TextAlignment="Center" FontSize="20" FontFamily="Andalus" Height="82">
+        				<Run Text="Congratulations!"/>
+        				<LineBreak/>
+        				<Run Text="Message comes here!"/>
+        				<LineBreak/>
+        				<Run Text="Level Up!! "/>
+        			</TextBlock>
+        		</Border>
+        	</Grid>
+        </Popup>
     </Grid>
 </Page>

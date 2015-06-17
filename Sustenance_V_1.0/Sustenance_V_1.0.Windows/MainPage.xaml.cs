@@ -58,32 +58,32 @@ namespace Sustenance_V_1._0
         List<Environment_species> all_env = new List<Environment_species>();
         List<Industrial_species> all_ind = new List<Industrial_species>();
 
-        List<animal_potion> all_pot_animals = new List<animal_potion>();
-        List<ind_potion> all_pot_ind = new List<ind_potion>();
-        List<env_potion> all_pot_env = new List<env_potion>();
+        List<potion> all_pot_animals = new List<potion>();
+        List<potion> all_pot_ind = new List<potion>();
+        List<potion> all_pot_env = new List<potion>();
 
-        species Aquatic_Plants = new species() { name = "Aquatic_Plants"};
-        species Bee = new species() { name = "Bee" };
-        species Cow = new species() { name = "Cow" };
-        species Deer = new species() { name = "Deer" };
-        species Eagle = new species() { name = "Eagle" };
-        species Elephant = new species() { name = "Elephant" };
-        species Fruits = new species() { name = "Fruits" };
-        species Goat = new species() { name = "Goat" };
-        species Grass_Flowers = new species() { name = "Grass_Flowers" };
-        species Grasshopper = new species() { name = "Grasshopper" };
-        species Humans = new species() { name = "Humans" };
-        species Lion = new species() { name = "Lion" };
-        species Monkey = new species() { name = "Monkey" };
-        species Rabbit = new species() { name = "Rabbit" };
-        species Shark = new species() { name = "Shark" };
-        species Sheep = new species() { name = "Sheep" };
-        species Small_Bird = new species() { name = "Small_Bird" };
-        species Small_Fish = new species() { name = "Small_Fish" };
-        species Stork = new species() { name = "Stork" };
-        species Tiger = new species() { name = "Tiger" };
-        species Vulture = new species() { name = "Vulture" };
-        species Veggie = new species() { name = "Veggie" };
+        species Aquatic_Plants = new species() { name = "Aquatic_Plants", wiki = "http://www.google.co.in", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Bee = new species() { name = "Bee", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Cow = new species() { name = "Cow", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Deer = new species() { name = "Deer", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Eagle = new species() { name = "Eagle", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Fruits = new species() { name = "Fruits", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Goat = new species() { name = "Goat", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Grass_Flowers = new species() { name = "Grass_Flowers", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Grasshopper = new species() { name = "Grasshopper", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Humans = new species() { name = "Humans", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Lion = new species() { name = "Lion", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Monkey = new species() { name = "Monkey", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Shark = new species() { name = "Shark", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Sheep = new species() { name = "Sheep", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Small_Bird = new species() { name = "Small_Bird", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Small_Fish = new species() { name = "Small_Fish", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Stork = new species() { name = "Stork", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Tiger = new species() { name = "Tiger", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Vulture = new species() { name = "Vulture", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Veggie = new species() { name = "Veggie", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
 
         Environment_species Land = new Environment_species() { name = "Land" };
         Environment_species Air = new Environment_species() { name = "Air" };
@@ -95,27 +95,10 @@ namespace Sustenance_V_1._0
         Industrial_species Agriculture = new Industrial_species() { name = "Agriculture" };
         Industrial_species Health = new Industrial_species() { name = "Health" };
 
-        animal_potion potion1_animal = new animal_potion() { name = "potion1" , effectiveness = 0.3 };
-        animal_potion potion2_animal = new animal_potion() { name = "potion2" , effectiveness = 0.6 };
-        animal_potion potion3_animal = new animal_potion() { name = "potion3" , effectiveness = 0.9 };
-
-        //ind_potion potion1_ind = new ind_potion() { name = "ind_potion1" };
-        //ind_potion potion2_ind = new ind_potion() { name = "ind_potion2" };
-        //ind_potion potion3_ind = new ind_potion() { name = "ind_potion3" };
-
-        //env_potion potion1_env = new env_potion() { name = "env_potion1" };
-        //env_potion potion2_env = new env_potion() { name = "env_potion2" };
-        //env_potion potion3_env = new env_potion() { name = "env_potion3" };
-
-
-        ind_potion potion1_ind ;
-        ind_potion potion2_ind ;
-        ind_potion potion3_ind ;
-
-        env_potion potion1_env ;
-        env_potion potion2_env ;
-        env_potion potion3_env ;
-
+        potion exilir = new potion() { name = "exilir" , effectiveness = 0.3 };
+        potion reproductive_enhancer = new potion() { name = "reproductive_enhancer" , effectiveness = 0.6 };
+        potion purifiers = new potion() { name = "purifiers" , effectiveness = 0.9 };
+        potion_infi boost = new potion_infi() { name = "boost", effectiveness = 1 };
         int Coins;
 
         myProgressBar XP = new myProgressBar() {name = "XP"};
@@ -195,17 +178,19 @@ namespace Sustenance_V_1._0
 
         public void add_data_contexts()
         {
-            potion1_flyout_available.DataContext = potion1_animal;
-            potion1_flyout_timer.DataContext = potion1_animal;
-            potion1_flyout_g.DataContext = potion1_animal;
+            exilir_flyout_available.DataContext = exilir;
+            exilir_flyout_timer.DataContext = exilir;
+            exilir_flyout_g.DataContext = exilir;
 
-            potion2_flyout_available.DataContext = potion2_animal;
-            potion2_flyout_timer.DataContext = potion2_animal;
-            potion2_flyout_g.DataContext = potion2_animal;
+            reproductive_enhancer_flyout_available.DataContext = reproductive_enhancer;
+            reproductive_enhancer_flyout_timer.DataContext = reproductive_enhancer;
+            reproductive_enhancer_flyout_g.DataContext = reproductive_enhancer;
 
-            potion3_flyout_available.DataContext = potion3_animal;
-            potion3_flyout_timer.DataContext = potion3_animal;
-            potion3_flyout_g.DataContext = potion3_animal;
+            boost_flyout_g.DataContext = boost;
+            boost_flyout_available.DataContext = boost;
+            //purifiers_flyout_available.DataContext = purifiers;
+            //purifiers_flyout_timer.DataContext = purifiers;
+            //purifiers_flyout_g.DataContext = purifiers;
         }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -235,7 +220,13 @@ namespace Sustenance_V_1._0
             sp_Flyout_Title.Text = sp.name;
             sp_Flyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
             sp_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
-            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+            sp_Flyout_terrain.Text = "TERRAIN : " + sp.terrain;
+            sp_Flyout_status.Text = "STATUS: \n" + sp.get_status();
+
+            Uri link;
+            Uri.TryCreate(sp.wiki , UriKind.RelativeOrAbsolute , out link);
+            sp_Flyout_wiki.NavigateUri = link;
+
             sp_Flyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
 
@@ -386,41 +377,15 @@ namespace Sustenance_V_1._0
             }
         }
 
-        public void link_members(animal_potion sp)
+        public void link_members(potion sp)
         {
             sp.grid = FindName(sp.name + "_g") as Grid;
             sp.available_box = FindName(sp.name + "_available") as TextBlock;
             sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
         }
-        public void link_members(List<animal_potion> list)
+        public void link_members(List<potion> list)
         {
-            foreach (animal_potion sp in list)
-            {
-                link_members(sp);
-            }
-        }
-        public void link_members(ind_potion sp)
-        {
-            sp.grid = FindName(sp.name + "_g") as Grid;
-            sp.available_box = FindName(sp.name + "_available") as TextBlock;
-            sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
-        }
-        public void link_members(List<ind_potion> list)
-        {
-            foreach (ind_potion sp in list)
-            {
-                link_members(sp);
-            }
-        }
-        public void link_members(env_potion sp)
-        {
-            sp.grid = FindName(sp.name + "_g") as Grid;
-            sp.available_box = FindName(sp.name + "_available") as TextBlock;
-            sp.timer_box = FindName(sp.name + "_timer") as TextBlock;
-        }
-        public void link_members(List<env_potion> list)
-        {
-            foreach (env_potion sp in list)
+            foreach (potion sp in list)
             {
                 link_members(sp);
             }
@@ -478,23 +443,11 @@ namespace Sustenance_V_1._0
             list.Add(Health);
         }
 
-        public void add_species(List<animal_potion> list)
+        public void add_species(List<potion> list)
         {
-            list.Add(potion1_animal);
-            list.Add(potion2_animal);
-            list.Add(potion3_animal);
-        }
-        public void add_species(List<ind_potion> list)
-        {
-            list.Add(potion1_ind);
-            list.Add(potion2_ind);
-            list.Add(potion3_ind);
-        }
-        public void add_species(List<env_potion> list)
-        {
-            list.Add(potion1_env);
-            list.Add(potion2_env);
-            list.Add(potion3_env);
+            list.Add(exilir);
+            list.Add(reproductive_enhancer);
+            list.Add(purifiers);
         }
         
         //------------------------//
@@ -553,39 +506,9 @@ namespace Sustenance_V_1._0
 
         }
 
-        private void LoadChartContents(List<animal_potion> list)
+        private void LoadChartContents(List<potion> list)
         {
-            foreach (animal_potion mySpecies in list)
-            {
-
-
-                ///================Updeate healthy and sick values======================///
-
-                ///=====================================================================///
-
-                //mySpecies.update_box();
-                //mySpecies.update_timer_box();
-            }
-
-        }
-        private void LoadChartContents(List<ind_potion> list)
-        {
-            foreach (ind_potion mySpecies in list)
-            {
-
-
-                ///================Updeate healthy and sick values======================///
-
-                ///=====================================================================///
-
-                //mySpecies.update_box();
-                //mySpecies.update_timer_box();
-            }
-
-        }
-        private void LoadChartContents(List<env_potion> list)
-        {
-            foreach (env_potion mySpecies in list)
+            foreach (potion mySpecies in list)
             {
 
 
@@ -604,7 +527,7 @@ namespace Sustenance_V_1._0
         private void animal_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
         	// TODO: Add event handler implementation here.
-            animal_potion pot = all_pot_animals.Find(x => (x.name + "_flyout_g") == object_to_name(sender));
+            potion pot = all_pot_animals.Find(x => (x.name + "_flyout_g") == object_to_name(sender));
             species sp = all_species.Find(x => x.name == sp_Flyout_Title.Text);
 
             if (pot == null || sp == null)
@@ -714,6 +637,7 @@ namespace Sustenance_V_1._0
         public string sc_name { get; set; }
         public string desc { get; set; }
         public string wiki { get; set; }
+        public string terrain { get; set; }
         public Grid grid { get; set; }
         public Image image { get; set; }
         public Ellipse circle { get; set; }
@@ -721,8 +645,6 @@ namespace Sustenance_V_1._0
         public TextBlock sick_b { get; set; }
         public TextBlock healthy_b { get; set; }
         public TextBox title { get; set; }
-
-
         public void update_chart()
         {
             //(chart.Series[0] as PieSeries).ItemsSource = double_list(healthy, sick);
@@ -742,13 +664,11 @@ namespace Sustenance_V_1._0
                 sick_b.Text = sick.ToString();
             }
         }
-
         public species()
         {
             healthy = 50;
             sick = 50;
         }
-
         public void pointer_entered()
         {
             scale_transform(grid, 1.1, 1.1);
@@ -760,7 +680,6 @@ namespace Sustenance_V_1._0
             title.Visibility = Visibility.Visible;
 
         }
-
         public void pointer_exited()
         {
             scale_transform(grid, 1, 1);
@@ -770,7 +689,60 @@ namespace Sustenance_V_1._0
             healthy_b.Visibility = Visibility.Collapsed;
             title.Visibility = Visibility.Collapsed;
         }
+        public string get_status()
+        {
+            double total = healthy + sick;
 
+            string dying;
+            string iucn;
+            if (total == 0)
+            {
+                iucn = "extinct";
+            }
+            else if (total < 30)
+            {
+                iucn = "Critically Endangered";
+            }
+            else if (total < 100)
+            {
+                iucn = "Endangered";
+            }
+            else if (total < 250)
+            {
+                iucn = "Vulnerable";
+            }
+            else if (total < 600)
+            {
+                iucn = "Near Threatened";
+            }
+            else
+            {
+                iucn = "Least Concerned";
+            }
+
+            double ratio = healthy/sick;
+
+            if (ratio < 0.05)
+            {
+                dying = "Diminishing Rapidly";
+            }
+            else if (ratio < 0.2)
+            {
+                dying = "Dying Quickly";
+            }
+            else if (ratio < 0.5)
+            {
+                dying = "Dying";
+            }
+            else
+            {
+                return iucn;
+            }
+
+            return dying + "\n" + iucn;
+
+
+        }
 //===========UTILITY FUNCTIONS==========//
         public void scale_transform(UIElement element, double x, double y)
         {
@@ -844,7 +816,7 @@ namespace Sustenance_V_1._0
 
     //------------------------//
 
-    public class potion<Type> : INotifyPropertyChanged
+    public class potion : INotifyPropertyChanged
     {
         
         //// affectiveness
@@ -879,8 +851,6 @@ namespace Sustenance_V_1._0
                             timer_box.Visibility = Visibility.Visible;
                         }
                     }
-
-
                 }
             }
         }
@@ -925,10 +895,6 @@ namespace Sustenance_V_1._0
         }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
-        virtual public void affect(Type sp)
-        {
-            
-        }
         public double min(double a, double b)
         {
             if (a > b)
@@ -994,28 +960,16 @@ namespace Sustenance_V_1._0
             maximum = 3;
             setup_timer();
         }
-    }
-    public class env_potion : potion<Environment_species>
-    {
-        public int affect(ref Environment_species sp)
+        public int affect(ref Industrial_species sp)
         {
             ////Formula Affecting Change;
-
-            //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
-            double change = (100 - sp.healthy) * (percent_affect * effectiveness);
+            //double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            //sp.healthy = (change > 1000) ? 1000 : change;
+            double change = (1000 - sp.healthy) * (percent_affect * effectiveness);
             sp.healthy += change;
-            return change_to_xp(change);
+
+            return (int)change;///Formula for Adding XP
         }
-        public int change_to_xp(double change)
-        {
-            int xp = (int)(change*1.5);//Formula for Adding XP;
-            return xp;
-        }
-        public env_potion():base(){
-        }
-    }
-    public class animal_potion : potion<species>
-    {
         public int affect(ref species sp)
         {
             double change = 0;
@@ -1027,21 +981,85 @@ namespace Sustenance_V_1._0
                 sp.sick = sp.sick - change;
                 available--;
             }
-            return change_to_xp(change);
+            return (int)(change / 2);///Formula adding XP
         }
-
-        public int change_to_xp(double change)
+        public int affect(ref Environment_species sp)
         {
-            int xp = (int)(change/2);
-            return xp;
-        }
+            ////Formula Affecting Change;
 
-        public animal_potion():base(){
+            //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            double change = (100 - sp.healthy) * (percent_affect * effectiveness);
+            sp.healthy += change;
+            return (int)(change * 1.5);//Formula for Adding XP;
         }
 
     }
-    public class ind_potion : potion<Industrial_species>
+
+    public class potion_infi : INotifyPropertyChanged
     {
+
+        //// affectiveness
+        public const double percent_affect = 0.3;
+
+        public string name { get; set; }
+        int _available;
+        public int available
+        {
+            get
+            {
+                return _available;
+            }
+            set
+            {
+                _available = value;
+                update_box();
+                if (grid != null)
+                {
+                    if (_available == 0)
+                    {
+                        grid.Opacity = 0.5;
+                    }
+                    else
+                    {
+                        grid.Opacity = 1;
+                    }
+                }
+            }
+        }
+        public Grid grid { get; set; }
+        TextBlock _available_box;
+        public TextBlock available_box
+        {
+            get
+            {
+                return _available_box;
+            }
+            set
+            {
+                _available_box = value;
+                update_box();
+                OnPropertyChanged("available_box");
+            }
+        }
+        public string desc { get; set; }
+        public double effectiveness { get; set; }// 0 < effectiveness < 1
+        public void update_box()
+        {
+            if (available_box != null) available_box.Text = available.ToString();
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+        public potion_infi()
+        {
+            available = 2;
+        }
         public int affect(ref Industrial_species sp)
         {
             ////Formula Affecting Change;
@@ -1049,18 +1067,33 @@ namespace Sustenance_V_1._0
             //sp.healthy = (change > 1000) ? 1000 : change;
             double change = (1000 - sp.healthy) * (percent_affect * effectiveness);
             sp.healthy += change;
-            return change_to_xp(change);
-        }
-        public int change_to_xp(double change)
-        {
-            int xp = (int)(change); ///Formula for Adding XP
-            return xp;
-        }
-        public ind_potion():base(){
-        }
-    }
 
-    //------------------------//
+            return (int)change;///Formula for Adding XP
+        }
+        public int affect(ref species sp)
+        {
+            double change = 0;
+            if (available > 0)
+            {
+                ////Formula Affecting Change;
+                change = (sp.sick * (percent_affect) * effectiveness);
+                sp.healthy = sp.healthy + change;
+                sp.sick = sp.sick - change;
+                available--;
+            }
+            return (int)(change / 2);///Formula adding XP
+        }
+        public int affect(ref Environment_species sp)
+        {
+            ////Formula Affecting Change;
+
+            //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+            double change = (100 - sp.healthy) * (percent_affect * effectiveness);
+            sp.healthy += change;
+            return (int)(change * 1.5);//Formula for Adding XP;
+        }
+
+    } 
 
     public class Population
     {
