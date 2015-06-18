@@ -59,31 +59,30 @@ namespace Sustenance_V_1._0
         List<Industrial_species> all_ind = new List<Industrial_species>();
 
         List<potion> all_pot_animals = new List<potion>();
-        List<potion> all_pot_ind = new List<potion>();
-        List<potion> all_pot_env = new List<potion>();
+        List<potion_infi> all_pot_infi = new List<potion_infi>();
 
         species Aquatic_Plants = new species() { name = "Aquatic_Plants", wiki = "http://www.google.co.in", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Bee = new species() { name = "Bee", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Cow = new species() { name = "Cow", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Deer = new species() { name = "Deer", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Eagle = new species() { name = "Eagle", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Fruits = new species() { name = "Fruits", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Goat = new species() { name = "Goat", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Grass_Flowers = new species() { name = "Grass_Flowers", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Grasshopper = new species() { name = "Grasshopper", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Humans = new species() { name = "Humans", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Lion = new species() { name = "Lion", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Monkey = new species() { name = "Monkey", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Shark = new species() { name = "Shark", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Sheep = new species() { name = "Sheep", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Small_Bird = new species() { name = "Small_Bird", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Small_Fish = new species() { name = "Small_Fish", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Stork = new species() { name = "Stork", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Tiger = new species() { name = "Tiger", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Vulture = new species() { name = "Vulture", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Veggie = new species() { name = "Veggie", wiki = "http://en.wikipaedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Bee = new species() { name = "Bee", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Cow = new species() { name = "Cow", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Deer = new species() { name = "Deer", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Eagle = new species() { name = "Eagle", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Fruits = new species() { name = "Fruits", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Goat = new species() { name = "Goat", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Grass_Flowers = new species() { name = "Grass_Flowers", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Grasshopper = new species() { name = "Grasshopper", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Humans = new species() { name = "Humans", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Lion = new species() { name = "Lion", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Monkey = new species() { name = "Monkey", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Shark = new species() { name = "Shark", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Sheep = new species() { name = "Sheep", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Small_Bird = new species() { name = "Small_Bird", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Small_Fish = new species() { name = "Small_Fish", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Stork = new species() { name = "Stork", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Tiger = new species() { name = "Tiger", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Vulture = new species() { name = "Vulture", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Veggie = new species() { name = "Veggie", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
 
         Environment_species Land = new Environment_species() { name = "Land" };
         Environment_species Air = new Environment_species() { name = "Air" };
@@ -95,10 +94,10 @@ namespace Sustenance_V_1._0
         Industrial_species Agriculture = new Industrial_species() { name = "Agriculture" };
         Industrial_species Health = new Industrial_species() { name = "Health" };
 
-        potion exilir = new potion() { name = "exilir" , effectiveness = 0.3 };
-        potion reproductive_enhancer = new potion() { name = "reproductive_enhancer" , effectiveness = 0.6 };
-        potion purifiers = new potion() { name = "purifiers" , effectiveness = 0.9 };
-        potion_infi boost = new potion_infi() { name = "boost", effectiveness = 1 };
+        potion Elixir = new potion() { name = "Elixir" , effectiveness = 0.3 };
+        potion Vaccine = new potion() { name = "Vaccine" , effectiveness = 0.6 };
+        potion Purifier = new potion() { name = "Purifier" , effectiveness = 0.9 };
+        potion_infi Boost = new potion_infi() { name = "Boost", effectiveness = 1 };
         int Coins;
 
         myProgressBar XP = new myProgressBar() {name = "XP"};
@@ -163,13 +162,17 @@ namespace Sustenance_V_1._0
             link_members(all_pot_animals);
             LoadChartContents(all_pot_animals);
 
-            //add_species(all_pot_ind);
-            link_members(all_pot_ind);
-            LoadChartContents(all_pot_ind);
+            add_species(all_pot_infi);
+            link_members(all_pot_infi);
+            LoadChartContents(all_pot_infi);
 
-            //add_species(all_pot_env);
-            link_members(all_pot_env);
-            LoadChartContents(all_pot_env);
+            ////add_species(all_pot_ind);
+            //link_members(all_pot_ind);
+            //LoadChartContents(all_pot_ind);
+
+            ////add_species(all_pot_env);
+            //link_members(all_pot_env);
+            //LoadChartContents(all_pot_env);
 
             add_data_contexts();
 
@@ -178,19 +181,52 @@ namespace Sustenance_V_1._0
 
         public void add_data_contexts()
         {
-            exilir_flyout_available.DataContext = exilir;
-            exilir_flyout_timer.DataContext = exilir;
-            exilir_flyout_g.DataContext = exilir;
+            Elixir_flyout_available.DataContext = Elixir;
+            Elixir_flyout_timer.DataContext = Elixir;
+            Elixir_flyout_g.DataContext = Elixir;
 
-            reproductive_enhancer_flyout_available.DataContext = reproductive_enhancer;
-            reproductive_enhancer_flyout_timer.DataContext = reproductive_enhancer;
-            reproductive_enhancer_flyout_g.DataContext = reproductive_enhancer;
+            Vaccine_flyout_available.DataContext = Vaccine;
+            Vaccine_flyout_timer.DataContext = Vaccine;
+            Vaccine_flyout_g.DataContext = Vaccine;
 
-            boost_flyout_g.DataContext = boost;
-            boost_flyout_available.DataContext = boost;
-            //purifiers_flyout_available.DataContext = purifiers;
-            //purifiers_flyout_timer.DataContext = purifiers;
-            //purifiers_flyout_g.DataContext = purifiers;
+            Boost_flyout_g.DataContext = Boost;
+            Boost_flyout_available.DataContext = Boost;
+
+            Boost_g.DataContext = Boost;
+            Boost_available.DataContext = Boost;
+
+            Elixir_flyout1_available.DataContext = Elixir;
+            Elixir_flyout1_timer.DataContext = Elixir;
+            Elixir_flyout1_g.DataContext = Elixir;
+
+            Purifier_flyout1_available.DataContext = Purifier;
+            Purifier_flyout1_timer.DataContext = Purifier;
+            Purifier_flyout1_g.DataContext = Purifier;
+
+            ///=============MARKET============////
+            Elixir_market_available_button.DataContext = Elixir;
+            Elixir_market_available_cost.DataContext = Elixir;
+            Elixir_market_maximum_button.DataContext = Elixir;
+            Elixir_market_maximum_cost.DataContext = Elixir;
+            Elixir_market_timer_button.DataContext = Elixir;
+            Elixir_market_timer_cost.DataContext = Elixir;
+
+            Vaccine_market_available_button.DataContext = Vaccine;
+            Vaccine_market_available_cost.DataContext = Vaccine;
+            Vaccine_market_maximum_button.DataContext = Vaccine;
+            Vaccine_market_maximum_cost.DataContext = Vaccine;
+            Vaccine_market_timer_button.DataContext = Vaccine;
+            Vaccine_market_timer_cost.DataContext = Vaccine;
+
+            Purifier_market_available_button.DataContext = Purifier;
+            Purifier_market_available_cost.DataContext = Purifier;
+            Purifier_market_maximum_button.DataContext = Purifier;
+            Purifier_market_maximum_cost.DataContext = Purifier;
+            Purifier_market_timer_button.DataContext = Purifier;
+            Purifier_market_timer_cost.DataContext = Purifier;
+
+            Boost_market_available_button.DataContext = Boost;
+            Boost_market_available_cost.DataContext = Boost;
         }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -205,8 +241,9 @@ namespace Sustenance_V_1._0
             LoadChartContents(all_ind);
 
             LoadChartContents(all_pot_animals);
-            LoadChartContents(all_pot_env);
-            LoadChartContents(all_pot_ind);
+            LoadChartContents(all_pot_infi);
+            //LoadChartContents(all_pot_env);
+            //LoadChartContents(all_pot_ind);
         }
 
         //------------------------//
@@ -221,11 +258,9 @@ namespace Sustenance_V_1._0
             sp_Flyout_sc_name.Text = "Sc Name: " + sp.sc_name + " ";
             sp_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
             sp_Flyout_terrain.Text = "TERRAIN : " + sp.terrain;
-            sp_Flyout_status.Text = "STATUS: \n" + sp.get_status();
+            sp_Flyout_status.DataContext = sp;
 
-            Uri link;
-            Uri.TryCreate(sp.wiki , UriKind.RelativeOrAbsolute , out link);
-            sp_Flyout_wiki.NavigateUri = link;
+            sp_Flyout_wiki.NavigateUri = new Uri(sp.wiki);
 
             sp_Flyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
@@ -240,10 +275,11 @@ namespace Sustenance_V_1._0
 
             env_Flyout_Title.Text = sp.name;
             env_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
-            //myFlyout_wiki.NavigateUri = "http://wiki.com" ;
+            //myFlyout_wiki.NavigateUri = new Uri(sp.wiki);
+            env_Flyout_status.Text = sp.get_status();
             env_Flyout.ShowAt(sp.grid);
-            //sp.title.Visibility = Visibility.Collapsed;
 
+            //sp.title.Visibility = Visibility.Collapsed;
             //animate_scale(sender, 1.2);
         }
         private void Ind_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)//sender =Grid
@@ -260,7 +296,35 @@ namespace Sustenance_V_1._0
 
             //animate_scale(sender, 1.2);
         }
-
+        private void Potion_Grid_Clicked(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			
+			potion sp = grid_obj_to_potion(sender);
+            if (sp == null)
+            {
+                potion_infi sp_infi = grid_obj_to_potion_infi(sender);
+                pot_Flyout_Title.Text = sp_infi.name;
+                pot_Flyout_refill_time.Text = "Refill Time\nNA";
+                pot_Flyout_capacity.Text = "Capacity\nInfinite";
+                pot_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp_infi.desc;
+                pot_Flyout.ShowAt(sp_infi.grid);
+            }
+            else
+            {
+                pot_Flyout_Title.Text = sp.name;
+                pot_Flyout_refill_time.Text = "Refill Time\n" + sp.max_time.ToString();
+                pot_Flyout_capacity.Text = "Capacity\n" + sp.maximum;
+                pot_Flyout_desc.Text = "DESCRIPTION" + '\n' + '\n' + sp.desc;
+                pot_Flyout.ShowAt(sp.grid);
+            }
+        }
+		
+		private void open_market(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+			market_Flyout.ShowAt(game_page);
+        }
 
 //===========HOVER START FUNCTIONS==========//
         private void test_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -320,7 +384,14 @@ namespace Sustenance_V_1._0
         {
             return all_ind.Find(x => (x.name + "_g") == object_to_name(obj));
         }
-        
+        public potion grid_obj_to_potion(object obj)
+        {
+            return all_pot_animals.Find(x => (x.name + "_g") == object_to_name(obj));
+        }
+        public potion_infi grid_obj_to_potion_infi(object obj)
+        {
+            return all_pot_infi.Find(x => (x.name + "_g") == object_to_name(obj));
+        }
         //------------------------//
 
         public string object_to_name(object sender)
@@ -391,6 +462,18 @@ namespace Sustenance_V_1._0
             }
         }
 
+        public void link_members(potion_infi sp)
+        {
+            sp.grid = FindName(sp.name + "_g") as Grid;
+            sp.available_box = FindName(sp.name + "_available") as TextBlock;
+        }
+        public void link_members(List<potion_infi> list)
+        {
+            foreach (potion_infi sp in list)
+            {
+                link_members(sp);
+            }
+        }
 
         public void link_members(myProgressBar sp)
         {
@@ -445,9 +528,13 @@ namespace Sustenance_V_1._0
 
         public void add_species(List<potion> list)
         {
-            list.Add(exilir);
-            list.Add(reproductive_enhancer);
-            list.Add(purifiers);
+            list.Add(Elixir);
+            list.Add(Vaccine);
+            list.Add(Purifier);
+        }
+        public void add_species(List<potion_infi> list)
+        {
+            list.Add(Boost);
         }
         
         //------------------------//
@@ -521,9 +608,27 @@ namespace Sustenance_V_1._0
             }
 
         }
+        private void LoadChartContents(List<potion_infi> list)
+        {
+            foreach (potion_infi mySpecies in list)
+            {
 
 
+                ///================Updeate healthy and sick values======================///
+
+                ///=====================================================================///
+
+                //mySpecies.update_box();
+                //mySpecies.update_timer_box();
+            }
+
+        }
+
+
+        //======================================//
         //==============POTIONS=================//
+        //======================================//
+
         private void animal_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
         	// TODO: Add event handler implementation here.
@@ -535,12 +640,55 @@ namespace Sustenance_V_1._0
                 return;
             }
 
-            int xp_change = pot.affect(ref sp);
+            int xp_change;
+            if (pot.name == "Vaccine")
+            {
+                xp_change = pot.vaccinate(ref sp, new TimeSpan(0,0,10));
+                
+            }
+            else
+            {
+                xp_change = pot.affect(ref sp);
+            }
             XP.Add(xp_change);
             
 
         }
+        private void ind_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+            potion_infi pot = Boost; ///Unable to copy by reference
+            Industrial_species sp = all_ind.Find(x => x.name == ind_Flyout_Title.Text);
 
+            if (pot == null || sp == null)
+            {
+                return;
+            }
+
+            int xp_change = Boost.affect(ref sp); /// Hence, using Boost not pot
+            XP.Add(xp_change);
+            return;
+
+        }
+        private void env_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            potion pot = all_pot_animals.Find(x => (x.name + "_flyout1_g") == object_to_name(sender));
+            Environment_species sp = all_env.Find(x => x.name == env_Flyout_Title.Text);
+
+            if (pot == null || sp == null)
+            {
+                return;
+            }
+
+            int xp_change = pot.affect(ref sp);
+            XP.Add(xp_change);
+        }
+
+        private void Elixir_market_timer_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         ////=====================DRAG/DROP==================//
         //private void grid_MouseMove(object sender, MouseEventArgs e)
         //{
@@ -603,8 +751,9 @@ namespace Sustenance_V_1._0
 
     //------------------------//
     
-    public class species
+    public class species:INotifyPropertyChanged
     {
+        double ext_limit=1;///extinction limit
         public string name { get; set; }
         double _healthy;
         public double healthy
@@ -618,6 +767,7 @@ namespace Sustenance_V_1._0
                 _healthy = value;
                 update_chart();
                 update_population_boxes();
+                update_status();
             }
         }
         double _sick;
@@ -632,12 +782,97 @@ namespace Sustenance_V_1._0
                 _sick = value;
                 update_chart();
                 update_population_boxes();
+                update_status();
             }
         }
         public string sc_name { get; set; }
         public string desc { get; set; }
         public string wiki { get; set; }
         public string terrain { get; set; }
+
+        
+        /// FOR VACCINATION START///
+        public string _status_message;
+        public string status_message
+        {
+            get
+            {
+                return _status_message;
+            }
+            set
+            {
+                _status_message = value;
+                OnPropertyChanged("status_message");
+            }
+        }
+        public bool _is_vaccinated;
+        public bool is_vaccinated
+        {
+            get
+            {
+                return _is_vaccinated;
+            }
+            set
+            {
+                _is_vaccinated = value;
+                if (grid != null && (healthy+sick > ext_limit ))
+                {
+                    if (is_vaccinated)
+                    {
+                        grid.Opacity = 0.8;
+                    }
+                    else
+                    {
+                        grid.Opacity = 1;
+                    }
+                }
+                update_status();
+            }
+        }
+        DispatcherTimer vaccine_timer = new DispatcherTimer();
+        TimeSpan max_time = new TimeSpan(0, 0, 20);///Setting Max Time
+        TimeSpan time_left = new TimeSpan(0,0,0);
+        public void vaccinate(TimeSpan input)
+        {
+            vaccine_timer.Stop();
+            max_time = input;
+            time_left = max_time;
+            is_vaccinated = true;
+            vaccine_timer.Start();
+        }
+        public void setup_timer()
+        {
+            vaccine_timer.Interval = new TimeSpan(0, 0, 1);
+            vaccine_timer.Tick += delegate
+            {
+                if (time_left.ToString() == "00:00:00")
+                {
+                    is_vaccinated = false;
+                    vaccine_timer.Stop();
+                }
+                else
+                {
+                    time_left = time_left.Subtract(new TimeSpan(0, 0, 1));
+                    update_status();
+                }
+            };
+        }
+        public void update_status()
+        {
+            if (is_vaccinated)
+            {
+                status_message = "STATUS\nVaccinated for " + get_vaccine_time() + "\n" + get_status();
+            }
+            else
+            {
+                status_message = "STATUS\n" + get_status();
+            }
+        }
+        public string get_vaccine_time()
+        {
+            return time_left.ToString();
+        }
+        /// FOR VACCINATION END///
         public Grid grid { get; set; }
         public Image image { get; set; }
         public Ellipse circle { get; set; }
@@ -668,6 +903,7 @@ namespace Sustenance_V_1._0
         {
             healthy = 50;
             sick = 50;
+            setup_timer();
         }
         public void pointer_entered()
         {
@@ -755,7 +991,15 @@ namespace Sustenance_V_1._0
             myTransformGroup.Children.Add(myScaleTransform);
             element.RenderTransform = myTransformGroup;
         }
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
     }
     public class Environment_species
@@ -785,6 +1029,30 @@ namespace Sustenance_V_1._0
             data.Add(new Population() { Name = "Healthy", Amount = healthy });
             data.Add(new Population() { Name = "Sick", Amount = 100-healthy });
             (chart.Series[0] as PieSeries).ItemsSource = data;
+        }
+        public string get_status()
+        {
+            if (healthy < 0.1)
+            {
+                return "STATUS\nPoisoned";
+            } else if (healthy < 0.2)
+            {
+                return "STATUS\nVery Contaminated";
+            } else if (healthy < 0.4)
+            {
+                return "STATUS\nPolluted";
+            } else if (healthy < 0.6)
+            {
+                return "STATUS\nMildly Polluted";
+            }
+            else if(healthy > 0.85)
+            {
+                return "STATUS\nMarvellous";
+            }
+            else
+            {
+                return "STATUS\nBearable";
+            }
         }
 
     }
@@ -832,6 +1100,7 @@ namespace Sustenance_V_1._0
             set{
                 _available= value;
                 update_box();
+                OnPropertyChanged("available");
                 if (grid != null)
                 {
                     if (_available == 0)
@@ -865,6 +1134,7 @@ namespace Sustenance_V_1._0
             {
                 _maximum = value;
                 update_box();
+                OnPropertyChanged("maximum");
             }
         }
         public Grid grid { get; set; }
@@ -915,7 +1185,32 @@ namespace Sustenance_V_1._0
             timer_box.Text = time_left.ToString(@"mm\:ss");
         }
         DispatcherTimer timer = new DispatcherTimer();
-        TimeSpan  max_time = new TimeSpan(0,0,20);///Setting Max Time
+        TimeSpan _max_time;
+        public TimeSpan max_time
+        {
+            get
+            {
+                return _max_time;
+            }
+            set
+            {
+                _max_time = value;
+                max_time_string = max_time.ToString();
+            }
+        }
+        string _max_time_string;
+        public string max_time_string
+        {
+            get
+            {
+                return _max_time_string;
+            }
+            set
+            {
+                _max_time_string = value;
+                OnPropertyChanged("max_time_string");
+            }
+        }
         TimeSpan time_left = new TimeSpan();
         public void setup_timer()
         {
@@ -958,7 +1253,10 @@ namespace Sustenance_V_1._0
         {
             available = 2;
             maximum = 3;
+            max_time = new TimeSpan(0,0,20);///Setting Max Time
             setup_timer();
+
+            Maximum_cost = Available_cost = Timer_cost = 35;
         }
         public int affect(ref Industrial_species sp)
         {
@@ -985,14 +1283,69 @@ namespace Sustenance_V_1._0
         }
         public int affect(ref Environment_species sp)
         {
-            ////Formula Affecting Change;
-
-            //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
-            double change = (100 - sp.healthy) * (percent_affect * effectiveness);
-            sp.healthy += change;
-            return (int)(change * 1.5);//Formula for Adding XP;
+            
+            if (available > 0)
+            {
+                ////Formula Affecting Change;
+                //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+                double change = (100 - sp.healthy) * (percent_affect * effectiveness);
+                sp.healthy += change;
+                available--;
+                return (int)(change * 1.5);//Formula for Adding XP;
+            }
+            else return 0;
+            
         }
-
+        public int vaccinate(ref species sp , TimeSpan time)
+        {
+            if (available > 0)
+            {
+                ////Formula Affecting Change;
+                sp.vaccinate(time);
+                available--;
+                return 100; ///formula affecting xp;
+            }
+            return 0;
+        }
+        int _available_cost;
+        public int Available_cost
+        {
+            get
+            {
+                return _available_cost;
+            }
+            set
+            {
+                _available_cost = value;
+                OnPropertyChanged("Available_cost");
+            }
+        }
+        int _maximum_cost;
+        public int Maximum_cost
+        {
+            get
+            {
+                return _maximum_cost;
+            }
+            set
+            {
+                _maximum_cost = value;
+                OnPropertyChanged("Maximum_cost");
+            }
+        }
+        int _timer_cost;
+        public int Timer_cost
+        {
+            get
+            {
+                return _timer_cost;
+            }
+            set
+            {
+                _timer_cost = value;
+                OnPropertyChanged("Timer_cost");
+            }
+        }
     }
 
     public class potion_infi : INotifyPropertyChanged
@@ -1012,7 +1365,7 @@ namespace Sustenance_V_1._0
             set
             {
                 _available = value;
-                update_box();
+                //update_box();
                 if (grid != null)
                 {
                     if (_available == 0)
@@ -1024,6 +1377,8 @@ namespace Sustenance_V_1._0
                         grid.Opacity = 1;
                     }
                 }
+
+                OnPropertyChanged("available");
             }
         }
         public Grid grid { get; set; }
@@ -1065,10 +1420,14 @@ namespace Sustenance_V_1._0
             ////Formula Affecting Change;
             //double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
             //sp.healthy = (change > 1000) ? 1000 : change;
-            double change = (1000 - sp.healthy) * (percent_affect * effectiveness);
-            sp.healthy += change;
-
-            return (int)change;///Formula for Adding XP
+            if (available > 0)
+            {
+                double change = (1000 - sp.healthy) * (percent_affect * effectiveness);
+                sp.healthy += change;
+                available--;
+                return (int)change;///Formula for Adding XP
+            }
+            else return 0;
         }
         public int affect(ref species sp)
         {
