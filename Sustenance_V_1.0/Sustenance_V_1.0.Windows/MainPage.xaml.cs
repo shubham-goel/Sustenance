@@ -98,7 +98,8 @@ namespace Sustenance_V_1._0
         potion Vaccine = new potion() { name = "Vaccine" , effectiveness = 0.6 };
         potion Purifier = new potion() { name = "Purifier" , effectiveness = 0.9 };
         potion_infi Boost = new potion_infi() { name = "Boost", effectiveness = 1 };
-        int Coins;
+        
+        Coin Coins = new Coin();
 
         myProgressBar XP = new myProgressBar() {name = "XP"};
         
@@ -227,6 +228,8 @@ namespace Sustenance_V_1._0
 
             Boost_market_available_button.DataContext = Boost;
             Boost_market_available_cost.DataContext = Boost;
+
+            Total_Coins.DataContext = Coins;
         }
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -323,7 +326,7 @@ namespace Sustenance_V_1._0
 		private void open_market(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
         	// TODO: Add event handler implementation here.
-			market_Flyout.ShowAt(game_page);
+			market_Flyout.ShowAt(market_icon);
         }
 
 //===========HOVER START FUNCTIONS==========//
@@ -685,9 +688,62 @@ namespace Sustenance_V_1._0
             XP.Add(xp_change);
         }
 
-        private void Elixir_market_timer_button_Click(object sender, RoutedEventArgs e)
+        private void Market_available_upgrade_click(object sender, RoutedEventArgs e)
         {
-
+            var button = sender as Button;
+            switch (button.Name[0])
+            {
+                case 'E':
+                    Elixir.buy_available(ref Coins);
+                    break;
+                case 'V':
+                    Vaccine.buy_available(ref Coins);
+                    break;
+                case 'P':
+                    Purifier.buy_available(ref Coins);
+                    break;
+                case 'B':
+                    Boost.buy_available(ref Coins);
+                    break;
+                default: 
+                    return;
+            }
+        }
+        private void Market_maximum_upgrade_click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            switch (button.Name[0])
+            {
+                case 'E':
+                    Elixir.buy_maximum(ref Coins);
+                    break;
+                case 'V':
+                    Vaccine.buy_maximum(ref Coins);
+                    break;
+                case 'P':
+                    Purifier.buy_maximum(ref Coins);
+                    break;
+                default:
+                    return;
+            }
+        }
+        private void Market_timer_upgrade_click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            switch (button.Name[0])
+            {
+                case 'E':
+                    Elixir.buy_timer(ref Coins);
+                    break;
+                case 'V':
+                    Vaccine.buy_timer(ref Coins);
+                    break;
+                case 'P':
+                    Purifier.buy_timer(ref Coins);
+                    break;
+                default:
+                    return;
+            }
         }
         ////=====================DRAG/DROP==================//
         //private void grid_MouseMove(object sender, MouseEventArgs e)
@@ -1032,20 +1088,20 @@ namespace Sustenance_V_1._0
         }
         public string get_status()
         {
-            if (healthy < 0.1)
+            if (healthy < 10)
             {
                 return "STATUS\nPoisoned";
-            } else if (healthy < 0.2)
+            } else if (healthy < 20)
             {
                 return "STATUS\nVery Contaminated";
-            } else if (healthy < 0.4)
+            } else if (healthy < 40)
             {
                 return "STATUS\nPolluted";
-            } else if (healthy < 0.6)
+            } else if (healthy < 60)
             {
                 return "STATUS\nMildly Polluted";
             }
-            else if(healthy > 0.85)
+            else if(healthy > 85)
             {
                 return "STATUS\nMarvellous";
             }
@@ -1113,6 +1169,7 @@ namespace Sustenance_V_1._0
                         if (_available == maximum)
                         {
                             timer_box.Visibility = Visibility.Collapsed;
+                            reset_timer();
                         }
                         else
                         {
@@ -1134,6 +1191,14 @@ namespace Sustenance_V_1._0
             {
                 _maximum = value;
                 update_box();
+                if (!timer.IsEnabled && available < maximum)
+                {
+                    reset_timer();
+                    timer.Start();
+                    if(timer_box != null){
+                        timer_box.Visibility = Visibility.Visible;
+                    }
+                }
                 OnPropertyChanged("maximum");
             }
         }
@@ -1182,7 +1247,10 @@ namespace Sustenance_V_1._0
         }
         public void update_timer_box()
         {
-            timer_box.Text = time_left.ToString(@"mm\:ss");
+            if (timer_box != null)
+            {
+                timer_box.Text = time_left.ToString(@"mm\:ss");
+            }
         }
         DispatcherTimer timer = new DispatcherTimer();
         TimeSpan _max_time;
@@ -1196,6 +1264,10 @@ namespace Sustenance_V_1._0
             {
                 _max_time = value;
                 max_time_string = max_time.ToString();
+                if (!timer.IsEnabled)
+                {
+                    reset_timer();
+                }
             }
         }
         string _max_time_string;
@@ -1212,6 +1284,12 @@ namespace Sustenance_V_1._0
             }
         }
         TimeSpan time_left = new TimeSpan();
+        void reset_timer()
+        {
+            time_left = max_time;
+            update_timer_box();
+            timer.Stop();
+        }
         public void setup_timer()
         {
             time_left = max_time;
@@ -1223,11 +1301,14 @@ namespace Sustenance_V_1._0
                     if (available < maximum)
                     {
                         available++;
-                        time_left = time_left.Add(max_time);
-                        update_timer_box();
+                        reset_timer();
                         if (available >= maximum)
                         {
                             timer.Stop();
+                        }
+                        else
+                        {
+                            timer.Start();
                         }
                     }
                 }
@@ -1346,8 +1427,31 @@ namespace Sustenance_V_1._0
                 OnPropertyChanged("Timer_cost");
             }
         }
+        public void buy_available(ref Coin coins)
+        {
+            if (available < maximum && coins.Coins > Available_cost)
+            {
+                available++;
+                coins.Coins -= Available_cost;
+            }
+        }
+        public void buy_maximum(ref Coin coins)
+        {
+            if (coins.Coins > Maximum_cost)
+            {
+                maximum++;
+                coins.Coins -= Maximum_cost;
+            }
+        }
+        public void buy_timer(ref Coin coins)
+        {
+            if (max_time.TotalSeconds >= 15 && coins.Coins > Timer_cost)
+            {
+                max_time = max_time.Subtract(new TimeSpan(0, 0, 5));
+                coins.Coins -= Timer_cost;
+            }
+        }
     }
-
     public class potion_infi : INotifyPropertyChanged
     {
 
@@ -1451,6 +1555,27 @@ namespace Sustenance_V_1._0
             sp.healthy += change;
             return (int)(change * 1.5);//Formula for Adding XP;
         }
+        int _Available_cost;
+        public int Available_cost
+        {
+            get
+            {
+                return _Available_cost;
+            }
+            set
+            {
+                _Available_cost = value;
+                OnPropertyChanged("Available_cost");
+            }
+        }
+        public void buy_available(ref Coin coins)
+        {
+            if (coins.Coins > Available_cost)
+            {
+                available++;
+                coins.Coins -= Available_cost;
+            }
+        }
 
     } 
 
@@ -1459,7 +1584,6 @@ namespace Sustenance_V_1._0
         public string Name { get; set; }
         public double Amount { get; set; }
     }
-
     public class myProgressBar
     {
         public string name;
@@ -1670,7 +1794,35 @@ namespace Sustenance_V_1._0
         }
         public EasingDoubleKeyFrame animate_easingkeyframe;
     }
-
+    public class Coin : INotifyPropertyChanged
+    {
+        int _coins;
+        public int Coins
+        {
+            get
+            {
+                return _coins;
+            }
+            set
+            {
+                _coins = value;
+                OnPropertyChanged("Coins");
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+        public Coin()
+        {
+            Coins = 200;
+        }
+    }
 
     ////===============CONVERTERS===================////
 
