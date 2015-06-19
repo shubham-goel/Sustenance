@@ -54,6 +54,8 @@ namespace Sustenance_V_1._0
 
 //===========VAR DEFINITIONS===========//
 
+        AI Marley;
+
         List<species> all_species = new List<species>();
         List<Environment_species> all_env = new List<Environment_species>();
         List<Industrial_species> all_ind = new List<Industrial_species>();
@@ -61,13 +63,14 @@ namespace Sustenance_V_1._0
         List<potion> all_pot_animals = new List<potion>();
         List<potion_infi> all_pot_infi = new List<potion_infi>();
 
+
         species Aquatic_Plants = new species() { name = "Aquatic_Plants", wiki = "http://www.google.co.in", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Bee = new species() { name = "Bee", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Cow = new species() { name = "Cow", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Crocodile = new species() { name = "Crocodile", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Deer = new species() { name = "Deer", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Eagle = new species() { name = "Eagle", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        //species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Fruits = new species() { name = "Fruits", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Goat = new species() { name = "Goat", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Grass_Flowers = new species() { name = "Grass_Flowers", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
@@ -76,7 +79,7 @@ namespace Sustenance_V_1._0
         species Killer_Whale = new species() { name = "Killer_Whale", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Lion = new species() { name = "Lion", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Monkey = new species() { name = "Monkey", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
-        species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        //species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Shark = new species() { name = "Shark", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Sheep = new species() { name = "Sheep", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Small_Bird = new species() { name = "Small_Bird", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
@@ -183,6 +186,8 @@ namespace Sustenance_V_1._0
             add_data_contexts();
 
             link_members(XP);
+
+            Marley = new AI(ref all_species, ref all_env, ref all_ind);
         }
 
         public void add_data_contexts()
@@ -508,7 +513,7 @@ namespace Sustenance_V_1._0
             list.Add(Crocodile);
             list.Add(Deer);
             list.Add(Eagle);
-            list.Add(Elephant);
+            //list.Add(Elephant);
             list.Add(Fruits);
             list.Add(Goat);
             list.Add(Grass_Flowers);
@@ -517,7 +522,7 @@ namespace Sustenance_V_1._0
             list.Add(Killer_Whale);
             list.Add(Lion);
             list.Add(Monkey);
-            list.Add(Rabbit);
+            //list.Add(Rabbit);
             list.Add(Shark);
             list.Add(Sheep);  
             list.Add(Small_Bird);
@@ -567,8 +572,10 @@ namespace Sustenance_V_1._0
 
                 ///================Updeate healthy and sick values======================///
 
-                mySpecies.healthy = rand.Next(0, 200);
-                mySpecies.sick = rand.Next(0, 200);
+                //mySpecies.healthy = rand.Next(0, 200);
+                //mySpecies.sick = rand.Next(0, 200);
+                mySpecies.healthy = 200;
+                mySpecies.sick = 0;
 
                 ///=====================================================================///
 
@@ -586,7 +593,8 @@ namespace Sustenance_V_1._0
 
                 ///================Updeate healthy and sick values======================///
 
-                mySpecies.healthy = rand.Next(0, 100);
+                //mySpecies.healthy = rand.Next(0, 100);
+                mySpecies.healthy = 100;
 
                 ///=====================================================================///
 
@@ -603,7 +611,8 @@ namespace Sustenance_V_1._0
 
                 ///================Updeate healthy and sick values======================///
 
-                mySpecies.healthy = rand.Next(0, 1000);
+                //mySpecies.healthy = rand.Next(0, 1000);
+                mySpecies.healthy = 1000;
 
                 ///=====================================================================///
 
@@ -669,7 +678,11 @@ namespace Sustenance_V_1._0
             {
                 xp_change = pot.affect(ref sp);
             }
-            XP.Add(xp_change);
+            int level = XP.Add(xp_change);
+            if (level != 0)
+            {
+                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+            }
             
 
         }
@@ -685,11 +698,15 @@ namespace Sustenance_V_1._0
             }
 
             int xp_change = Boost.affect(ref sp); /// Hence, using Boost not pot
-            XP.Add(xp_change);
-            return;
+            int level = XP.Add(xp_change);
+            if (level != 0)
+            {
+                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+            }
 
         }
         private void env_potion_pressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+
         {
             // TODO: Add event handler implementation here.
             potion pot = all_pot_animals.Find(x => (x.name + "_flyout1_g") == object_to_name(sender));
@@ -701,7 +718,11 @@ namespace Sustenance_V_1._0
             }
 
             int xp_change = pot.affect(ref sp);
-            XP.Add(xp_change);
+            int level = XP.Add(xp_change);
+            if (level != 0)
+            {
+                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+            }
         }
 
         private void Market_available_upgrade_click(object sender, RoutedEventArgs e)
@@ -821,11 +842,6 @@ namespace Sustenance_V_1._0
         {
             message_popup_text.Text = message;
             message_popup.IsOpen = true;
-        }
-
-        private void close_popup(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
         }
     }
 
@@ -1170,7 +1186,7 @@ namespace Sustenance_V_1._0
     {
         
         //// affectiveness
-        public const double percent_affect = 0.3;
+        public double percent_affect = 0.3;
 
         public string name { get; set; }
         int _available;
@@ -1482,7 +1498,7 @@ namespace Sustenance_V_1._0
     {
 
         //// affectiveness
-        public const double percent_affect = 0.3;
+        public double percent_affect = 0.3;
 
         public string name { get; set; }
         int _available;
@@ -1706,7 +1722,7 @@ namespace Sustenance_V_1._0
                         int add_max = Level * 50;                     ///Formula for different levels
                         max_value += add_max;
                         Level++;
-
+                        level_change = Level;
                         if (!members_null())
                         {
                             update_value_box();///Updating Value_box
@@ -1786,10 +1802,14 @@ namespace Sustenance_V_1._0
                 inner.Width = outer.ActualWidth * Value / max_value;
             }
         }
-        public void Add(int change)
+        public int Add(int change)
         {
             Value += change;
+            int r = level_change;
+            level_change = 0;
+            return r;
         }
+        int level_change=0;
         public myProgressBar()
         {
             Value = 10;//test
@@ -1870,4 +1890,186 @@ namespace Sustenance_V_1._0
     //    }
     //}
 
+    public class AI
+    {
+        List<species> list_species;
+        List<Environment_species> list_env_species;
+        List<Industrial_species> list_ind_species;
+
+
+
+        poison p1 = new poison() { available = 5, maximum = 5, max_time = new TimeSpan(0, 0, 20) , effectiveness = 0.1 };
+        poison p2 = new poison() { available = 4, maximum = 4, max_time = new TimeSpan(0, 1, 0) , effectiveness = 0.3};
+        poison p3 = new poison() { available = 3, maximum = 3, max_time = new TimeSpan(0, 5, 0) , effectiveness = 0.5};
+        poison p4 = new poison() { available = 2, maximum = 2, max_time = new TimeSpan(0, 15, 0) , effectiveness = 1};
+
+        DispatcherTimer timer = new DispatcherTimer();
+
+        int rand(int a, int b)
+        {
+            Random rand = new Random();
+            return rand.Next(a, b);
+        }
+
+        void setup_ticker()
+        {
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += delegate
+            {
+                if(p4.available > 0)
+                {
+                    poison_using_p4();
+                }
+                else if (p3.available > 0)
+                {
+                    poison_using_p3();
+                }
+                else if (p2.available > 0)
+                {
+                    poison_using_p2();
+                }
+                else if (p1.available > 0)
+                {
+                    poison_using_p1();
+                }
+            };
+            timer.Start();
+            
+        }
+
+        void poison_using_p1()
+        {
+            compare_across(ref p1);
+        }
+        void poison_using_p2()
+        {
+            compare_across(ref p2);
+        }
+        void poison_using_p3()
+        {
+            compare_across(ref p3);
+        }
+        void poison_using_p4()
+        {
+            compare_across(ref p4);
+        }
+
+        void compare_across(ref poison p)
+        {
+            int i = select_best_species();
+            int j = select_best_env_species();
+            int k = select_best_ind_species();
+
+            double animal = list_species[i].healthy / 2;
+            double env = list_env_species[j].healthy;
+            double ind = list_ind_species[k].healthy/20;
+
+            double temp = (animal > env) ? animal : env;
+            double max = (temp > ind) ? temp : ind;
+
+            if (animal == max)
+            {
+                p.affect(list_species,i);
+            }
+            if (env == max)
+            {
+                p.affect(list_env_species,j);
+            }
+            else
+            {
+                p.affect(list_ind_species,k);
+            }
+        }
+
+        int select_best_species()
+        {
+            int best = 0;
+            for (int i = 0; i < list_species.Count;i++ )
+            {
+                if (list_species[i].healthy > list_species[best].healthy && !list_species[i].is_vaccinated)
+                {
+                    best = i;
+                }
+            }
+            return best;
+        }
+        int select_best_env_species()
+        {
+            int best = 0;
+            for (int i = 0; i < list_env_species.Count; i++)
+            {
+                if (list_env_species[i].healthy > list_env_species[best].healthy)
+                {
+                    best = i;
+                }
+            }
+            return best;
+        }
+        int select_best_ind_species()
+        {
+            int best = 0;
+            for (int i = 0; i < list_ind_species.Count; i++)
+            {
+                if (list_ind_species[i].healthy > list_ind_species[best].healthy)
+                {
+                    best = i;
+                }
+            }
+            return best;
+        }
+
+        public AI(ref List<species> sp, ref List<Environment_species> env_sp, ref List<Industrial_species> ind_sp)
+        {
+            setup_ticker();
+            list_species = sp;
+            list_env_species = env_sp;
+            list_ind_species = ind_sp;
+        }
+
+        class poison : potion
+        {
+            public poison()
+            {
+                percent_affect = 0.5;///Defines Hardness Level
+                setup_timer();
+            }
+            public void affect(List<Industrial_species> sp, int i)
+            {
+                if (available > 0)
+                {
+                    ////Formula Affecting Change;
+                    //double change = ((sp.healthy - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+                    //sp.healthy = (change > 1000) ? 1000 : change;
+                    double change = (sp[i].healthy) * (percent_affect * effectiveness);
+                    sp[i].healthy -= change;
+                    available--;
+                }
+            }
+            public void affect(List<species> sp , int i)
+            {
+                double change = 0;
+                if (available > 0 && !sp[i].is_vaccinated)
+                {
+                    ////Formula Affecting Change;
+                    change = (sp[i].healthy * (percent_affect) * effectiveness);
+                    sp[i].healthy = sp[i].healthy - change;
+                    sp[i].sick = sp[i].sick + change;
+                    available--;
+                }
+            }
+            public void affect(List<Environment_species> sp , int i)
+            {
+
+                if (available > 0)
+                {
+                    ////Formula Affecting Change;
+                    //sp.healthy = (((100-sp.healthy) - (percent_affect * effectiveness)) <= 0) ? (sp.healthy * (1 - percent_affect) * effectiveness) : ((sp.healthy - (percent_affect * effectiveness)));
+                    double change = (sp[i].healthy) * (percent_affect * effectiveness);
+                    sp[i].healthy -= change;
+                    available--;
+                }
+
+            }
+        }
+    }
 }

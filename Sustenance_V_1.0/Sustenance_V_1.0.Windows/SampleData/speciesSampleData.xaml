@@ -1,0 +1,194 @@
+﻿<_0:species xmlns:_0="using:Sustenance_V_1._0" xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting" xmlns:Xaml="using:Windows.UI.Xaml" xmlns:Media="using:Windows.UI.Xaml.Media" xmlns:Foundation="using:Windows.Foundation" xmlns:Text="using:Windows.UI.Text" xmlns:Controls="using:Windows.UI.Xaml.Controls" xmlns:Shapes="using:Windows.UI.Xaml.Shapes" xmlns:Input="using:Windows.UI.Xaml.Input" desc="Phasellus praesent est consequat accumsan" healthy="685.64" is_vaccinated="True" name="Maecenas curabitur vestibulum aenean" sick="823.23" status_message="Cras hac nullam donec" sc_name="Nam aliquam sed class dis" terrain="Bibendum dictumst" wiki="Convallis curae mauris">
+	<_0:species.chart>
+		<Charting:Chart AllowDrop="False" BorderBrush="#FFB15480" Background="#FF26F9B7" CharacterSpacing="19" CompositeMode="SourceOver" Foreground="#FF54A2E7" FontStyle="Normal" FontStretch="ExtraCondensed" FlowDirection="LeftToRight" FontSize="662.76" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="818.54" IsHitTestVisible="False" IsTabStop="True" IsDoubleTapEnabled="True" IsHoldingEnabled="True" IsTapEnabled="True" IsRightTapEnabled="False" IsEnabled="False" MaxWidth="631.31" MaxHeight="407.6" MinWidth="967.34" MinHeight="725.55" ManipulationMode="All" Opacity="173.62" RequestedTheme="Dark" TabIndex="84" TabNavigation="Cycle" UseLayoutRounding="True" Visibility="Collapsed" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="161.35">
+			<Charting:Chart.BorderThickness>
+				<Xaml:Thickness Bottom="618.2" Left="396.05" Right="613.38" Top="251.11"/>
+			</Charting:Chart.BorderThickness>
+			<Charting:Chart.ChartAreaStyle>
+				<Xaml:Style>
+					<Xaml:Style.BasedOn>
+						<Xaml:Style/>
+					</Xaml:Style.BasedOn>
+				</Xaml:Style>
+			</Charting:Chart.ChartAreaStyle>
+			<Charting:Chart.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="800.59" Width="947.62" X="325.43" Y="417.38"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Charting:Chart.Clip>
+			<Charting:Chart.FontWeight>
+				<Text:FontWeight/>
+			</Charting:Chart.FontWeight>
+			<Charting:Chart.LegendStyle>
+				<Xaml:Style>
+					<Xaml:Style.BasedOn>
+						<Xaml:Style/>
+					</Xaml:Style.BasedOn>
+				</Xaml:Style>
+			</Charting:Chart.LegendStyle>
+			<Charting:Chart.Margin>
+				<Xaml:Thickness Bottom="322.65" Left="247.66" Right="212.72" Top="828.99"/>
+			</Charting:Chart.Margin>
+			<Charting:Chart.PlotAreaStyle>
+				<Xaml:Style>
+					<Xaml:Style.BasedOn>
+						<Xaml:Style/>
+					</Xaml:Style.BasedOn>
+				</Xaml:Style>
+			</Charting:Chart.PlotAreaStyle>
+			<Charting:Chart.Padding>
+				<Xaml:Thickness Bottom="524.99" Left="817.95" Right="196.22" Top="914.42"/>
+			</Charting:Chart.Padding>
+			<Charting:Chart.RenderTransformOrigin>
+				<Foundation:Point X="707.41" Y="580.92"/>
+			</Charting:Chart.RenderTransformOrigin>
+			<Charting:Chart.TitleStyle>
+				<Xaml:Style>
+					<Xaml:Style.BasedOn>
+						<Xaml:Style/>
+					</Xaml:Style.BasedOn>
+				</Xaml:Style>
+			</Charting:Chart.TitleStyle>
+			<Charting:Chart.Template>
+				<Controls:ControlTemplate/>
+			</Charting:Chart.Template>
+		</Charting:Chart>
+	</_0:species.chart>
+	<_0:species.circle>
+		<Shapes:Ellipse AllowDrop="True" CompositeMode="MinBlend" Fill="#FFABE8D8" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="805.4" IsHitTestVisible="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsTapEnabled="False" IsRightTapEnabled="True" MaxWidth="796.02" MaxHeight="258.44" MinWidth="930.76" MinHeight="177.98" ManipulationMode="None" Opacity="481.31" RequestedTheme="Default" StrokeStartLineCap="Flat" StrokeDashOffset="709.24" Stretch="None" StrokeEndLineCap="Square" StrokeDashCap="Round" Stroke="#FFAE3284" StrokeThickness="104.39" StrokeMiterLimit="626.58" StrokeLineJoin="Miter" StrokeDashArray="281.69 612.5 146.79 720.22 666.64 149.35 925.22 713.29 921.68 379.38" UseLayoutRounding="False" Visibility="Collapsed" VerticalAlignment="Stretch" Width="545.31">
+			<Shapes:Ellipse.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="333.92" Width="779.56" X="649.98" Y="401.45"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Shapes:Ellipse.Clip>
+			<Shapes:Ellipse.Margin>
+				<Xaml:Thickness Bottom="466.58" Left="597.64" Right="757.87" Top="645.47"/>
+			</Shapes:Ellipse.Margin>
+			<Shapes:Ellipse.RenderTransformOrigin>
+				<Foundation:Point X="382.34" Y="778.03"/>
+			</Shapes:Ellipse.RenderTransformOrigin>
+		</Shapes:Ellipse>
+	</_0:species.circle>
+	<_0:species.grid>
+		<Controls:Grid AllowDrop="True" Background="#FF1C1204" Controls:Grid.ColumnSpan="97" CompositeMode="Inherit" Controls:Grid.Column="29" FlowDirection="LeftToRight" HorizontalAlignment="Left" Height="893.52" IsHitTestVisible="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsTapEnabled="False" IsRightTapEnabled="True" MaxWidth="462.98" MaxHeight="109.4" MinWidth="758.37" MinHeight="174.19" ManipulationMode="TranslateRailsX" Opacity="739.78" Controls:Grid.Row="64" Controls:Grid.RowSpan="53" RequestedTheme="Dark" UseLayoutRounding="False" Visibility="Collapsed" VerticalAlignment="Stretch" Width="619.73">
+			<Controls:Grid.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="803.91" Width="737.07" X="874.26" Y="354.79"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Controls:Grid.Clip>
+			<Controls:Grid.Margin>
+				<Xaml:Thickness Bottom="141.47" Left="325.86" Right="194.88" Top="813.97"/>
+			</Controls:Grid.Margin>
+			<Controls:Grid.RenderTransformOrigin>
+				<Foundation:Point X="533.23" Y="761.34"/>
+			</Controls:Grid.RenderTransformOrigin>
+		</Controls:Grid>
+	</_0:species.grid>
+	<_0:species.healthy_b>
+		<Controls:TextBlock AllowDrop="False" CharacterSpacing="87" CompositeMode="MinBlend" Foreground="#FF0BCDE3" FontStyle="Normal" FontStretch="UltraExpanded" FlowDirection="LeftToRight" FontSize="533.69" HorizontalAlignment="Left" Height="300.81" IsHitTestVisible="False" IsDoubleTapEnabled="True" IsHoldingEnabled="True" IsTapEnabled="True" IsColorFontEnabled="False" IsRightTapEnabled="False" IsTextSelectionEnabled="True" LineStackingStrategy="BlockLineHeight" LineHeight="437.32" MaxWidth="688.63" MaxHeight="132.45" MinWidth="173.2" MaxLines="15" MinHeight="293.43" ManipulationMode="Rotate" Opacity="413.05" OpticalMarginAlignment="TrimSideBearings" RequestedTheme="Default" SelectionHighlightColor="#FF80E062" TextAlignment="Right" TextReadingOrder="Default" TextLineBounds="TrimToBaseline" TextWrapping="NoWrap" Text="Etiam adipiscing leo" TextTrimming="Clip" UseLayoutRounding="True" Visibility="Visible" VerticalAlignment="Bottom" Width="177.49">
+			<Controls:TextBlock.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="518.99" Width="493.31" X="960.2" Y="152.57"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Controls:TextBlock.Clip>
+			<Controls:TextBlock.FontWeight>
+				<Text:FontWeight/>
+			</Controls:TextBlock.FontWeight>
+			<Controls:TextBlock.Margin>
+				<Xaml:Thickness Bottom="976.39" Left="442.62" Right="694.1" Top="951.91"/>
+			</Controls:TextBlock.Margin>
+			<Controls:TextBlock.Padding>
+				<Xaml:Thickness Bottom="820.99" Left="434.1" Right="656.79" Top="977.43"/>
+			</Controls:TextBlock.Padding>
+			<Controls:TextBlock.RenderTransformOrigin>
+				<Foundation:Point X="587.09" Y="162.99"/>
+			</Controls:TextBlock.RenderTransformOrigin>
+		</Controls:TextBlock>
+	</_0:species.healthy_b>
+	<_0:species.image>
+		<Controls:Image AllowDrop="False" CompositeMode="MinBlend" FlowDirection="LeftToRight" HorizontalAlignment="Right" Height="526.93" IsHitTestVisible="False" IsDoubleTapEnabled="True" IsHoldingEnabled="True" IsTapEnabled="True" IsRightTapEnabled="False" MaxWidth="865.34" MaxHeight="351.53" MinWidth="208.38" MinHeight="772.74" ManipulationMode="All" Opacity="226.4" RequestedTheme="Default" Stretch="UniformToFill" UseLayoutRounding="True" Visibility="Visible" VerticalAlignment="Center" Width="974.25">
+			<Controls:Image.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="521.57" Width="959.03" X="492.94" Y="692.02"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Controls:Image.Clip>
+			<Controls:Image.Margin>
+				<Xaml:Thickness Bottom="210.7" Left="247.88" Right="860.96" Top="134.4"/>
+			</Controls:Image.Margin>
+			<Controls:Image.NineGrid>
+				<Xaml:Thickness Bottom="255.5" Left="151.58" Right="527.19" Top="377.91"/>
+			</Controls:Image.NineGrid>
+			<Controls:Image.RenderTransformOrigin>
+				<Foundation:Point X="915.02" Y="465.28"/>
+			</Controls:Image.RenderTransformOrigin>
+		</Controls:Image>
+	</_0:species.image>
+	<_0:species.sick_b>
+		<Controls:TextBlock AllowDrop="True" CharacterSpacing="23" CompositeMode="MinBlend" Foreground="#FF6622C3" FontStyle="Italic" FontStretch="UltraCondensed" FlowDirection="RightToLeft" FontSize="745.34" HorizontalAlignment="Stretch" Height="888.61" IsHitTestVisible="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsTapEnabled="False" IsColorFontEnabled="True" IsRightTapEnabled="True" IsTextSelectionEnabled="False" LineStackingStrategy="BlockLineHeight" LineHeight="437.88" MaxWidth="668.03" MaxHeight="362.45" MinWidth="449.09" MaxLines="32" MinHeight="552.15" ManipulationMode="TranslateRailsX" Opacity="666.84" OpticalMarginAlignment="TrimSideBearings" RequestedTheme="Dark" SelectionHighlightColor="#FFEE20C8" TextAlignment="Right" TextReadingOrder="DetectFromContent" TextLineBounds="TrimToCapHeight" TextWrapping="Wrap" Text="Aptent dignissim" TextTrimming="None" UseLayoutRounding="False" Visibility="Collapsed" VerticalAlignment="Stretch" Width="195.09">
+			<Controls:TextBlock.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="779.09" Width="226.56" X="337.86" Y="869.41"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Controls:TextBlock.Clip>
+			<Controls:TextBlock.FontWeight>
+				<Text:FontWeight/>
+			</Controls:TextBlock.FontWeight>
+			<Controls:TextBlock.Margin>
+				<Xaml:Thickness Bottom="625.62" Left="654.28" Right="371.02" Top="440.49"/>
+			</Controls:TextBlock.Margin>
+			<Controls:TextBlock.Padding>
+				<Xaml:Thickness Bottom="548.6" Left="475.32" Right="502.12" Top="962.51"/>
+			</Controls:TextBlock.Padding>
+			<Controls:TextBlock.RenderTransformOrigin>
+				<Foundation:Point X="855.32" Y="186.25"/>
+			</Controls:TextBlock.RenderTransformOrigin>
+		</Controls:TextBlock>
+	</_0:species.sick_b>
+	<_0:species.title>
+		<Controls:TextBox AllowDrop="True" AcceptsReturn="True" BorderBrush="#FF1C80FE" Background="#FFFC556B" CharacterSpacing="70" CompositeMode="MinBlend" Foreground="#FFADEAC7" FontStyle="Italic" FontStretch="UltraCondensed" FlowDirection="LeftToRight" FontSize="454.52" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" Height="389.06" IsHitTestVisible="True" IsTabStop="False" IsSpellCheckEnabled="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsTextPredictionEnabled="False" IsTapEnabled="False" IsColorFontEnabled="True" IsReadOnly="False" IsRightTapEnabled="True" IsEnabled="True" MaxWidth="835.27" MaxHeight="241.52" MinWidth="894.27" MinHeight="936.98" ManipulationMode="TranslateY" MaxLength="46" Opacity="705.89" PlaceholderText="Congue facilisi vestibulum cursus" PreventKeyboardDisplayOnProgrammaticFocus="False" RequestedTheme="Light" SelectionStart="33" SelectedText="Duis elementum" SelectionHighlightColor="#FFC1951D" SelectionLength="56" TextAlignment="Right" TextWrapping="Wrap" Text="Mus nec eleifend auctor parturient" TabIndex="51" TabNavigation="Once" UseLayoutRounding="False" Visibility="Visible" VerticalAlignment="Top" VerticalContentAlignment="Stretch" Width="411.23">
+			<Controls:TextBox.BorderThickness>
+				<Xaml:Thickness Bottom="460.1" Left="598.53" Right="773.28" Top="638.28"/>
+			</Controls:TextBox.BorderThickness>
+			<Controls:TextBox.Clip>
+				<Media:RectangleGeometry>
+					<Media:RectangleGeometry.Rect>
+						<Foundation:Rect Height="733.54" Width="576.79" X="394.63" Y="997.86"/>
+					</Media:RectangleGeometry.Rect>
+				</Media:RectangleGeometry>
+			</Controls:TextBox.Clip>
+			<Controls:TextBox.FontWeight>
+				<Text:FontWeight/>
+			</Controls:TextBox.FontWeight>
+			<Controls:TextBox.HeaderTemplate>
+				<Xaml:DataTemplate/>
+			</Controls:TextBox.HeaderTemplate>
+			<Controls:TextBox.InputScope>
+				<Input:InputScope/>
+			</Controls:TextBox.InputScope>
+			<Controls:TextBox.Margin>
+				<Xaml:Thickness Bottom="781.09" Left="911.18" Right="234.34" Top="925.12"/>
+			</Controls:TextBox.Margin>
+			<Controls:TextBox.Padding>
+				<Xaml:Thickness Bottom="580.85" Left="343.05" Right="304.2" Top="693.28"/>
+			</Controls:TextBox.Padding>
+			<Controls:TextBox.RenderTransformOrigin>
+				<Foundation:Point X="754.99" Y="600.24"/>
+			</Controls:TextBox.RenderTransformOrigin>
+			<Controls:TextBox.Template>
+				<Controls:ControlTemplate/>
+			</Controls:TextBox.Template>
+		</Controls:TextBox>
+	</_0:species.title>
+</_0:species>

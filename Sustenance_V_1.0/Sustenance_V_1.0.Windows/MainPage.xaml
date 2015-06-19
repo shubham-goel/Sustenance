@@ -3311,7 +3311,7 @@
         		</Grid>
         	</Border>
         </Grid>
-        <Popup x:Name="message_popup" Margin="0,0,300,208" HorizontalAlignment="Center" VerticalAlignment="Center" PointerExited="close_popup">
+        <Popup x:Name="message_popup" Margin="0,0,300,208" HorizontalAlignment="Center" VerticalAlignment="Center" IsLightDismissEnabled="True">
             <Grid Background="White" Height="200" Width="300">
                 <Border HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="300" Background="#FFD8D8D8" CornerRadius="30" BorderBrush="#FF343434" BorderThickness="0,0,9,9" Margin="0" >
                     <TextBlock x:Name="message_popup_text" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" FontFamily="Andalus" Height="82">
