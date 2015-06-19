@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-18T14:36:30.662</Modified>
+      <Modified>2015-06-19T09:50:01.996</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.exe">
       <PackagePath>Sustenance_V_1.0.Windows.exe</PackagePath>
-      <Modified>2015-06-19T04:51:01.665</Modified>
+      <Modified>2015-06-19T11:06:53.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.Controls.DataVisualization.1.4.4.1\lib\netcore45\WinRTXamlToolkit.Controls.DataVisualization.dll">
       <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
@@ -39,6 +39,14 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\077-512.png">
       <PackagePath>077-512.png</PackagePath>
       <Modified>2015-06-15T04:42:14.719</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\arrowhead.png">
+      <PackagePath>arrowhead.png</PackagePath>
+      <Modified>2015-06-19T09:45:15.712</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\arrowhead_old.png">
+      <PackagePath>arrowhead_old.png</PackagePath>
+      <Modified>2015-06-19T10:04:26.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -83,6 +91,10 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\cow.png">
       <PackagePath>cow.png</PackagePath>
       <Modified>2015-06-08T16:46:42.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\crocodile.png">
+      <PackagePath>crocodile.png</PackagePath>
+      <Modified>2015-06-19T08:46:33.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\deer.png">
       <PackagePath>deer.png</PackagePath>
@@ -132,6 +144,10 @@
       <PackagePath>Health_icon_TF2.png</PackagePath>
       <Modified>2015-06-15T04:54:41.110</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\killer whale.png">
+      <PackagePath>killer whale.png</PackagePath>
+      <Modified>2015-06-19T08:13:12.169</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\lion.png">
       <PackagePath>lion.png</PackagePath>
       <Modified>2015-06-08T16:46:42.560</Modified>
@@ -172,6 +188,10 @@
       <PackagePath>sheep.png</PackagePath>
       <Modified>2015-06-08T16:46:42.750</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\squirell.png">
+      <PackagePath>squirell.png</PackagePath>
+      <Modified>2015-06-19T08:37:02.504</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\Stork_07.png">
       <PackagePath>Stork_07.png</PackagePath>
       <Modified>2015-06-16T17:12:28.815</Modified>
@@ -191,6 +211,14 @@
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\vulture.png">
       <PackagePath>vulture.png</PackagePath>
       <Modified>2015-06-08T16:46:42.830</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\whale2.png">
+      <PackagePath>whale2.png</PackagePath>
+      <Modified>2015-06-19T08:15:13.331</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\wolf.png">
+      <PackagePath>wolf.png</PackagePath>
+      <Modified>2015-06-19T08:15:39.791</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\apple.jpg">
       <PackagePath>apple.jpg</PackagePath>
@@ -246,11 +274,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-06-19T04:51:01.440</Modified>
+      <Modified>2015-06-19T11:04:33.444</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\Sustenance_V_1.0.Windows.xr.xml">
       <PackagePath>Sustenance_V_1.0.Windows.xr.xml</PackagePath>
-      <Modified>2015-06-19T04:50:40.668</Modified>
+      <Modified>2015-06-19T11:02:52.646</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\packages\WinRTXamlToolkit.1.4.4.1\lib\netcore45\WinRTXamlToolkit\Controls\AnimatingContainer.xaml">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xaml</PackagePath>
@@ -438,7 +466,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sgoel\Desktop\Sustenance\Sustenance_V_1.0\Sustenance\Sustenance_V_1.0\Sustenance_V_1.0.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-19T04:50:41.013</Modified>
+      <Modified>2015-06-19T11:12:18.094</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

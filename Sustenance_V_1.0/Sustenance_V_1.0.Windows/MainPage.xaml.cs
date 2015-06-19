@@ -64,6 +64,7 @@ namespace Sustenance_V_1._0
         species Aquatic_Plants = new species() { name = "Aquatic_Plants", wiki = "http://www.google.co.in", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Bee = new species() { name = "Bee", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Cow = new species() { name = "Cow", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Crocodile = new species() { name = "Crocodile", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Deer = new species() { name = "Deer", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Eagle = new species() { name = "Eagle", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Elephant = new species() { name = "Elephant", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
@@ -72,6 +73,7 @@ namespace Sustenance_V_1._0
         species Grass_Flowers = new species() { name = "Grass_Flowers", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Grasshopper = new species() { name = "Grasshopper", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Humans = new species() { name = "Humans", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Killer_Whale = new species() { name = "Killer_Whale", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Lion = new species() { name = "Lion", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Monkey = new species() { name = "Monkey", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Rabbit = new species() { name = "Rabbit", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
@@ -79,10 +81,13 @@ namespace Sustenance_V_1._0
         species Sheep = new species() { name = "Sheep", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Small_Bird = new species() { name = "Small_Bird", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Small_Fish = new species() { name = "Small_Fish", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Squirell = new species() { name = "Squirell", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Stork = new species() { name = "Stork", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Tiger = new species() { name = "Tiger", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Vulture = new species() { name = "Vulture", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
         species Veggie = new species() { name = "Veggie", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Whale = new species() { name = "Whale", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
+        species Wolf = new species() { name = "Wolf", wiki = "http://en.wikipedia.org/", sc_name = "Enter Sc Name Here", desc = "Enter Desc Here" };
 
         Environment_species Land = new Environment_species() { name = "Land" };
         Environment_species Air = new Environment_species() { name = "Air" };
@@ -342,7 +347,10 @@ namespace Sustenance_V_1._0
             species sp = grid_obj_to_species(sender);
 
 
-            sp.pointer_entered();
+            if (sp != null)
+            {
+                sp.pointer_entered();
+            }
             //animate_scale(sender, 1.1);
             
         }
@@ -494,6 +502,7 @@ namespace Sustenance_V_1._0
             list.Add(Aquatic_Plants);
             list.Add(Bee);
             list.Add(Cow);
+            list.Add(Crocodile);
             list.Add(Deer);
             list.Add(Eagle);
             list.Add(Elephant);
@@ -502,6 +511,7 @@ namespace Sustenance_V_1._0
             list.Add(Grass_Flowers);
             list.Add(Grasshopper);
             list.Add(Humans);
+            list.Add(Killer_Whale);
             list.Add(Lion);
             list.Add(Monkey);
             list.Add(Rabbit);
@@ -509,10 +519,13 @@ namespace Sustenance_V_1._0
             list.Add(Sheep);  
             list.Add(Small_Bird);
             list.Add(Small_Fish);
+            list.Add(Squirell);
             list.Add(Stork);
             list.Add(Tiger);
             list.Add(Vulture);
             list.Add(Veggie);
+            list.Add(Whale);
+            list.Add(Wolf);
         }
         public void add_species(List<Environment_species> list)
         {
