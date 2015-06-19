@@ -250,6 +250,8 @@ namespace Sustenance_V_1._0
 
             LoadChartContents(all_pot_animals);
             LoadChartContents(all_pot_infi);
+
+            show_popup("working!");
             //LoadChartContents(all_pot_env);
             //LoadChartContents(all_pot_ind);
         }
@@ -270,6 +272,7 @@ namespace Sustenance_V_1._0
 
             sp_Flyout_wiki.NavigateUri = new Uri(sp.wiki);
 
+            sp.pointer_entered();
             sp_Flyout.ShowAt(sp.grid);
             sp.title.Visibility = Visibility.Collapsed;
 
@@ -814,6 +817,16 @@ namespace Sustenance_V_1._0
         //    elastic_scale_1_1.Begin();
         //}
 
+        public void show_popup(string message)
+        {
+            message_popup_text.Text = message;
+            message_popup.IsOpen = true;
+        }
+
+        private void close_popup(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
     }
 
     //===========CLASS DEFINITIONS===========//
