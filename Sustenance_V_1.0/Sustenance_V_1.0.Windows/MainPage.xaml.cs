@@ -187,7 +187,7 @@ namespace Sustenance_V_1._0
 
             link_members(XP);
 
-            Marley = new AI(ref all_species, ref all_env, ref all_ind);
+            Marley = new AI(ref all_species, ref all_env, ref all_ind) { message = message_popup, text = message_popup_text };
         }
 
         public void add_data_contexts()
@@ -484,7 +484,6 @@ namespace Sustenance_V_1._0
         public void link_members(potion_infi sp)
         {
             sp.grid = FindName(sp.name + "_g") as Grid;
-            sp.available_box = FindName(sp.name + "_available") as TextBlock;
         }
         public void link_members(List<potion_infi> list)
         {
@@ -681,7 +680,7 @@ namespace Sustenance_V_1._0
             int level = XP.Add(xp_change);
             if (level != 0)
             {
-                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+                show_popup("Congratulations!\nYou Have Reached\nLevel " + level.ToString());
             }
             
 
@@ -701,7 +700,7 @@ namespace Sustenance_V_1._0
             int level = XP.Add(xp_change);
             if (level != 0)
             {
-                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+                show_popup("Congratulations!\nYou Have Reached\nLevel " + level.ToString());
             }
 
         }
@@ -721,7 +720,7 @@ namespace Sustenance_V_1._0
             int level = XP.Add(xp_change);
             if (level != 0)
             {
-                show_popup("Congratulations!\nYou Have Reached\nLevel" + level.ToString());
+                show_popup("Congratulations!\nYou Have Reached\nLevel " + level.ToString());
             }
         }
 
@@ -1528,26 +1527,8 @@ namespace Sustenance_V_1._0
             }
         }
         public Grid grid { get; set; }
-        TextBlock _available_box;
-        public TextBlock available_box
-        {
-            get
-            {
-                return _available_box;
-            }
-            set
-            {
-                _available_box = value;
-                update_box();
-                OnPropertyChanged("available_box");
-            }
-        }
         public string desc { get; set; }
         public double effectiveness { get; set; }// 0 < effectiveness < 1
-        public void update_box()
-        {
-            if (available_box != null) available_box.Text = available.ToString();
-        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
@@ -1896,15 +1877,15 @@ namespace Sustenance_V_1._0
         List<Environment_species> list_env_species;
         List<Industrial_species> list_ind_species;
 
-
-
-        poison p1 = new poison() { available = 5, maximum = 5, max_time = new TimeSpan(0, 0, 20) , effectiveness = 0.1 };
-        poison p2 = new poison() { available = 4, maximum = 4, max_time = new TimeSpan(0, 1, 0) , effectiveness = 0.3};
-        poison p3 = new poison() { available = 3, maximum = 3, max_time = new TimeSpan(0, 5, 0) , effectiveness = 0.5};
-        poison p4 = new poison() { available = 2, maximum = 2, max_time = new TimeSpan(0, 15, 0) , effectiveness = 1};
+        poison p1 = new poison() { available = 1, maximum = 5, max_time = new TimeSpan(0, 0, 40) , effectiveness = 0.1 };
+        poison p2 = new poison() { available = 1, maximum = 4, max_time = new TimeSpan(0, 2, 0) , effectiveness = 0.3};
+        poison p3 = new poison() { available = 1, maximum = 3, max_time = new TimeSpan(0, 10, 0) , effectiveness = 0.5};
+        poison p4 = new poison() { available = 1, maximum = 2, max_time = new TimeSpan(0, 30, 0) , effectiveness = 1};
 
         DispatcherTimer timer = new DispatcherTimer();
 
+        public Popup message { get; set; }
+        public TextBlock text { get; set; }
         int rand(int a, int b)
         {
             Random rand = new Random();
@@ -1969,15 +1950,26 @@ namespace Sustenance_V_1._0
 
             if (animal == max)
             {
-                p.affect(list_species,i);
+                if (p.affect(list_species, i))
+                {
+                    open_popup();
+                }
             }
             if (env == max)
             {
-                p.affect(list_env_species,j);
+                
+                if(p.affect(list_env_species,j))
+                {
+                    open_popup();
+                }
             }
             else
             {
-                p.affect(list_ind_species,k);
+                if (p.affect(list_ind_species, k))
+                {
+                    open_popup();
+                }
+
             }
         }
 
@@ -2018,6 +2010,12 @@ namespace Sustenance_V_1._0
             return best;
         }
 
+        void open_popup()
+        {
+            text.Text = "Buckle Up\nMarley Just Made a Move!";
+            message.IsOpen = true;
+        }
+
         public AI(ref List<species> sp, ref List<Environment_species> env_sp, ref List<Industrial_species> ind_sp)
         {
             setup_ticker();
@@ -2030,10 +2028,10 @@ namespace Sustenance_V_1._0
         {
             public poison()
             {
-                percent_affect = 0.5;///Defines Hardness Level
+                percent_affect = 0.95;///Defines Hardness Level
                 setup_timer();
             }
-            public void affect(List<Industrial_species> sp, int i)
+            public bool affect(List<Industrial_species> sp, int i)
             {
                 if (available > 0)
                 {
@@ -2043,9 +2041,11 @@ namespace Sustenance_V_1._0
                     double change = (sp[i].healthy) * (percent_affect * effectiveness);
                     sp[i].healthy -= change;
                     available--;
+                    return true;
                 }
+                return false;
             }
-            public void affect(List<species> sp , int i)
+            public bool affect(List<species> sp, int i)
             {
                 double change = 0;
                 if (available > 0 && !sp[i].is_vaccinated)
@@ -2055,9 +2055,11 @@ namespace Sustenance_V_1._0
                     sp[i].healthy = sp[i].healthy - change;
                     sp[i].sick = sp[i].sick + change;
                     available--;
+                    return true;
                 }
+                return false;
             }
-            public void affect(List<Environment_species> sp , int i)
+            public bool affect(List<Environment_species> sp , int i)
             {
 
                 if (available > 0)
@@ -2067,8 +2069,9 @@ namespace Sustenance_V_1._0
                     double change = (sp[i].healthy) * (percent_affect * effectiveness);
                     sp[i].healthy -= change;
                     available--;
+                    return true;
                 }
-
+                return false;
             }
         }
     }
